@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    display: flex;
+}
+
+header{
+    display: flex;
+    background: black;
+    justify-content: space-around; 
+
+}
+
+ #header h1{
+    display: inline;  
+    color: chocolate;
+    font-family: fantasy;
+    display: block;
+}
+
+#tim-kiem{
+    width: 25%;
+    margin: 5px 0;
+}
+
+#tim-kiem > input{
+    width: 100%;
+    border-radius: 5px;
+}
