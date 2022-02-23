@@ -23,20 +23,27 @@ header{
     display: block;
 }
 
-a{
-    margin: 5px; 
+#link{
+    margin: 8px; 
     color: #EDEDED; 
     font-style: oblique;
     font-family: fantasy;
     text-decoration: none;
 }
 
+a#link:hover{
+    color: chocolate;
+}
+
+
 #tim-kiem{
     width: 25%;
     margin: 5px 0;
+    text-decoration-color: black;
 }
 
 #tim-kiem > input{
+    background: #EDEDED;
     width: 100%;
     border-radius: 5px;
 }
