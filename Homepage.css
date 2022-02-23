@@ -8,18 +8,27 @@ div{
     display: flex;
 }
 
+
 header{
     display: flex;
-    background: black;
+    background: linear-gradient(45deg, black 14%, chocolate 30% 70%,black);
     justify-content: space-around; 
-
+    
 }
 
- #header h1{
+#header h1{
     display: inline;  
     color: chocolate;
     font-family: fantasy;
     display: block;
+}
+
+a{
+    margin: 5px; 
+    color: #EDEDED; 
+    font-style: oblique;
+    font-family: fantasy;
+    text-decoration: none;
 }
 
 #tim-kiem{
