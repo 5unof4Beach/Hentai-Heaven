@@ -11,10 +11,14 @@ div{
 li{
     list-style-type: none;
 }
+body{
+    background-color: #EDEDED;
+}
+
 
 header{
     display: flex;
-    background: linear-gradient(45deg, black 14%, chocolate 30% 70%,black);
+    background: linear-gradient(90deg, #373737 26%, chocolate 38% 70%,#373737 80%);
     justify-content: space-around; 
     
 }
@@ -82,11 +86,13 @@ a.link-the-loai:hover{
 #danh-muc-phim{
     /* flex-grow: 10; */
     width: 80%;
-    height: 695px;
+    /* height: 695px; */
     border: 1px solid black;
-    margin: 5px;
+    /* margin: 5px; */
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #the-loai{
@@ -103,10 +109,28 @@ a.link-the-loai:hover{
     flex-shrink: 5;
     border: 1px solid black;
     margin: 5px;
+    overflow: auto;
 }
 
 .hang{
-    height: 25%;
+    /* height: 25%; */
+    flex-grow: 1;
     width: 100%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
+    align-items: center;
+}
+
+.truyen{
+    height: 200px;
+    width: 300px;
+    border: 1px solid red;
+    /* margin: 5px; */
+    overflow: auto;
+}
+
+#chuyen-trang{
+    height: 50px;
+    width: 100%;
+    border: 1px solid red ;
+    margin: 3px;
 }
