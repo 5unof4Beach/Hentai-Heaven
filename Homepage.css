@@ -8,12 +8,23 @@ div{
     display: flex;
 }
 
+li{
+    list-style-type: none;
+}
 
 header{
     display: flex;
     background: linear-gradient(45deg, black 14%, chocolate 30% 70%,black);
     justify-content: space-around; 
     
+}
+
+footer{
+    /* position: absolute; */
+    /* /* display: flex; */
+    background: black;
+    height: 150px;
+    /* bottom: 0; */
 }
 
 #header h1{
@@ -23,7 +34,7 @@ header{
     display: block;
 }
 
-#link{
+.link{
     margin: 8px; 
     color: #EDEDED; 
     font-style: oblique;
@@ -31,7 +42,19 @@ header{
     text-decoration: none;
 }
 
-a#link:hover{
+.link-the-loai{
+    margin: 8px; 
+    color: black; 
+    font-style: oblique;
+    font-family: fantasy;
+    text-decoration: none;
+}
+
+a.link:hover{
+    color: chocolate;
+}
+
+a.link-the-loai:hover{
     color: chocolate;
 }
 
@@ -46,4 +69,44 @@ a#link:hover{
     background: #EDEDED;
     width: 100%;
     border-radius: 5px;
+}
+
+
+#nd-chinh{
+    border: 1px solid black;
+    margin: 3px;
+    height: 700px;
+    align-items: flex-start;
+}
+
+#danh-muc-phim{
+    /* flex-grow: 10; */
+    width: 80%;
+    height: 695px;
+    border: 1px solid black;
+    margin: 5px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#the-loai{
+    /* flex-grow: 1; */
+    flex-shrink: 1;
+    border: 1px solid black;
+    margin: 5px;
+    justify-content: center;
+}
+
+
+#quang-cao{
+    flex-grow: 2;
+    flex-shrink: 5;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.hang{
+    height: 25%;
+    width: 100%;
+    border: 1px solid green;
 }
