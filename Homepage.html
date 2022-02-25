@@ -10,29 +10,39 @@
 </head>
 <body>
     <header id="header">
-        <a href="#" style="text-decoration: none;"><h1>Hentai Heaven</h1></a>
-
+        <div id="menu-the-loai" class="menu-the-loai">
+            <a href="javascript:void(0)" class="dong-menu" onclick="closeNav()">&times;</a>
+            <div id = 'the-loai'>
+                <ul>
+                    <li><a href="#" class="link-the-loai">Trinh Tham</a></li>
+                    <li><a href="#" class="link-the-loai">Truyen Tranh</a></li>
+                    <li><a href="#" class="link-the-loai">Tieu Thuyet</a></li>
+                    <li><a href="#" class="link-the-loai">Truyen Cuoi</a></li>
+                    <li><a href="#" class="link-the-loai">Truyen Hentai</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="align-items: center;">
+            <button class="mo-menu" onclick="openNav()">&#9776;</button>
+            <a href="#" style="text-decoration: none;"><h1>Hentai Heaven</h1></a>
+        </div>
+        
         <div id="tim-kiem">
             <input placeholder="Tim Kiem">
         </div>
-
-        <div>
+        
+        <div id="dang-nhap-dang-ky">
             <a class = 'link' href="#">Login</a>
-            <a class = 'link' href="#">Register</a>
+            <a class = 'link' href="#">Sign up</a>
         </div>
+
+        <!-- <div class="sidenav bg-dark sidenav-light ps ps--active-y" id="sidenav" data-accordion="true" data-color="light" data-hidden="true" role="navigation" style="width: 240px; height: 100vh; position: fixed; transition: all 0.3s linear 0s; transform: translateX(0%);"> 
+        </div> -->
     </header>
 
 
     <div id="nd-chinh">
-        <div id = 'the-loai'>
-            <ul>
-                <li><a href="#" class="link-the-loai">Trinh Tham</a></li>
-                <li><a href="#" class="link-the-loai">Truyen Tranh</a></li>
-                <li><a href="#" class="link-the-loai">Tieu Thuyet</a></li>
-                <li><a href="#" class="link-the-loai">Truyen Cuoi</a></li>
-                <li><a href="#" class="link-the-loai">Truyen Hentai</a></li>
-            </ul>
-        </div>
 
         <div id = 'danh-muc-phim'>
             <div class = 'truyen'></div>
@@ -49,13 +59,29 @@
             <div class = 'truyen'></div>
         </div>
 
-        <div id = 'quang-cao'>
-            <iframe width="172" height="144" src="https://www.youtube.com/embed/NjpKlAuQuE0?autoplay=1" allow="autoplay"></iframe>
-        </div>
+        <!-- <div id = 'quang-cao'>
+            <iframe width="250" height="144" src="https://www.youtube.com/embed/NjpKlAuQuE0?autoplay=1" allow="autoplay"></iframe>
+        </div> -->
 
     </div>
 
-    <div id="chuyen-trang"></div>
+    <nav id="chuyen-trang">
+        <ul>
+            <li class = 'doi-so-trang'>
+                <a href="#" class="link trang">1</a>
+            </li>
+            <li class = 'doi-so-trang'>
+                <a href="#" class="link trang">2</a>
+            </li>
+            <li class = 'doi-so-trang'>
+                <a href="#" class="link trang">3</a>
+            </li>
+            <li class = 'doi-so-trang'>
+                <a href="#" class="link trang">Next</a>
+            </li>
+        </ul>
+    </nav>
+
 
     <footer>
 
