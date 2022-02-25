@@ -17,9 +17,11 @@ body{
 
 
 header{
+    width: 100%;
     display: flex;
     background: linear-gradient(90deg, #373737 26%, chocolate 38% 70%,#373737 80%);
     justify-content: space-around; 
+    position: fixed;
     
 }
 
@@ -31,7 +33,7 @@ footer{
     /* bottom: 0; */
 }
 
-#header h1{
+header h1{
     display: inline;  
     color: chocolate;
     font-family: fantasy;
