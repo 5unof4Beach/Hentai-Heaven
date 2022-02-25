@@ -8,7 +8,7 @@ div{
     display: flex;
 }
 
-li{
+ol, ul{
     list-style-type: none;
 }
 body{
@@ -101,20 +101,63 @@ a.link-the-loai:hover{
 }
 
 #the-loai{
-    /* flex-grow: 1; */
-    /* flex-shrink: 1; */
-    width: 150px;
-    border: 1px solid black;
+    width: 250;
+    /* border: 1px solid black; */
     margin: 5px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
+.menu-the-loai {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    background-color: #373737;
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.2s;
+    justify-content: flex-start;
+  }
+  
+  .menu-the-loai a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  .menu-the-loai .dong-menu {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #EDEDED;
+  }
+  
+  .mo-menu {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #373737;
+    color: chocolate;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .mo-menu:hover {
+    background-color: #444;
+  }
 
 #quang-cao{
-    /* flex-grow: 2;
-    flex-shrink: 5; */
     border: 1px solid black;
-    /* margin: 5px; */
     overflow: auto;
     justify-content: center;
 }
@@ -151,55 +194,3 @@ a.link-the-loai:hover{
     color: chocolate;
 
 }
-
-.menu-the-loai {
-    height: 100%; /* Specify a height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-  }
-  
-  /* The sidepanel links */
-  .menu-the-loai a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidepanel a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .menu-the-loai .dong-menu {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    color: #EDEDED;
-  }
-  
-  /* Style the button that is used to open the sidepanel */
-  .mo-menu {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #373737;
-    color: chocolate;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .mo-menu:hover {
-    background-color: #444;
-  }
