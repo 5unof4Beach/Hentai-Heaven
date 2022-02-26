@@ -95,8 +95,8 @@ a.link-the-loai:hover{
     justify-content: space-around;
 }
 
-#danh-muc-phim{
-    width: 1100px;
+#danh-muc-truyen{
+    width: 1202px;
     border: 1px solid black;
     /* margin: 5px; */
     align-items: center;
@@ -167,8 +167,8 @@ a.link-the-loai:hover{
 }
 
 .truyen{
-    height: 200px;
-    width: 274px;
+    height: 340px;
+    width: 300px;
     border: 1px solid red;
     overflow: auto;
 }

@@ -10,8 +10,8 @@
 </head>
 <body>
     <header class="header">
-        <div id="menu-the-loai" class="menu-the-loai">
-            <a href="javascript:void(0)" class="dong-menu" onclick="dongMenu()">&times;</a>
+        <div id="menu-the-loai" class="menu-the-loai" onpointerleave="dongMenu()">
+            <a class="dong-menu">&times;</a>
             <div id = 'the-loai'>
                 <ul>
                     <li><a href="#" class="link-the-loai">Trinh Tham</a></li>
@@ -24,7 +24,7 @@
         </div>
 
         <div style="align-items: center;">
-            <button class="mo-menu" onclick="moMenu()">&#9776;</button>
+            <button class="mo-menu"onpointerenter="moMenu()">&#9776;</button>
             <a href="#" style="text-decoration: none;"><h1>Hentai Heaven</h1></a>
         </div>
         
@@ -45,9 +45,9 @@
     <br>
     <br>
 
-    <div id="nd-chinh" onclick="dongMenu()">
+    <div id="nd-chinh">
 
-        <div id = 'danh-muc-phim'>
+        <div id = 'danh-muc-truyen'>
             <div class = 'truyen'></div>
             <div class = 'truyen'></div>
             <div class = 'truyen'></div>
