@@ -1,4 +1,4 @@
-*{
+*, ::after, ::before{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -40,9 +40,6 @@ header h1{
     display: block;
 }
 
-#tim-kiem:hover{
-    opacity: 0.5;
-}
 
 #dang-nhap-dang-ky{
     width: 100px;
@@ -74,31 +71,31 @@ a.link-the-loai:hover{
     color: chocolate;
 }
 
-
-#tim-kiem{
+#thanh-tim-kiem{
     width: 25%;
-    margin: 5px 0;
-    text-decoration-color: black;
+    border-radius: 2px;
+    border: 0;
+    padding-left: 5px;
+    margin: 5px;
 }
 
-#tim-kiem > input{
-    background: #EDEDED;
-    width: 100%;
-    border-radius: 5px;
+#thanh-tim-kiem:hover{
+    opacity: 0.8;
 }
 
+#thanh-tim-kiem:focus{
+    opacity: 1;
+}
 
 #nd-chinh{
     border: 1px solid black;
     margin: 3px;
-    /* height: 700px; */
     justify-content: space-around;
 }
 
 #danh-muc-truyen{
     width: 1202px;
     border: 1px solid black;
-    /* margin: 5px; */
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
