@@ -40,6 +40,10 @@ header h1{
     display: block;
 }
 
+#tim-kiem:hover{
+    opacity: 0.5;
+}
+
 #dang-nhap-dang-ky{
     width: 100px;
     justify-content: space-between;
@@ -167,6 +171,10 @@ a.link-the-loai:hover{
     width: 274px;
     border: 1px solid red;
     overflow: auto;
+}
+
+.truyen:hover{
+    background-color: chocolate;
 }
 
 #chuyen-trang{
