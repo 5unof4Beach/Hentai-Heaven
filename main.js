@@ -1,9 +1,11 @@
-/* Set the width of the sidebar to 250px (show it) */
 function moMenu() {
-    document.getElementById("menu-the-loai").style.width = "300px";
+    var a = document.getElementById("menu-the-loai");
+    a.style.width = "300px";
+    // a.style.height = "100%";
   }
   
-  /* Set the width of the sidebar to 0 (hide it) */
 function dongMenu() {
-    document.getElementById("menu-the-loai").style.width = "0";
-  }
+    var a = document.getElementById("menu-the-loai");
+    a.style.width = "0";
+    // a.style.height = "0px";
+}
