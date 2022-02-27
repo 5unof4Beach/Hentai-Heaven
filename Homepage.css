@@ -13,7 +13,11 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #373737; 
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: chocolate; 
   }
 
   ::-webkit-scrollbar-thumb {
@@ -190,6 +194,10 @@ a.link-the-loai:hover{
     width: 300px;
     border: 1px solid transparent;
     overflow: auto;
+    background-image: url(ME.jpg);
+    background-size: 170px 200px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .truyen:hover{
