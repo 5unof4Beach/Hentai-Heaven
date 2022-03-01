@@ -4,29 +4,28 @@
     padding: 0;
 }
 
-:root{
-
+@media all and (max-width: 800px) {
+    #logo{
+        display: none;
+    }
+    
 }
 
 ::-webkit-scrollbar {
     width: 10px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: #373737; 
-  }
-
-  ::-webkit-scrollbar-track:hover {
-    background: chocolate; 
-  }
+}
 
   ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+      background: #555; 
+      border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #888; 
     width: 20px;
   }
 
@@ -38,6 +37,7 @@ div{
 ol, ul{
     list-style-type: none;
 }
+
 body{
     background-color: #EDEDED;
 }
@@ -45,7 +45,7 @@ body{
 header{
     width: 100%;
     display: flex;
-    background: linear-gradient(90deg, #373737 26%, chocolate 38% 70%,#373737 80%);
+    background: #373737;
     justify-content: space-around; 
     position: sticky;
     top: 0;
@@ -61,22 +61,29 @@ footer{
 }
 
 header h1{
-    display: inline;  
+    display: flex;  
     color: chocolate;
     font-family: fantasy;
     font-size: 42px;
     letter-spacing: 4px;
+    flex-shrink: 5;
 }
 
 #dang-nhap-dang-ky{
     width: 100px;
+    height: 50px;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 5;
 }
 
 #dang-nhap-dang-ky a{
-    line-height: 100%;
+    line-height: 50px;
     font-size: 17px;
+}
+
+#dang-nhap-dang-ky a:active{
+    color: wheat;
 }
 
 .link{
@@ -103,13 +110,17 @@ a.link-the-loai:hover{
     color: chocolate;
 }
 
+a.link-the-loai:active{
+    color: white;
+}
+
 #thanh-tim-kiem{
-    width: 25%;
+    width: 20%;
     border-radius: 2px;
     border: 0;
     padding-left: 5px;
-    margin: 5px;
-    /* box-shadow: 2px 5px 2px 2px white; */
+    margin: 10px 0;
+    flex-shrink: 7;
 }
 
 #thanh-tim-kiem:hover{
@@ -137,26 +148,22 @@ a.link-the-loai:hover{
 
 #the-loai{
     width: 250;
-    /* border: 1px solid black; */
     margin: 5px;
     justify-content: flex-start;
 }
 
 .menu-the-loai {
     height: 100%;
-    /* height: 0; */
     width: 0;
-    /* width: 300px; */
     position: fixed;
     z-index: 0;
     top: 0px;
     left: 0px;
-    background-color: #373737;
+    background-color: rgba(0, 0, 0, 0.85);
     overflow-y: scroll;
     padding-top: 30px;
     transition: 0.2s;
     justify-content: flex-start;
-    /* scrollbar-color: chocolate chocolate; */
 }
 
 .menu-the-loai a {
@@ -177,10 +184,6 @@ a.link-the-loai:hover{
     color: chocolate;
     padding: 10px 15px;
     border: none;
-}
-  
-.mo-menu:hover {
-    background-color: #444;
 }
 
 #quang-cao{
@@ -221,7 +224,7 @@ a.link-the-loai:hover{
 }
 
 #chuyen-trang .doi-so-trang a{
-    border: 1px solid #373737;
+    /* border: 1px solid #373737; */
     color: #373737;
     margin: 2px;
 }
