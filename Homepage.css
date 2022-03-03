@@ -157,7 +157,7 @@ a.link-the-loai:active{
     width: 0;
     position: fixed;
     z-index: 0;
-    top: 0px;
+    top: 50px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.85);
     overflow-y: scroll;
@@ -173,8 +173,11 @@ a.link-the-loai:active{
     color: #818181;
     display: block;
     transition: 0.3s;
-    font-size: 25px;
     line-height: 100%;
+}
+
+.menu-the-loai a:hover {
+    font-weight: bold;
 }
   
 .mo-menu {
@@ -212,7 +215,7 @@ a.link-the-loai:active{
     display: flex;
     height: 50px;
     width: 100%;
-    border: 1px solid red ;
+    /* border: 1px solid red ; */
     margin: 3px;
     justify-content: center;
     align-items: center;
