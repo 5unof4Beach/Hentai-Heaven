@@ -9,3 +9,5 @@ function dongMenu() {
     a.style.width = "0";
     // a.style.height = "0px";
 }
+
+console.log(window)
