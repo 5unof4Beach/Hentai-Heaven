@@ -21,3 +21,5 @@ function themTruyen() {
   
   ds_truyen.appendChild(box);
 }
+
+console.log("Bui Minh Duc")
