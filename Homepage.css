@@ -200,8 +200,8 @@ a.link-the-loai:active{
     width: 300px;
     border: 1px solid transparent;
     overflow: auto;
-    background-image: url(ME.jpg);
-    background-size: 170px 200px;
+    background-image: url(Me\ and\ Mina.png);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
