@@ -8,6 +8,11 @@
     #logo{
         display: none;
     }
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
     
 }
 
@@ -29,6 +34,13 @@
 width: 20px;
 }
 
+:root{
+    --background: #282a36;
+    --pink: #ff79c6;
+    --green: #50fa7b;
+    --purple: #bd93f9;
+    --red: #ff5555;
+}
 
 div{
     display: flex;
@@ -39,13 +51,13 @@ ol, ul{
 }
 
 body{
-    background-color: #EDEDED;
+    background-color: var(--background);
 }
 
 header{
     width: 100%;
     display: flex;
-    background: #373737;
+    background: var(--background);
     justify-content: space-around; 
     position: sticky;
     top: 0;
@@ -62,7 +74,7 @@ footer{
 
 header h1{
     display: flex;  
-    color: chocolate;
+    color: var(--purple);
     font-family: fantasy;
     font-size: 42px;
     letter-spacing: 4px;
@@ -74,7 +86,8 @@ header h1{
     height: 50px;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 5;
+    /* margin: 0 2px 0 2px; */
+    /* flex-shrink: 5; */
 }
 
 #dang-nhap-dang-ky a{
@@ -103,11 +116,11 @@ header h1{
 }
 
 a.link:hover{
-    color: chocolate;
+    color: var(--green);
 }
 
 a.link-the-loai:hover{
-    color: chocolate;
+    color: var(--green);
 }
 
 a.link-the-loai:active{
@@ -132,7 +145,7 @@ a.link-the-loai:active{
 }
 
 #nd-chinh{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 3px;
     justify-content: space-around;
     position: static;
@@ -140,7 +153,7 @@ a.link-the-loai:active{
 
 #danh-muc-truyen{
     width: 1202px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -180,12 +193,25 @@ a.link-the-loai:active{
     font-weight: bold;
 }
   
-.mo-menu {
+#mo-menu {
     font-size: 20px;
     cursor: pointer;
-    background-color: #373737;
-    color: chocolate;
+    background-color: var(--background);
+    color: var(--pink);
     padding: 10px 15px;
+    border: none;
+}
+
+
+#dong-menu{
+    background: transparent;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    top: 10px;
+    right: 40px;
+    z-index: 0;
+    cursor: pointer;
     border: none;
 }
 
@@ -207,8 +233,8 @@ a.link-the-loai:active{
 }
 
 .truyen:hover{
-    background-color: chocolate;
-    box-shadow: 5px 5px 8px 7px rgb(209, 187, 187);
+    background-color: var(--green);
+    box-shadow: 5px 5px 8px 7px rgb(0, 0, 0, 0.85);
 }
 
 #chuyen-trang{
@@ -228,11 +254,11 @@ a.link-the-loai:active{
 
 #chuyen-trang .doi-so-trang a{
     /* border: 1px solid #373737; */
-    color: #373737;
+    color: var(--purple);
     margin: 2px;
 }
 
 #chuyen-trang .doi-so-trang a:hover{
-    color: chocolate;
+    color: var(--green);
 
 }

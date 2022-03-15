@@ -23,7 +23,8 @@ function themTruyen() {
 }
 
 nutThemTruyen = ()=>{
-  var Truyens = document.getElementsByClassName('truyen')
+  var Truyens = document.getElementsByClassName('truyen');
+  Truyens.length
 }
 
 console.log("Bui Minh Duc")
