@@ -86,13 +86,12 @@ header h1{
     height: 50px;
     justify-content: space-between;
     align-items: center;
-    /* margin: 0 2px 0 2px; */
-    /* flex-shrink: 5; */
 }
 
 #dang-nhap-dang-ky a{
     line-height: 50px;
     font-size: 17px;
+    color: var(--pink);
 }
 
 #dang-nhap-dang-ky a:active{
