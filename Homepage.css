@@ -67,7 +67,7 @@ header{
 footer{
     /* position: absolute; */
     /* /* display: flex; */
-    background: black;
+    background: var(--background);
     height: 150px;
     /* bottom: 0; */
 }
@@ -94,6 +94,10 @@ header h1{
     color: var(--pink);
 }
 
+#dang-nhap-dang-ky a:hover{
+    color: var(--green);
+}
+
 #dang-nhap-dang-ky a:active{
     color: wheat;
 }
@@ -114,7 +118,7 @@ header h1{
     text-decoration: none;
 }
 
-a.link:hover{
+a:hover{
     color: var(--green);
 }
 
