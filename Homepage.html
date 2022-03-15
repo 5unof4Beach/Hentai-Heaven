@@ -10,7 +10,10 @@
 </head>
 <body>
     <header class="header">
-        <div id="menu-the-loai" class="menu-the-loai" onpointerleave="dongMenu()">
+        <div id="menu-the-loai" class="menu-the-loai" >
+
+            <button id="dong-menu" onclick="dongMenu()">×</button>
+
             <div id = 'the-loai'>
                 <ul>
                     <li><a href="#" class="link-the-loai">Trinh Tham</a></li>
@@ -28,7 +31,7 @@
         </div>
 
         <div style="align-items: center;">
-            <button class="mo-menu" onpointerenter="moMenu()">&#9776;</button>
+            <button id="mo-menu" onclick="moMenu()">&#9776;</button>
             <a id = "logo" href="#" style="text-decoration:none;"><h1>Hentai Heaven</h1></a>
         </div>
         
@@ -41,7 +44,7 @@
 
     </header>
     
-    <div id="nd-chinh">
+    <div id="nd-chinh" >
 
         <div id = 'danh-muc-truyen'>
             <div class = 'truyen'></div>
@@ -78,6 +81,7 @@
             <li class = 'doi-so-trang'>
                 <a href="#" class="link trang">Next</a>
             </li>
+
         </ul>
     </nav>
 
