@@ -58,7 +58,7 @@ header{
     display: flex;
     background: var(--background);
     justify-content: space-around; 
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1;
 }
