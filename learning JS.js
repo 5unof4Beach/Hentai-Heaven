@@ -9,10 +9,6 @@ var students = ['123', '243124', 'duc'];
 students.unshift('111111');
 var first = students.shift();
 
-<<<<<<< HEAD
-console.log(students[1]);
-console.log(first);
-=======
 
 var studentTeenNames = students.map(student => {
     return student + 'yahoo.com';
@@ -29,4 +25,3 @@ var total = numbers.reduce((soLuongSoChan, curr) =>{
 
 console.log(total)
 // console.log(students[1]);
->>>>>>> 36eb66b18b32dc44b0fef413c7cebe2aaa2c391f
