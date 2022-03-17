@@ -12,3 +12,8 @@ loadImage = (url, successCallback, errorCallback) =>{
 
 var imgLink = 'https://github.com/5unof4Beach/Hentai-Heaven/blob/main/Images/Me%20and%20Mina.png';
 
+console.log("1");
+
+setTimeout(() => console.log('xong'),0);
+
+console.log("2");
