@@ -4,9 +4,9 @@
     padding: 0;
 }
 
-html, body {
+html, body #nd-chinh{
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 @media all and (max-width: 800px) {
@@ -58,7 +58,7 @@ header{
     display: flex;
     background: var(--background);
     justify-content: space-around; 
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1;
 }
