@@ -4,10 +4,20 @@
     margin: 0;
 }
 
+:root{
+    --background: #282a36;
+    --pink: #ff79c6;
+    --green: #50fa7b;
+    --purple: #bd93f9;
+    --red: #ff5555;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background: #8E0E00;
-    background: linear-gradient(to left, #8E0E00, #1F1C18);
+    font-family: "Inconsolata" , sans-serif;
+    background: var(--background);
+    /* background: linear-gradient(to left, #8E0E00, #1F1C18); */
 }
 
 #container {
@@ -20,7 +30,7 @@ body {
 }
 
 h1 {
-    background: #1F030C;
+    background: var(--purple);
     color: white;
     margin: 0px;
     text-align: center;
@@ -68,7 +78,7 @@ button {
     font-size: 14px;
     display: block;
     margin: 30px auto;
-    background: #AD133A;
+    background: var(--red);
     border-radius: 5px;
     width: 200px;
     height: 50px;
@@ -78,8 +88,9 @@ button {
 }
 
 button:hover {
-    background: #4c2827;
-    border-bottom-color: #1F1C18;
+    background: var(--pink);
+    transition: all 0.5s;
+    border-bottom-color: var(--green);
 }
 
 button:active {
