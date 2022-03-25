@@ -228,7 +228,7 @@ a.link-the-loai:active{
     width: 300px;
     border: 1px solid transparent;
     overflow: auto;
-    background-image: url(Images/Me\ and\ Mina.png);
+    background-image: url("ME.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -262,5 +262,4 @@ a.link-the-loai:active{
 
 #chuyen-trang .doi-so-trang a:hover{
     color: var(--green);
-
 }

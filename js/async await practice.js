@@ -12,8 +12,17 @@ loadImage = (url, successCallback, errorCallback) =>{
 
 var imgLink = 'https://github.com/5unof4Beach/Hentai-Heaven/blob/main/Images/Me%20and%20Mina.png';
 
-console.log("1");
+loadImage(imgLink,
+    ()=>{
+        console.log('anh load thanh cong');
+},
+    ()=>{
+        console.log(' deo load duoc anh');
+    }
+    );
 
-setTimeout(() => console.log('xong'),0);
+// console.log("1");
 
-console.log("2");
+// setTimeout(() => console.log('xong'),0);
+
+// console.log("2");
