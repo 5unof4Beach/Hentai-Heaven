@@ -1,13 +1,15 @@
+@import url(theme.css);
+
 *, ::after, ::before{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html, body {
+/* html, body {
     max-width: 100%;
     overflow-x: hidden;
-}
+} */
 
 @media all and (max-width: 800px) {
     #logo{
@@ -31,14 +33,6 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
     background: #888; 
     width: 20px;
-}
-
-:root{
-    --background: #282a36;
-    --pink: #ff79c6;
-    --green: #50fa7b;
-    --purple: #bd93f9;
-    --red: #ff5555;
 }
 
 div{
