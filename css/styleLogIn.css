@@ -1,22 +1,16 @@
+@import url(theme.css);
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-:root{
-    --background: #282a36;
-    --pink: #ff79c6;
-    --green: #50fa7b;
-    --purple: #bd93f9;
-    --red: #ff5555;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
-
 body {
     font-family: "Inconsolata" , sans-serif;
     background: var(--background);
+    /* background: url("https://s.meta.com.vn/img/thumb.ashx/Data/image/2021/07/05/bad-girl-la-gi-5.jpg"); */
     /* background: linear-gradient(to left, #8E0E00, #1F1C18); */
 }
 
@@ -30,13 +24,13 @@ body {
 }
 
 h1 {
-    background: var(--purple);
+    background: var(--red);
     color: white;
     margin: 0px;
     text-align: center;
     padding: 10px 100px;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: normal;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -63,6 +57,7 @@ input {
     width: 70%;
     padding: 5px 5px 8px 8px;
     margin-left: 30px;
+    border-radius: 5px;
 }
 
 #password {
@@ -72,6 +67,7 @@ input {
     margin-left: 30px;
     background-color: #f7f7f7;
     font-size: 14px;
+    border-radius: 5px;
 }
 
 button {
@@ -88,7 +84,7 @@ button {
 }
 
 button:hover {
-    background: var(--pink);
+    background: rgb(202, 20, 20);
     transition: all 0.5s;
     border-bottom-color: var(--green);
 }
