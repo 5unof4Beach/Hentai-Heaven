@@ -4,21 +4,10 @@
  */
 package controller;
 
-import controller.dbHelper.DatabaseHelper;
 import model.Truyen;
 import com.google.gson.Gson;
-import com.mysql.jdbc.Driver;
 import controller.dao.ReadDao;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,16 +24,19 @@ public class ReadController extends HttpServlet {
         
         String truyenID = req.getParameter("truyenID");
         String url = "/read.jsp";
+//        String url = "/login";
         String jsonString = " ";
         ReadDao rd = new ReadDao();
         Truyen t = rd.getTruyenInfoByID(truyenID);
         req.setAttribute("truyen", t);
         getServletContext().getRequestDispatcher(url).forward(req, resp);
-        PrintWriter out = resp.getWriter();
-        resp.setContentType("application/json");
-        resp.setCharacterEncoding("UTF-8");
-        out.print(jsonString);
-        out.flush();   
+        
+        
+//        PrintWriter out = resp.getWriter();
+//        resp.setContentType("application/json");
+//        resp.setCharacterEncoding("UTF-8");
+//        out.print(jsonString);
+//        out.flush();   
         
     }
     

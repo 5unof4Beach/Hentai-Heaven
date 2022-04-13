@@ -8,6 +8,7 @@ package controller.dao;
 import controller.ReadController;
 import controller.dbHelper.DatabaseHelper;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,11 +38,17 @@ public class ReadDao {
             Logger.getLogger(ReadDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        System.out.println(id);
+        
         ResultSet rs = null;
+        String query = "select * from truyen where truyenID = ?";
         try {
-            rs = stm.executeQuery("select * from truyen where truyenID = '" + id + "';" );
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ko co result set");
         }
         
         try {

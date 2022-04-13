@@ -1,7 +1,10 @@
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\model\Truyen.java
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\controller\dbHelper\DatabaseHelper.java
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\controller\dao\ReadDao.java
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\controller\ReadController.java
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\model\User.java
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\apis\ThongTinTruyenAPI.java
-C:\Users\suckm\OneDrive\Desktop\JsonTest\src\main\java\Json\JsonTest.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\apis\ThongTinTruyenAPI.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\controller\dao\ReadDao.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\model\User.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\controller\LoginController.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\controller\ReadController.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\model\Truyen.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\controller\dao\UserDao.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\controller\dbHelper\DatabaseHelper.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\controller\SignupController.java
+C:\Users\suckm\OneDrive\Desktop\Backend\src\main\java\Json\JsonTest.java
