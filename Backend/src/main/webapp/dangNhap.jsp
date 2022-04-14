@@ -30,6 +30,7 @@
             <small>
                 Bạn chưa có tài khoản? Đăng ký <a href="dangKy.jsp">Tại đây</a></p>
             </small>
+            <p>${mess}</p>
         </div>
     </div>
 </body>

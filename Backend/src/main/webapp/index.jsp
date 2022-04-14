@@ -30,11 +30,14 @@
             <a id = "logo" href="#" style="text-decoration:none;"><h1>Hentai Heaven</h1></a>
         </div>
         
-        <input id="thanh-tim-kiem"  type="text" placeholder="Tim Kiem...">
+        <form action="search" style="display: flex; justify-content: center; align-items: center; width:30%; ">
+            <input type="text" placeholder="Tim Kiem..." name="search" style="height: 90%; width: 90%;border-radius: 5px">
+            <input type="submit" value="" placeholder="search"  style="display:none"/>
+        </form>
         
-        <div id="dang-nhap-dang-ky">
+        <div id="dang-nhap-dang-ky" >
             <a class = 'link' href="dangNhap.jsp" target="_blank">Login</a>
-            <a class = 'link' href="#">Sign up</a>
+            <a class = 'link' href="dangKy.jsp" target="_blank">Sign up</a>
         </div>
 
     </header>

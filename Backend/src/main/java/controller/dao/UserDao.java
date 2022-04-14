@@ -5,9 +5,15 @@
 package controller.dao;
 
 import controller.dbHelper.DatabaseHelper;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import model.User;
 
 /**
@@ -29,8 +35,7 @@ public class UserDao {
             ps.setString(2, pass);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                System.out.println(new User(rs.getString(1),rs.getString(2),rs.getString(3)));
-                return new User(rs.getString(1),rs.getString(2),rs.getString(3));
+                return new User(rs.getString(1),rs.getString(2),rs.getString(3), rs.getInt(5));
             }
         } catch (Exception e) {
             System.out.println("No result for user found");
@@ -38,8 +43,9 @@ public class UserDao {
         return null;
     }
     
-    public void signup(String Ho, String Ten, String hashedPassword, String username){
+    public String signup(String Ho, String Ten, String hashedPassword, String username){
         String sql = "insert into user(firstName, lastName, password, username) values(?, ?, ?, ?);";
+        if(username.equals("")) return null;
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, Ten);
@@ -47,9 +53,12 @@ public class UserDao {
             ps.setString(3, hashedPassword);
             ps.setString(4, username);
             ps.execute();
+            return new String("sucessfully");
         } catch (Exception e) {
             System.err.println(e);
             System.out.println("No result for user found");
         }
+        return null;
     }
+
 }

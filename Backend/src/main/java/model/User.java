@@ -24,10 +24,11 @@ public class User implements Serializable {
         email = "";
     }
 
-    public User(String firstName, String lastName, String email) {
+    public User(String firstName, String lastName, String email, int isAdmin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.isAdmin = isAdmin;
     }
 
     public String getFirstName() {

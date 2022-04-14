@@ -4,54 +4,39 @@
  */
 package controller;
 
-import com.google.common.hash.Hashing;
-import com.sun.xml.internal.ws.dump.MessageDumpingFeature;
-import controller.dao.UserDao;
-import controller.dbHelper.DatabaseHelper;
+import com.google.gson.Gson;
+import controller.dao.SearchDao;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Truyen;
 
 /**
  *
  * @author suckm
  */
-@WebServlet(name = "SignupController", urlPatterns = {"/signup"})
-public class SignupController extends HttpServlet {
-
+@WebServlet(name = "SearchController", urlPatterns = {"/search"})
+public class SearchController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String ho = request.getParameter("Ho");
-        String ten = request.getParameter("Ten");
-        String username = request.getParameter("Username");
-        String pass = request.getParameter("password");
-        
-        UserDao ud = new UserDao();
-        String state = ud.signup(ho, ten, encryptPassword(pass), username);
-        if(state != null){
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        }
-        else{
-            request.setAttribute("mess", "Lam on nhap lai");
-            request.getRequestDispatcher("dangKy.jsp").forward(request, response);
-        }
+        String ndTimKiem = request.getParameter("search");
+        Gson gson = new Gson();
+        Vector<Truyen> ts = new Vector<>();
+        SearchDao sd = new SearchDao();
+        ts = sd.search(ndTimKiem);
+        String jsonResponse = gson.toJson(ts);
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(jsonResponse);
+        out.flush();   
     }
-    
-    private String encryptPassword(String plainPassword){
-        String encryptedPassword = Hashing.sha256()
-                            .hashString(plainPassword, StandardCharsets.UTF_8)
-                            .toString();
-        return encryptedPassword;
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

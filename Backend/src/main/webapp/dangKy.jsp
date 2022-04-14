@@ -33,6 +33,7 @@
                 </p>
                 <button type="submit">Đăng ký</button>
             </form>
+            <p>${mess}</p>
         </div>
     </div>
 </body>

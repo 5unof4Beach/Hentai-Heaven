@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.User;
 
 /**
@@ -31,10 +32,18 @@ public class LoginController extends HttpServlet {
         UserDao ud = new UserDao();
         User u = ud.login(user, encryptPassword(pass));
         if(u == null){
-            request.setAttribute("mes", "Tài khoản không tồn tại");
-            request.getRequestDispatcher("reader.jsp").forward(request, response);
+            request.setAttribute("mess", "Tài khoản không tồn tại");
+            request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
         }else{
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            HttpSession session = request.getSession();
+            session.setAttribute("user", u);
+                    
+            if(u.getIsAdmin() == 1){
+                request.getRequestDispatcher("quanTriVien.jsp").forward(request, response);
+            }
+            else{
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
         }
     }
     
