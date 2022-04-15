@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Trang chuc nang nguoi dung</h1>
+        <form action="../logout" method="get">
+            <button type="submit" name="Dang Xuat">Dang Xuat</button>
+        </form>
+        
     </body>
 </html>

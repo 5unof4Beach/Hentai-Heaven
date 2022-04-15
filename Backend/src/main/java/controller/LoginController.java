@@ -23,6 +23,9 @@ import model.User;
 @WebServlet(name = "LoginController", urlPatterns = {"/login"})
 public class LoginController extends HttpServlet {
     
+    final int ADMIN = 1;
+    final int USER = 0;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -38,12 +41,7 @@ public class LoginController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", u);
                     
-            if(u.getIsAdmin() == 1){
-                request.getRequestDispatcher("/jsp/quanTriVien.jsp").forward(request, response);
-            }
-            else{
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
+            request.getRequestDispatcher("/home").forward(request, response);
         }
     }
     

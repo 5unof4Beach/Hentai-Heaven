@@ -8,16 +8,12 @@ public class User implements Serializable {
     private String lastName;
     private String userName;
     private String email;
-    private int isAdmin;
-    private int isMember;
+    private int type;
 
-    public int getIsAdmin() {
-        return isAdmin;
+    public int getType() {
+        return type;
     }
 
-    public int getIsMember() {
-        return isMember;
-    }
 
     public User() {
         firstName = "";
@@ -25,11 +21,11 @@ public class User implements Serializable {
         email = "";
     }
 
-    public User(String firstName, String lastName, String userName, int isAdmin) {
+    public User(String firstName, String lastName, String userName, int type) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.isAdmin = isAdmin;
+        this.type = type;
     }
 
     public String getFirstName() {

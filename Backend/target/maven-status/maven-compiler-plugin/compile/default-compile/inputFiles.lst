@@ -1,4 +1,3 @@
-D:\HentaiHeaven\Backend\src\main\java\Json\JsonTest.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dbHelper\DatabaseHelper.java
 D:\HentaiHeaven\Backend\src\main\java\controller\ReadController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dao\SearchDao.java
@@ -8,5 +7,6 @@ D:\HentaiHeaven\Backend\src\main\java\controller\LoginController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dao\UserDao.java
 D:\HentaiHeaven\Backend\src\main\java\controller\SignupController.java
 D:\HentaiHeaven\Backend\src\main\java\model\User.java
+D:\HentaiHeaven\Backend\src\main\java\controller\dangXuatController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\SearchController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dao\ReadDao.java

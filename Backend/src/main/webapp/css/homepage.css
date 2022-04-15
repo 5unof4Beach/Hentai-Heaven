@@ -50,7 +50,8 @@ body{
 header{
     width: 100%;
     display: flex;
-    background: var(--background);
+    background: transparent;
+    /*background: var(--background);*/
     justify-content: space-around; 
     position: sticky;
     top: 0;
@@ -101,6 +102,7 @@ header h1{
     font-style: oblique;
     font-family: fantasy;
     text-decoration: none;
+    margin: 5px;
 }
 
 .link-the-loai{
@@ -192,7 +194,8 @@ a.link-the-loai:active{
 #mo-menu {
     font-size: 20px;
     cursor: pointer;
-    background-color: var(--background);
+    /*background-color: var(--background);*/
+    background-color: transparent;
     color: var(--pink);
     padding: 10px 15px;
     border: none;
@@ -222,10 +225,12 @@ a.link-the-loai:active{
     width: 300px;
     border: 1px solid transparent;
     overflow: auto;
-    background-image: url('../img/meandmina.png');
+    /*background-image: url('../img/meandmina.png');*/
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    justify-content: center;
 }
 
 .truyen:hover{

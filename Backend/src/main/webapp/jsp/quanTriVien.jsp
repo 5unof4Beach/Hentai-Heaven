@@ -1,15 +1,14 @@
-<%-- 
-    Document   : quanTriVien
-    Created on : Apr 14, 2022, 10:36:49 PM
-    Author     : suckm
---%>
 
 <%@page import="model.User"%>
+<%@page import="javax.servlet.http.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file='toInclude/const.jsp' %>
 <%
     User u = (User)session.getAttribute("user");
-    if(u == null || u.getIsAdmin() != 1){
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+    if(u == null || u.getType()!= ADMIN){
+//        request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
+//        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
     }
     
 %>

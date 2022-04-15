@@ -9,6 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href="css/trangDoc.css">
 </head>
 <body>
+    <%@include file="toInclude/userCheckToRead.jsp" %>
     <div id="anh-bia">
         <img  src="img/Thumbnails/${truyen.id}.jpg" alt="Anh bia"/>
     </div>
@@ -18,7 +19,7 @@
         <div>Danh gia: ${truyen.rating}</div>
     </div>
     <button type="submit">
-        <a href="reader.jsp">Doc Truyen</a>
+        <a href="jsp/reader.jsp">Doc Truyen</a>
     </button>
     <script src='main.js'></script>
 </body>

@@ -1,10 +1,13 @@
+<%@page import="model.Truyen"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.io.FileInputStream"%>
 <% 
         response.setContentType("application/pdf");
         ServletOutputStream oute = response.getOutputStream();
-//        FileInputStream fin = new FileInputStream("D:\\NakedGun1\\test.mp4");
-        FileInputStream fin = new FileInputStream("D:\\Hentai Heaven Data\\Comic\\DRM1.pdf");
+        Truyen t = (Truyen)request.getSession().getAttribute("truyen");
+        FileInputStream fin = new FileInputStream("D:\\Hentai Heaven Data\\Comic\\"+t.getId()+".pdf");
+//        System.out.println("id:" + t.getId());
+        
 
         byte [] buf = new byte[4096];
         int read;

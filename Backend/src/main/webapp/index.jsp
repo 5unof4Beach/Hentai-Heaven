@@ -1,5 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="model.User"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,17 +38,7 @@
         </form>
         
         <div id="dang-nhap-dang-ky" >
-            <%
-                User u = (User)session.getAttribute("user");
-                if(u == null){
-                    out.print("<a class = 'link' href='jsp/dangNhap.jsp' >Login</a>");
-                    out.print("<a class = 'link' href='jsp/dangKy.jsp' >Signup</a>");
-                }
-                else{
-                    out.print("<a class = 'link' href='#'>" + u.getUserName()+ "</a>");
-                }
-    
-            %>
+            <%@include file="jsp/toInclude/userCheck.jsp" %>
         </div>
 
     </header>
@@ -56,31 +46,15 @@
     <div id="nd-chinh" >
 
         <div id = 'danh-muc-truyen'>
-            <div class = 'truyen'> 
-                <a href="read?truyenID=DRM1">
-
+            <c:forEach items="${dsTruyen}" var='t'>
+                <a class='truyen' href="read?truyenID=${t.id}">
+                    <div style="width: 85%; height: 80%;">
+                        <img style="width: 100%; height: 100%;" src="img/Thumbnails/${t.id}.jpg" alt="alt"/>
+                    </div>
                 </a>
-            </div>
-            <div class = 'truyen'>
-                <a href="read?truyenID=DRM2">
-
-                </a>
-            </div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
-            <div class = 'truyen'></div>
+            </c:forEach>
             <div class = 'truyen' onclick="themTruyen()"></div>
         </div>
-
-        <!-- <div id = 'quang-cao'>
-            <iframe width="250" height="144" src="https://www.youtube.com/embed/NjpKlAuQuE0?autoplay=1" allow="autoplay"></iframe>
-        </div> -->
 
     </div>
 

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -40,6 +41,11 @@ public class UserDao {
         } catch (Exception e) {
             System.out.println("No result for user found");
         }
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return null;
     }
     
@@ -57,6 +63,12 @@ public class UserDao {
         } catch (Exception e) {
             System.err.println(e);
             System.out.println("No result for user found");
+        }
+        
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

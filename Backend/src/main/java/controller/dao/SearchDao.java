@@ -51,6 +51,41 @@ public class SearchDao {
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        try {
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ts;
+    }
+    
+    public Vector<Truyen> getTruyen(int soLuong){
+        String query = "select * from truyen limit 16;";
+        ResultSet rs = null;
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+//            ps.setString(1, "%" + content + "%");
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ko co result set");
+        }
+        
+        
+        Vector<Truyen> ts = new Vector<>();
+        try {
+            while(rs.next()){
+                Truyen t = new Truyen(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+                ts.add(t);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return ts;
     }
     

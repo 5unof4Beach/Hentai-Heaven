@@ -28,7 +28,7 @@ public class ReadController extends HttpServlet {
         String jsonString = " ";
         ReadDao rd = new ReadDao();
         Truyen t = rd.getTruyenInfoByID(truyenID);
-        req.setAttribute("truyen", t);
+        req.getSession().setAttribute("truyen", t);
         getServletContext().getRequestDispatcher(url).forward(req, resp);
         
         
