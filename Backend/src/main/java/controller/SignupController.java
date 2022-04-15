@@ -42,7 +42,7 @@ public class SignupController extends HttpServlet {
         }
         else{
             request.setAttribute("mess", "Lam on nhap lai");
-            request.getRequestDispatcher("dangKy.jsp").forward(request, response);
+            request.getRequestDispatcher("jsp/dangKy.jsp").forward(request, response);
         }
     }
     

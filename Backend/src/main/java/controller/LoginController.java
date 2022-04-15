@@ -33,13 +33,13 @@ public class LoginController extends HttpServlet {
         User u = ud.login(user, encryptPassword(pass));
         if(u == null){
             request.setAttribute("mess", "Tài khoản không tồn tại");
-            request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/dangNhap.jsp").forward(request, response);
         }else{
             HttpSession session = request.getSession();
             session.setAttribute("user", u);
                     
             if(u.getIsAdmin() == 1){
-                request.getRequestDispatcher("quanTriVien.jsp").forward(request, response);
+                request.getRequestDispatcher("/jsp/quanTriVien.jsp").forward(request, response);
             }
             else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);

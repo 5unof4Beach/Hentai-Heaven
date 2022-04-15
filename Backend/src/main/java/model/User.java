@@ -6,6 +6,7 @@ public class User implements Serializable {
 
     private String firstName;
     private String lastName;
+    private String userName;
     private String email;
     private int isAdmin;
     private int isMember;
@@ -24,10 +25,10 @@ public class User implements Serializable {
         email = "";
     }
 
-    public User(String firstName, String lastName, String email, int isAdmin) {
+    public User(String firstName, String lastName, String userName, int isAdmin) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.userName = userName;
         this.isAdmin = isAdmin;
     }
 
@@ -45,6 +46,10 @@ public class User implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUserName() {
+        return userName;
     }
 
     public String getEmail() {

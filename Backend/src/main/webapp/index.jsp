@@ -1,3 +1,5 @@
+<%@page import="model.User"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,8 +38,17 @@
         </form>
         
         <div id="dang-nhap-dang-ky" >
-            <a class = 'link' href="dangNhap.jsp" target="_blank">Login</a>
-            <a class = 'link' href="dangKy.jsp" target="_blank">Sign up</a>
+            <%
+                User u = (User)session.getAttribute("user");
+                if(u == null){
+                    out.print("<a class = 'link' href='jsp/dangNhap.jsp' >Login</a>");
+                    out.print("<a class = 'link' href='jsp/dangKy.jsp' >Signup</a>");
+                }
+                else{
+                    out.print("<a class = 'link' href='#'>" + u.getUserName()+ "</a>");
+                }
+    
+            %>
         </div>
 
     </header>

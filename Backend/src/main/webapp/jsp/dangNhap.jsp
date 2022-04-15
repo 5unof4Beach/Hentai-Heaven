@@ -12,27 +12,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="css/signup.css">
+    <!--<link rel="stylesheet" href="../css/login.css">-->
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/login.css">
 </head>
 <body>
     <div id="container">
-        <h1>Đăng Ký</h1>
+        <h1>Đăng Nhập</h1>
         <div id="dangNhap">
-            <form action="signup" method="post">
+            <form action="${pageContext.servletContext.contextPath}/login" method="post">
                 <p>
-                    <input id="username" type="text" placeholder="Ho" name = "Ho">
-                </p>
-                <p>
-                    <input id="username" type="text" placeholder="Tên" name = "Ten">
-                </p>
-                <p>
-                    <input id="username" type="text" placeholder="Tên đăng nhập" name = "Username">
+                    <input id="username" type="text" placeholder="Tên đăng nhập" name = "user">
                 </p>
                 <p>
                     <input id="password" type="Password" placeholder="Mật khẩu" name = "password">
                 </p>
-                <button type="submit">Đăng ký</button>
+                <button type="submit">Đăng nhập</button>
             </form>
+            <small>
+                Bạn chưa có tài khoản? Đăng ký <a href="dangKy.jsp">Tại đây</a></p>
+            </small>
             <p>${mess}</p>
         </div>
     </div>
