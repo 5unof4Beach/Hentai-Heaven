@@ -4,14 +4,6 @@
         <servlet-name>HomeController</servlet-name>
         <servlet-class>controller.HomeController</servlet-class>
     </servlet>
-    <!--    <servlet>
-        <servlet-name>read</servlet-name>
-        <jsp-file>/jsp/read.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>read</servlet-name>
-        <url-pattern>/read</url-pattern>
-    </servlet-mapping>-->
     
     <servlet>
         <servlet-name>index</servlet-name>
@@ -20,6 +12,15 @@
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>thongtin</servlet-name>
+        <jsp-file>/jsp/thongTinNguoiDung.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thongtin</servlet-name>
+        <url-pattern>/thongtin</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>

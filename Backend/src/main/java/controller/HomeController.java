@@ -36,7 +36,6 @@ public class HomeController extends HttpServlet {
         Vector<Truyen> ts = new Vector<>();
         SearchDao sd = new SearchDao();
         ts = sd.getTruyen(10);
-        System.out.println(ts.elementAt(0).getId());
         
         request.setAttribute("dsTruyen", ts);
         request.getRequestDispatcher("/index").forward(request, response); 

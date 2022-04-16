@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Trang chuc nang nguoi dung</h1>
-        <form action="../logout" method="get">
+        <form action="logout" method="get">
             <button type="submit" name="Dang Xuat">Dang Xuat</button>
         </form>
         

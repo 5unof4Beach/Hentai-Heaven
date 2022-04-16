@@ -50,7 +50,7 @@ body{
 header{
     width: 100%;
     display: flex;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.2);
     /*background: var(--background);*/
     justify-content: space-around; 
     position: sticky;
@@ -132,6 +132,7 @@ a.link-the-loai:active{
     padding-left: 5px;
     margin: 10px 0;
     flex-shrink: 7;
+    background-color: transparent;
 }
 
 #thanh-tim-kiem:hover{

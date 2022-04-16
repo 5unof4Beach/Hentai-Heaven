@@ -1,12 +1,13 @@
 D:\HentaiHeaven\Backend\src\main\java\controller\dbHelper\DatabaseHelper.java
-D:\HentaiHeaven\Backend\src\main\java\controller\ReadController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dao\SearchDao.java
 D:\HentaiHeaven\Backend\src\main\java\model\Truyen.java
 D:\HentaiHeaven\Backend\src\main\java\apis\ThongTinTruyenAPI.java
-D:\HentaiHeaven\Backend\src\main\java\controller\LoginController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dao\UserDao.java
-D:\HentaiHeaven\Backend\src\main\java\controller\SignupController.java
 D:\HentaiHeaven\Backend\src\main\java\model\User.java
-D:\HentaiHeaven\Backend\src\main\java\controller\dangXuatController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\SearchController.java
+D:\HentaiHeaven\Backend\src\main\java\controller\ReadController.java
+D:\HentaiHeaven\Backend\src\main\java\controller\LoginController.java
+D:\HentaiHeaven\Backend\src\main\java\controller\HomeController.java
+D:\HentaiHeaven\Backend\src\main\java\controller\SignupController.java
+D:\HentaiHeaven\Backend\src\main\java\controller\dangXuatController.java
 D:\HentaiHeaven\Backend\src\main\java\controller\dao\ReadDao.java

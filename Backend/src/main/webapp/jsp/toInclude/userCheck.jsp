@@ -7,7 +7,7 @@
         out.print("<a class = 'link' href='jsp/dangKy.jsp' >Signup</a>");
     }
     else{
-        out.print("<a class = 'link' href='#'>" + u.getUserName()+ "</a>");
+        out.print("<a class = 'link' href='thongtin'>" + u.getUserName()+ "</a>");
         if(u.getType() == ADMIN){
             out.print("<a class = 'link' href='jsp/thongTinNguoiDung.jsp'>Admin</a>");
         }
