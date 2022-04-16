@@ -10,17 +10,42 @@
 </head>
 <body>
     <%@include file="toInclude/userCheckToRead.jsp" %>
-    <div id="anh-bia">
-        <img  src="img/Thumbnails/${truyen.id}.jpg" alt="Anh bia"/>
+    <div id="khung-bao-dau">
+        <div id="anh-bia">
+            <img  src="img/Thumbnails/${truyen.id}.jpg" alt="Anh bia"/>
+        </div>
+        <div id="thong-tin">
+            <div>Tên Truyen: ${truyen.ten}</div>
+            <div>Nha xuat ban: ${truyen.nxb}</div>
+            <div>Danh gia: ${truyen.rating}</div>
+            <button id="doc">
+                Doc Truyen
+            </button>
+        </div>
     </div>
-    <div id="thong-tin">
-        <div>Ten truyen: ${truyen.ten}</div>
-        <div>Nha xuat ban: ${truyen.nxb}</div>
-        <div>Danh gia: ${truyen.rating}</div>
-    </div>
-    <button type="submit">
-        <a href="jsp/reader.jsp">Doc Truyen</a>
-    </button>
-    <script src='main.js'></script>
+    
+    <iframe id = "khung-doc"src="jsp/reader.jsp"></iframe>
+    <script>
+        var nutDoc = document.getElementById('doc')
+        var read = document.getElementById('khung-doc')
+        
+        let dong = 1;
+
+        function mo(){
+            if(dong === 1){
+                console.log("pressed")
+                read.style.display = "flex";
+                dong = 0;
+            }
+            else{
+                console.log("pressed")
+                read.style.display = "none";
+                dong = 1;
+            }
+        }
+
+        nutDoc.addEventListener('click', mo);
+    </script>
+    <footer></footer>
 </body>
 </html>

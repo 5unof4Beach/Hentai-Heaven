@@ -48,9 +48,12 @@
         <div id = 'danh-muc-truyen'>
             <c:forEach items="${dsTruyen}" var='t'>
                 <a class='truyen' href="read?truyenID=${t.id}">
-                    <div style="width: 85%; height: 80%;">
-                        <img style="width: 100%; height: 100%;" src="img/Thumbnails/${t.id}.jpg" alt="alt"/>
+                    <div style="width: 85%; height: 80%; justify-content: center">
+                        <img style="width: calc(100%*3/4); height: 100%; border-radius: 5px " src="img/Thumbnails/${t.id}.jpg" alt="alt"/>
                     </div>
+                    <p style="color: white;font-size: 30px;text-decoration: none;display: flex;width: 100%; height:15%;justify-content: center">
+                        ${t.ten}
+                    </p>
                 </a>
             </c:forEach>
             <div class = 'truyen' onclick="themTruyen()"></div>
