@@ -3,8 +3,8 @@
 <%
     User u = (User)session.getAttribute("user");
     if(u == null){
-        out.print("<a class = 'link' href='jsp/dangNhap.jsp' >Login</a>");
-        out.print("<a class = 'link' href='jsp/dangKy.jsp' >Signup</a>");
+        out.print("<a class = 'link' href='dangnhap' >Login</a>");
+        out.print("<a class = 'link' href='dangky' >Signup</a>");
     }
     else{
         out.print("<a class = 'link' href='thongtin'>" + u.getUserName()+ "</a>");

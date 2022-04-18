@@ -5,16 +5,9 @@
 package controller;
 
 import com.google.common.hash.Hashing;
-import com.sun.xml.internal.ws.dump.MessageDumpingFeature;
 import controller.dao.UserDao;
-import controller.dbHelper.DatabaseHelper;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

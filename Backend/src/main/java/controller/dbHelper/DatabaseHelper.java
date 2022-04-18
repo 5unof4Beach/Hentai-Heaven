@@ -61,12 +61,14 @@ public class DatabaseHelper {
     }
     
     public void connnect(){
-//        Connection conn = null;
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/hentai-heaven";
-            String usrname = "root";
-            String pw    = "admin";
-            conn = DriverManager.getConnection(dbURL, usrname, pw);
+//            String dbURL = "jdbc:mysql://localhost:3306/hentai-heaven";
+//            String usrname = "root";
+//            String pw    = "admin";
+//            conn = DriverManager.getConnection(dbURL, usrname, pw);
+            String url ="jdbc:mysql://hentaiheaven.mysql.database.azure.com:3306/hentai-heaven?useSSL=true&requireSSL=false"; 
+            conn = DriverManager.getConnection(url, "ducbui2001@hentaiheaven", "Buiminhduc2001");
+            conn = DriverManager.getConnection(url);
             if (conn != null) {
                 System.out.println("Connected");
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();

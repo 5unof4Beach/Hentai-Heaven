@@ -28,6 +28,24 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>dangky</servlet-name>
+        <jsp-file>/jsp/dangKy.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dangky</servlet-name>
+        <url-pattern>/dangky</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>dangnhap</servlet-name>
+        <jsp-file>/jsp/dangNhap.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dangnhap</servlet-name>
+        <url-pattern>/dangnhap</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
