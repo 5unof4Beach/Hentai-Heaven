@@ -6,9 +6,7 @@
 <%
     User u = (User)session.getAttribute("user");
     if(u == null || u.getType()!= ADMIN){
-//        request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
-//        request.getRequestDispatcher("/index.jsp").forward(request, response);
-        request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/home");
     }
     
 %>

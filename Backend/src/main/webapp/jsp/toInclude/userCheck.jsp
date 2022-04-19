@@ -1,16 +1,30 @@
 <%@page import="model.User"%>
 <%@include file="const.jsp" %>
 <%
-    User u = (User)session.getAttribute("user");
-    if(u == null){
+    Cookie[] cookie = request.getCookies();
+    
+    if(cookie == null){
         out.print("<a class = 'link' href='dangnhap' >Login</a>");
         out.print("<a class = 'link' href='dangky' >Signup</a>");
     }
     else{
-        out.print("<a class = 'link' href='thongtin'>" + u.getUserName()+ "</a>");
-        if(u.getType() == ADMIN){
-            out.print("<a class = 'link' href='jsp/thongTinNguoiDung.jsp'>Admin</a>");
+        for(Cookie c:cookie){
+            if(c.getName().equals("user")){
+                if(c.getValue() == null || c.getValue() == ""){
+                    out.print("<a class = 'link' href='dangnhap' >Login</a>");
+                    out.print("<a class = 'link' href='dangky' >Signup</a>");
+                }
+            else{
+                out.print("<a class = 'link' href='thongtin'>" + c.getValue() + "</a>");
+    //            if(u.getType() == ADMIN){
+    //                out.print("<a class = 'link' href='jsp/thongTinNguoiDung.jsp'>Admin</a>");
+    //            }
+                }
+            }
         }
+    
     }
+    
+    
     
 %>

@@ -1,9 +1,23 @@
 <%@page import="model.User"%>
 <%@include file="const.jsp" %>
 <%
+    Cookie[] cookie = request.getCookies();
     User u = (User)session.getAttribute("user");
-    if(u == null){
-        request.getRequestDispatcher("dangNhap.jsp").forward(request, response);
+    if(cookie == null){
+        response.sendRedirect(request.getContextPath() + "/dangnhap");
     }
-    
+    else{
+        Boolean loggedIn = false;
+        for(Cookie c:cookie){
+            if(c.getName().equals("user")){
+                if(c.getValue() != null){
+                    loggedIn = true;
+                }
+            }
+        }
+        if(!loggedIn){
+            response.sendRedirect(request.getContextPath() + "/dangnhap");
+        }
+    }
+
 %>

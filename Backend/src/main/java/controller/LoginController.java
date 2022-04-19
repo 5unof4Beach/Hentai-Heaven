@@ -7,9 +7,11 @@ package controller;
 import com.google.common.hash.Hashing;
 import controller.dao.UserDao;
 import java.io.IOException;
+import java.net.HttpCookie;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,12 +38,14 @@ public class LoginController extends HttpServlet {
         User u = ud.login(user, encryptPassword(pass));
         if(u == null){
             request.setAttribute("mess", "Tài khoản không tồn tại");
-            request.getRequestDispatcher("/jsp/dangNhap.jsp").forward(request, response);
+            request.getRequestDispatcher("/dangnhap").forward(request, response);
         }else{
             HttpSession session = request.getSession();
             session.setAttribute("user", u);
-                    
-            request.getRequestDispatcher("/home").forward(request, response);
+            
+            Cookie cookie = new Cookie("user",u.getUserName());
+            response.addCookie(cookie);
+            response.sendRedirect(request.getContextPath() + "/home");
         }
     }
     
