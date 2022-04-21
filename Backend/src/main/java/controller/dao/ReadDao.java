@@ -30,8 +30,8 @@ public class ReadDao {
     }
     
     public Truyen getTruyenInfoByID(String id){
-        Statement stm = null;
         Truyen t = new Truyen("unknown", "unkown", "unknown", 0);
+        Statement stm = null;
         try {
             stm = conn.createStatement();
         } catch (SQLException ex) {

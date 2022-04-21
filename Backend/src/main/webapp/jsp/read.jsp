@@ -7,6 +7,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href="css/trangDoc.css">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0" nonce="BXLSoInD"></script>
 </head>
 <body>
     <%@include file="toInclude/userCheckToRead.jsp" %>
@@ -46,6 +47,9 @@
 
         nutDoc.addEventListener('click', mo);
     </script>
+    
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="700px" data-numposts="5"></div>
+    
     <footer></footer>
 </body>
 </html>
