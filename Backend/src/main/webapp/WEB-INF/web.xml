@@ -46,6 +46,15 @@
         <url-pattern>/dangnhap</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>kqtimkiem</servlet-name>
+        <jsp-file>/jsp/ketQuaTimKiem.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kqtimkiem</servlet-name>
+        <url-pattern>/kqtimkiem</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
