@@ -4,10 +4,10 @@ const ketQua = document.querySelector('#danh-muc-truyen')
 
 
 layTruyen()
-        .then(response =>{
-            console.log('Tra ve ket qua thanh cong')
+    .then(response =>{
+        console.log('Tra ve ket qua thanh cong')
 })
-        .catch(logError());
+    .catch(logError());
     
 function logResult(result) {
   console.log(result);
@@ -37,6 +37,10 @@ async function layTruyen(){
 }
 
 function display(json){
+    if(json.length == 0){
+        ketQua.innerHTML = '<h1>Khong co ket qua</h1>'
+        return;
+    }
     for(var key in Object.keys(json)){
         const t = document.createElement('a')
         t.classList.add("truyen")

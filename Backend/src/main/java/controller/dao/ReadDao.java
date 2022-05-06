@@ -41,7 +41,7 @@ public class ReadDao {
         System.out.println(id);
         
         ResultSet rs = null;
-        String query = "select * from truyen where truyenID = ?";
+        String query = "select * from truyen where idTruyen = ?";
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, id);

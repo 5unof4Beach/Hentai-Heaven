@@ -10,7 +10,7 @@
         Boolean loggedIn = false;
         for(Cookie c:cookie){
             if(c.getName().equals("user")){
-                if(c.getValue() != null){
+                if(c.getValue() != null || !c.getValue().equals("")){
                     loggedIn = true;
                 }
             }

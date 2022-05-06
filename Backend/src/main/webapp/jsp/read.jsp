@@ -6,7 +6,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href="css/trangDoc.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="${pageContext.request.contextPath}/css/trangDoc.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="${pageContext.request.contextPath}/css/homepage.css">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0" nonce="BXLSoInD"></script>
 </head>
 <body>
@@ -46,10 +47,26 @@
         }
 
         nutDoc.addEventListener('click', mo);
+        
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("khung-doc");
+
+        const sticky = navbar.offsetTop;
+
+        function myFunction() {
+            console.log(window.pageYOffset,sticky)
+            if (window.pageYOffset >= sticky) {
+              navbar.classList.add("sticky");
+            }
+            else {
+              navbar.classList.remove("sticky");
+            }
+        }
     </script>
     
     <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="700px" data-numposts="5"></div>
     
-    <footer></footer>
+    <!--<footer></footer>-->
 </body>
 </html>

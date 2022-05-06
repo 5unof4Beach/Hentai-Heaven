@@ -55,6 +55,15 @@
         <url-pattern>/kqtimkiem</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>/jsp/quanTriVien.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

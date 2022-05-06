@@ -3,28 +3,24 @@
 <%
     Cookie[] cookie = request.getCookies();
     
-    if(cookie == null){
-        out.print("<a class = 'link' href='dangnhap' >Login</a>");
-        out.print("<a class = 'link' href='dangky' >Signup</a>");
-    }
-    else{
+        Boolean loggedIn = false;
         for(Cookie c:cookie){
             if(c.getName().equals("user")){
-                if(c.getValue() == null || c.getValue() == ""){
-                    out.print("<a class = 'link' href='dangnhap' >Login</a>");
-                    out.print("<a class = 'link' href='dangky' >Signup</a>");
-                }
-            else{
-                out.print("<a class = 'link' href='thongtin'>" + c.getValue() + "</a>");
-    //            if(u.getType() == ADMIN){
-    //                out.print("<a class = 'link' href='jsp/thongTinNguoiDung.jsp'>Admin</a>");
-    //            }
-                }
+                out.print("<a class = 'link' href='thongtin' >"+c.getValue()+"</a>");
+                loggedIn = true;
+                    
+                
+//                User u = (User)session.getAttribute("user");
+//                if(u.getType() == ADMIN){
+//                    out.print("<a class = 'link' href='admin'>admin</a>");
+//                }
             }
         }
-    
-    }
-    
+        
+        if(!loggedIn){
+            out.print("<a class = 'link' href='dangnhap' >Login</a>");
+            out.print("<a class = 'link' href='dangky' >Signup</a>");
+        }
     
     
 %>

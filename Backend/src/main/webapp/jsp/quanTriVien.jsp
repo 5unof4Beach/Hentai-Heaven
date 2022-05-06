@@ -14,9 +14,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/homepage.css'>
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Page Quan Tri Vien</h1>
+        <h1>Them Truyen</h1>
     </body>
 </html>
