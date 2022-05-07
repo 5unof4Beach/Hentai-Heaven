@@ -60,7 +60,7 @@ public class SearchDao {
     }
     
     public Vector<Truyen> getTruyen(int soLuong){
-        String query = "select * from truyen limit 16;";
+        String query = "select * from dbo.truyen";
         ResultSet rs = null;
         try {
             PreparedStatement ps = con.prepareStatement(query);

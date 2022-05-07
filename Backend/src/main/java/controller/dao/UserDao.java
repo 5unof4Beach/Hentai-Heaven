@@ -29,7 +29,7 @@ public class UserDao {
     }
     
     public User login(String user, String pass){
-        String sql = "select * from user where username = ? and password = ?";
+        String sql = "select * from [dbo].[user] where username = ? and password = ?";
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, user);
@@ -50,7 +50,7 @@ public class UserDao {
     }
     
     public String signup(String Ho, String Ten, String hashedPassword, String username){
-        String sql = "insert into user(firstName, lastName, password, username) values(?, ?, ?, ?);";
+        String sql = "INSERT INTO [dbo].[user]([firstName],[lastName],[password],[username])VALUES(?, ?, ?, ?)";
         if(username.equals("")) return null;
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -59,7 +59,7 @@ public class UserDao {
             ps.setString(3, hashedPassword);
             ps.setString(4, username);
             ps.execute();
-            return new String("sucessfully");
+            return "sucessfully";
         } catch (Exception e) {
             System.err.println(e);
             System.out.println("No result for user found");

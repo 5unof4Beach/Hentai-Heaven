@@ -20,15 +20,15 @@ public class Truyen {
     }
 
     public String getId() {
-        return id;
+        return id.trim();
     }
 
     public String getTen() {
-        return ten;
+        return ten.trim();
     }
 
     public String getNxb() {
-        return nxb;
+        return nxb.trim();
     }
 
     public int getRating() {

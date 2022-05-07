@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>controller.HomeController</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>thongtin</servlet-name>
+        <jsp-file>/jsp/thongTinNguoiDung.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thongtin</servlet-name>
+        <url-pattern>/thongtin</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>dangky</servlet-name>
+        <jsp-file>/jsp/dangKy.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dangky</servlet-name>
+        <url-pattern>/dangky</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>dangnhap</servlet-name>
+        <jsp-file>/jsp/dangNhap.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dangnhap</servlet-name>
+        <url-pattern>/dangnhap</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>kqtimkiem</servlet-name>
+        <jsp-file>/jsp/ketQuaTimKiem.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kqtimkiem</servlet-name>
+        <url-pattern>/kqtimkiem</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>/jsp/quanTriVien.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
+</web-app>
