@@ -5,7 +5,7 @@
         response.setContentType("application/pdf");
         ServletOutputStream oute = response.getOutputStream();
         Truyen t = (Truyen)request.getSession().getAttribute("truyen");
-        FileInputStream fin = new FileInputStream("D:/Hentai Heaven Data/Comic/"+t.getId()+".pdf");
+        FileInputStream fin = new FileInputStream("/home/duc/Desktop/Hentai Heaven Data/Comic/"+t.getId()+".pdf");
 //        FileInputStream fin = new FileInputStream("/media/Comic/"+t.getId()+".pdf");
 //        System.out.println("id:" + t.getId());
         

@@ -12,21 +12,30 @@
 </head>
 <body>
     <%@include file="toInclude/userCheckToRead.jsp" %>
+    <%@include file="toInclude/header.jsp" %>
     <div id="khung-bao-dau">
         <div id="anh-bia">
             <img  src="img/Thumbnails/${truyen.id}.jpg" alt="Anh bia"/>
         </div>
-        <div id="thong-tin">
-            <div>Tên Truyen: ${truyen.ten}</div>
-            <div>Nha xuat ban: ${truyen.nxb}</div>
-            <div>Danh gia: ${truyen.rating}</div>
-            <button id="doc">
-                Doc Truyen
-            </button>
+        
+            <div class="thong-tin">
+                <div>Tên Truyen: ${truyen.ten}</div>
+                <div>Nha xuat ban: ${truyen.nxb}</div>
+                <div>Danh gia: ${truyen.rating}</div>
+                <button id="doc">
+                    Doc Truyen
+                </button>
+            </div>
+        
         </div>
-    </div>
+    <iframe id = "khung-doc" src="jsp/reader.jsp"></iframe>
     
-    <iframe id = "khung-doc"src="jsp/reader.jsp"></iframe>
+    <div class = 'extra'>
+        
+    </div>
+            
+    
+    
     <script>
         var nutDoc = document.getElementById('doc')
         var read = document.getElementById('khung-doc')
@@ -51,12 +60,16 @@
         window.onscroll = function() {myFunction()};
 
         var navbar = document.getElementById("khung-doc");
-
+        
+        var khungBaoDau = document.querySelector("#khung-bao-dau");
+        
         const sticky = navbar.offsetTop;
+//        const sticky = window.pageYOffset - header.offsetTop;
 
         function myFunction() {
-            console.log(window.pageYOffset,sticky)
-            if (window.pageYOffset >= sticky) {
+            console.log(sticky)
+            if (window.pageYOffset + 100 >= sticky) {
+//            if (header >= sticky) {
               navbar.classList.add("sticky");
             }
             else {
@@ -67,6 +80,5 @@
     
     <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="700px" data-numposts="5"></div>
     
-    <!--<footer></footer>-->
 </body>
 </html>

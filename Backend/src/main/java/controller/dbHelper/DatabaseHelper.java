@@ -62,14 +62,14 @@ public class DatabaseHelper {
     
     public void connnect(){
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/hentai-heaven";
-            String usrname = "root";
-            String pw    = "admin";
+//            String dbURL = "jdbc:mysql://localhost:3306/hentai-heaven";
+//            String usrname = "root";
+//            String pw    = "admin";
+            String IP = "10.244.208.55";
+            String dbURL = "jdbc:sqlserver://" + IP + ";databaseName=BTLWEB;encrypt=false";
+            String usrname = "sa";
+            String pw    = "1";
             conn = DriverManager.getConnection(dbURL, usrname, pw);
-
-//            String url ="jdbc:mysql://hentaiheaven.mysql.database.azure.com:3306/hentai-heaven?useSSL=true&requireSSL=false"; 
-//            conn = DriverManager.getConnection(url, "ducbui2001@hentaiheaven", "Buiminhduc2001");
-//            conn = DriverManager.getConnection(url);
             
             if (conn != null) {
                 System.out.println("Connected");
@@ -114,7 +114,7 @@ public class DatabaseHelper {
     
     private void loadDriver(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             System.out.println("Driver loaded!");
         } catch (ClassNotFoundException e) {
             throw new IllegalStateException("Cannot find the driver in the classpath!", e);

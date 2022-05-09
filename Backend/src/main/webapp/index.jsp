@@ -17,7 +17,8 @@
             <c:forEach items="${dsTruyen}" var='t'>
                 <a class='truyen' href="read?truyenID=${t.id}">
                     <div style="width: 85%; height: 80%; justify-content: center">
-                        <img style="width: calc(100%*3/4); height: 100%; border-radius: 5px " src="img/Thumbnails/${t.id}.jpg" alt="Thumbnail"/>
+                        <img style="width: calc(100%*3/4); height: 100%; border-radius: 5px " src="img/Thumbnails/${t.id}.jpg" alt="${t.id}"/>
+                        <!--<img style="width: calc(100%*3/4); height: 100%; border-radius: 5px " src="img/Thumbnails/DRM1.jpg" alt="${t.id}"/>-->
                     </div>
                     <p style="color: white;font-size: 30px;text-decoration: none;display: flex;width: 100%; height:15%;justify-content: center">
                         ${t.ten}

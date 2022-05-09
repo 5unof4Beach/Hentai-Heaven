@@ -25,7 +25,7 @@
         </form>
 
         <div id="dang-nhap-dang-ky" >
-            <%@include file="userCheck.jsp" %>
+            <%--<%@include file="userCheck.jsp" %>--%>
             <%--<%@include file="jsp/toInclude/userCheck.jsp" %>--%>
         </div>
 
