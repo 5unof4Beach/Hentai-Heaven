@@ -25,26 +25,18 @@
                     </p>
                 </a>
             </c:forEach>
-            <div class = 'truyen' onclick="themTruyen()"></div>
+            <!--<div class = 'truyen' onclick="themTruyen()"></div>-->
         </div>
 
     </div>
 
     <nav id="chuyen-trang">
         <ul>
-            <li class = 'doi-so-trang'>
-                <a href="#" class="link trang">1</a>
-            </li>
-            <li class = 'doi-so-trang'>
-                <a href="#" class="link trang">2</a>
-            </li>
-            <li class = 'doi-so-trang'>
-                <a href="#" class="link trang">3</a>
-            </li>
-            <li class = 'doi-so-trang'>
-                <a href="#" class="link trang">Next</a>
-            </li>
-
+            <c:forEach begin="1" end="${amount + 1}" var="i">
+                <li class = 'doi-so-trang'>
+                    <a href="home?page=${i}" class="link trang">${i}</a>
+                </li>
+            </c:forEach>
         </ul>
     </nav>
 

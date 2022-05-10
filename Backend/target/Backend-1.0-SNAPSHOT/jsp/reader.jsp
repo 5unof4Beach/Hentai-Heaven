@@ -3,7 +3,7 @@
 <%@page import="java.io.FileInputStream"%>
 <% 
         response.setContentType("application/pdf");
-        ServletOutputStream oute = response.getOutputStream();
+        ServletOutputStream sos = response.getOutputStream();
         Truyen t = (Truyen)request.getSession().getAttribute("truyen");
         FileInputStream fin = new FileInputStream("/home/duc/Desktop/Hentai Heaven Data/Comic/"+t.getId()+".pdf");
 //        FileInputStream fin = new FileInputStream("/media/Comic/"+t.getId()+".pdf");
@@ -14,11 +14,11 @@
         int read;
         while((read = fin.read(buf)) != -1)
         {
-            oute.write(buf, 0, read);
+            sos.write(buf, 0, read);
         }
 
         fin.close();
-        oute.flush();
-        oute.close();
+        sos.flush();
+        sos.close();
         
 %>

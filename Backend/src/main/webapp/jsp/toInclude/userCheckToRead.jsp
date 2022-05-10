@@ -1,14 +1,14 @@
 <%@page import="model.User"%>
 <%@include file="const.jsp" %>
 <%
-    Cookie[] cookie = request.getCookies();
+    Cookie[] cookee = request.getCookies();
     User u = (User)session.getAttribute("user");
-    if(cookie == null){
+    if(cookee == null){
         response.sendRedirect(request.getContextPath() + "/dangnhap");
     }
     else{
         Boolean loggedIn = false;
-        for(Cookie c:cookie){
+        for(Cookie c:cookee){
             if(c.getName().equals("user")){
                 if(c.getValue() != null || !c.getValue().equals("")){
                     loggedIn = true;

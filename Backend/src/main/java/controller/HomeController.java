@@ -33,11 +33,23 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        Integer page = null;
+        Integer amount = 0;
         Vector<Truyen> ts = new Vector<>();
+        
+        try{
+            page = Integer.parseInt(request.getParameter("page"));
+        }
+        catch(NumberFormatException e){
+            page = 1;
+        }
+        
         SearchDao sd = new SearchDao();
-        ts = sd.getTruyen(10);
+        ts = sd.getTruyen(10, page);
+        amount = (int)Math.ceil(sd.countTruyen()/10);
         
         request.setAttribute("dsTruyen", ts);
+        request.setAttribute("amount", amount);
         request.getRequestDispatcher("/index").forward(request, response); 
     }
 

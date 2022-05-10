@@ -44,9 +44,9 @@ function display(json){
     for(var key in Object.keys(json)){
         const t = document.createElement('a')
         t.classList.add("truyen")
-        t.href = 'read?truyenID=' + json[key].id
+        t.href = 'read?truyenID=' + json[key].id.trim()
         
-        t.innerHTML = anhThumb(json[key].id).outerHTML + tenTruyen(json[key].ten).outerHTML
+//        t.innerHTML = anhThumb(json[key].id).outerHTML + tenTruyen(json[key].ten).outerHTML
         ketQua.appendChild(t);
     }
     
@@ -55,7 +55,9 @@ function display(json){
         k.style = 'width: 85%; height: 80%; justify-content: center'
         const anh = document.createElement('img');
         anh.style = 'width: calc(100%*3/4); height: 100%; border-radius: 5px'
-        anh.src = 'img/Thumbnails/'+id+'.jpg'
+        anh.src = 'img/Thumbnails/'+ id.toLocaleString().trim() +'.jpg'
+//        anh.src = 'img/Thumbnails/'+ 'DRM1' +'.jpg';
+        console.log(id)
         k.appendChild(anh)
         return k
     }

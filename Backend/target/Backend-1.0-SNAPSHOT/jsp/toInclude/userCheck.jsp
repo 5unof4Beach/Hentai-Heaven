@@ -1,5 +1,5 @@
 <%@page import="model.User"%>
-<%@include file="const.jsp" %>
+<%--<%@include file="const.jsp" %>--%>
 <%
     Cookie[] cookie = request.getCookies();
     

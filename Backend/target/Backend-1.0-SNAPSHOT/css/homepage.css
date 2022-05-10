@@ -266,6 +266,8 @@ a.link-the-loai:active{
     /* border: 1px solid #373737; */
     color: var(--purple);
     margin: 2px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #chuyen-trang .doi-so-trang a:hover{

@@ -45,7 +45,7 @@ public class SearchDao {
         Vector<Truyen> ts = new Vector<>();
         try {
             while(rs.next()){
-                Truyen t = new Truyen(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+                Truyen t = new Truyen(rs.getString(1).trim(), rs.getString(2).trim(), rs.getString(3).trim(), rs.getInt(4));
                 ts.add(t);
             }
         } catch (SQLException ex) {
@@ -59,16 +59,17 @@ public class SearchDao {
         return ts;
     }
     
-    public Vector<Truyen> getTruyen(int soLuong){
-        String query = "select * from dbo.truyen";
+    public Vector<Truyen> getTruyen(int soLuong, int page){
+        String query = "select * from dbo.truyen where stt > ? and stt <= ?";
         ResultSet rs = null;
         try {
             PreparedStatement ps = con.prepareStatement(query);
-//            ps.setString(1, "%" + content + "%");
+            ps.setInt(1, 10*(page-1));
+            ps.setInt(2, 10*page);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Ko co result set");
+            System.out.println("Ko co truyen");
         }
         
         
@@ -81,12 +82,35 @@ public class SearchDao {
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return ts;
+    }
+    public Integer countTruyen(){
+        String query = "select max(stt) FROM dbo.truyen";
+        ResultSet rs = null;
+        Integer amount = 23;
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
+        }
+        try {
+            while(rs.next()){
+                amount = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         try {
             con.close();
         } catch (SQLException ex) {
             Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return ts;
+        
+        return amount;
     }
     
 }
