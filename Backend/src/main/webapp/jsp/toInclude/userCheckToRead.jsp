@@ -2,7 +2,6 @@
 <%@include file="const.jsp" %>
 <%
     Cookie[] cookee = request.getCookies();
-    User u = (User)session.getAttribute("user");
     if(cookee == null){
         response.sendRedirect(request.getContextPath() + "/dangnhap");
     }

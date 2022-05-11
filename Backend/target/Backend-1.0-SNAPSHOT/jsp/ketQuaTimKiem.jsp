@@ -15,7 +15,9 @@
     </head>
     <body>
         <%@include file="toInclude/header.jsp" %>
-        <div id = 'danh-muc-truyen'></div>
+        <div id="nd-chinh" >
+            <div id = 'danh-muc-truyen'></div>
+        </div>
     </body>
     <script src="${pageContext.request.contextPath}/js/kqTimKiem.js"></script>
 </html>

@@ -46,7 +46,7 @@ function display(json){
         t.classList.add("truyen")
         t.href = 'read?truyenID=' + json[key].id.trim()
         
-//        t.innerHTML = anhThumb(json[key].id).outerHTML + tenTruyen(json[key].ten).outerHTML
+        t.innerHTML = anhThumb(json[key].id).outerHTML + tenTruyen(json[key].ten).outerHTML
         ketQua.appendChild(t);
     }
     

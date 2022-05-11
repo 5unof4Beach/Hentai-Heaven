@@ -31,7 +31,7 @@ public class SignupController extends HttpServlet {
         UserDao ud = new UserDao();
         String state = ud.signup(ho, ten, encryptPassword(pass), username);
         if(state != null){
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            response.sendRedirect("home");
         }
         else{
             request.setAttribute("mess", "Lam on nhap lai");

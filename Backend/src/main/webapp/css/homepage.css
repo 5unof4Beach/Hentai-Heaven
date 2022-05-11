@@ -149,10 +149,10 @@ a.link-the-loai:active{
 
 #danh-muc-truyen{
     color: white;
-    width: 100%;
+    width: 80%;
     /* border: 1px solid black; */
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
