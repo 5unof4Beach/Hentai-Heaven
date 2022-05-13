@@ -8,6 +8,7 @@ import model.Truyen;
 import com.google.gson.Gson;
 import controller.dao.ReadDao;
 import java.io.IOException;
+import java.util.Hashtable;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,19 +25,11 @@ public class ReadController extends HttpServlet {
         
         String truyenID = req.getParameter("truyenID");
         String url = "/view/read.jsp";
-//        String url = "/login";
-        String jsonString = " ";
-        ReadDao rd = new ReadDao();
-        Truyen t = rd.getTruyenInfoByID(truyenID);
+        Hashtable<String, Truyen> truyenHM = (Hashtable) req.getSession().getAttribute("truyenHM");
+        Truyen t = truyenHM.get(truyenID);
         req.getSession().setAttribute("truyen", t);
         getServletContext().getRequestDispatcher(url).forward(req, resp);
         
-        
-//        PrintWriter out = resp.getWriter();
-//        resp.setContentType("application/json");
-//        resp.setCharacterEncoding("UTF-8");
-//        out.print(jsonString);
-//        out.flush();   
         
     }
     

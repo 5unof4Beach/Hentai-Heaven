@@ -7,7 +7,11 @@ package controller;
 import controller.dao.SearchDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,37 +24,58 @@ import model.Truyen;
  */
 public class HomeController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        if(request.getSession().getAttribute("user") == null){
+            getData(request, response);
+            goToIndex(request, response);
+            System.out.println("Lay du lieu");
+        }
+        else{
+            goToIndex(request, response);
+            System.out.println("Di toi trang chu");
+        }
+    }
+    
+    private void getData(HttpServletRequest request, HttpServletResponse response){
         Integer page = null;
         Integer amount = 0;
         Vector<Truyen> ts = new Vector<>();
-        
-        try{
+        Hashtable<String, Truyen> truyenHM = new Hashtable<>();
+
+        try {
             page = Integer.parseInt(request.getParameter("page"));
-        }
-        catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             page = 1;
         }
-        
+
         SearchDao sd = new SearchDao();
         ts = sd.getTruyen(10, page);
-        amount = (int)Math.ceil(sd.countTruyen()/10);
+        amount = (int) Math.ceil(sd.countTruyen() / 10);
         
-        request.setAttribute("dsTruyen", ts);
-        request.setAttribute("amount", amount);
-        request.getRequestDispatcher("/index").forward(request, response); 
+        for(Truyen t : ts){
+            if(!truyenHM.containsKey(t.getId())){
+                truyenHM.put(t.getId(), t);
+            }
+        }
+        
+        request.getSession().setAttribute("dsTruyen", ts);
+        request.getSession().setAttribute("truyenHM", truyenHM);
+        request.getSession().setAttribute("amount", amount);
+        
+        
+    }
+    
+    private void goToIndex(HttpServletRequest request, HttpServletResponse response){
+        try {
+            request.getRequestDispatcher("/index").forward(request, response);
+        } catch (ServletException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

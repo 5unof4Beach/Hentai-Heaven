@@ -14,7 +14,7 @@
     <div id="nd-chinh" >
 
         <div id = 'danh-muc-truyen'>
-            <c:forEach items="${dsTruyen}" var='t'>
+            <c:forEach items= "${sessionScope.dsTruyen}" var='t'>
                 <a class='truyen' href="read?truyenID=${t.id}">
                     <div style="width: 85%; height: 80%; justify-content: center">
                         <img style="width: calc(100%*3/4); height: 100%; border-radius: 5px " src="img/Thumbnails/${t.id}.jpg" alt="${t.id}"/>
