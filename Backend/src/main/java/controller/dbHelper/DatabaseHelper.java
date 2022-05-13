@@ -65,7 +65,7 @@ public class DatabaseHelper {
 //            String dbURL = "jdbc:mysql://localhost:3306/hentai-heaven";
 //            String usrname = "root";
 //            String pw    = "admin";
-            String IP = "10.244.208.55";
+            String IP = "10.147.17.50";
             String dbURL = "jdbc:sqlserver://" + IP + ";databaseName=BTLWEB;encrypt=false";
             String usrname = "sa";
             String pw    = "1";
