@@ -16,7 +16,7 @@
     
     <servlet>
         <servlet-name>thongtin</servlet-name>
-        <jsp-file>/jsp/thongTinNguoiDung.jsp</jsp-file>
+        <jsp-file>/view/thongTinNguoiDung.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>thongtin</servlet-name>
@@ -30,7 +30,7 @@
     
     <servlet>
         <servlet-name>dangky</servlet-name>
-        <jsp-file>/jsp/dangKy.jsp</jsp-file>
+        <jsp-file>/view/dangKy.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>dangky</servlet-name>
@@ -39,7 +39,7 @@
     
     <servlet>
         <servlet-name>dangnhap</servlet-name>
-        <jsp-file>/jsp/dangNhap.jsp</jsp-file>
+        <jsp-file>/view/dangNhap.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>dangnhap</servlet-name>
@@ -48,7 +48,7 @@
     
     <servlet>
         <servlet-name>kqtimkiem</servlet-name>
-        <jsp-file>/jsp/ketQuaTimKiem.jsp</jsp-file>
+        <jsp-file>/view/ketQuaTimKiem.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>kqtimkiem</servlet-name>
@@ -57,7 +57,7 @@
     
     <servlet>
         <servlet-name>admin</servlet-name>
-        <jsp-file>/jsp/quanTriVien.jsp</jsp-file>
+        <jsp-file>/view/quanTriVien.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>

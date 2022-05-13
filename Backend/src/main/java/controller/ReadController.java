@@ -23,7 +23,7 @@ public class ReadController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
         String truyenID = req.getParameter("truyenID");
-        String url = "/jsp/read.jsp";
+        String url = "/view/read.jsp";
 //        String url = "/login";
         String jsonString = " ";
         ReadDao rd = new ReadDao();

@@ -10,7 +10,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/homepage.css'>
 </head>
 <body>
-    <%@include file="jsp/toInclude/header.jsp" %>
+    <%@include file="view/toInclude/header.jsp" %>
     <div id="nd-chinh" >
 
         <div id = 'danh-muc-truyen'>
