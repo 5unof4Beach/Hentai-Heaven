@@ -4,7 +4,7 @@
  */
 package controller;
 
-import controller.dao.SearchDao;
+import dao.SearchDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;

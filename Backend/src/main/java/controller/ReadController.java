@@ -6,7 +6,7 @@ package controller;
 
 import model.Truyen;
 import com.google.gson.Gson;
-import controller.dao.ReadDao;
+import dao.ReadDao;
 import java.io.IOException;
 import java.util.Hashtable;
 import javax.servlet.ServletException;
@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 public class ReadController extends HttpServlet {
     private Gson gson = new Gson();
     
-    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
@@ -29,8 +28,6 @@ public class ReadController extends HttpServlet {
         Truyen t = truyenHM.get(truyenID);
         req.getSession().setAttribute("truyen", t);
         getServletContext().getRequestDispatcher(url).forward(req, resp);
-        
-        
     }
     
 } 

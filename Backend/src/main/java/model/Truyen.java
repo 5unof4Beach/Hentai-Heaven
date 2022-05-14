@@ -18,6 +18,14 @@ public class Truyen {
         this.nxb = nxb;
         this.rating = rating;
     }
+    public Truyen(String id, String ten, String nxb) {
+        this.id = id;
+        this.ten = ten;
+        this.nxb = nxb;
+    }
+
+    public Truyen() {
+    }
 
     public String getId() {
         return id.trim();
@@ -34,5 +42,12 @@ public class Truyen {
     public int getRating() {
         return rating;
     }
+
+    @Override
+    public String toString() {
+        return getId()+getTen()+getNxb();
+    }
+    
+    
     
 }

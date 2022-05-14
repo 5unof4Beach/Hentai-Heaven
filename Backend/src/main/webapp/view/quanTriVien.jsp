@@ -3,13 +3,9 @@
 <%@page import="javax.servlet.http.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file='toInclude/const.jsp' %>
-<%
-    User u = (User)session.getAttribute("user");
-    if(u == null || u.getType()!= ADMIN){
-        response.sendRedirect(request.getContextPath() + "/home");
-    }
-    
-%>
+<%@include file="toInclude/header.jsp" %>
+<%@include file="toInclude/adminCheck.jsp" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +13,19 @@
         <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/homepage.css'>
         <title>JSP Page</title>
     </head>
+        <style>
+            p{
+                color: white;
+            }
+        </style>
     <body>
-        <h1>Them Truyen</h1>
+        <p>Them Truyen</p>
+        <input id ="id" placeholder="ID">
+        <input id ="ten" placeholder="Ten Truyen">
+        <input id ="nxb" placeholder="Ten Nha Xuat Ban">
+        <button id = 'them'>them</button>
+        <p></p>
     </body>
+    <script src='${pageContext.request.contextPath}/js/themTruyen.js'></script>
+
 </html>

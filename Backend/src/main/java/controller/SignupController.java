@@ -5,7 +5,7 @@
 package controller;
 
 import com.google.common.hash.Hashing;
-import controller.dao.UserDao;
+import dao.UserDao;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
