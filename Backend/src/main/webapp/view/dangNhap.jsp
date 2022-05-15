@@ -21,10 +21,10 @@
         <div id="dangNhap">
             <form action="${pageContext.servletContext.contextPath}/login" method="post">
                 <p>
-                    <input id="username" type="text" placeholder="Tên đăng nhập" name = "user">
+                    <input id="username" type="text" placeholder="Tên đăng nhập" name = "user" value="ducbui">
                 </p>
                 <p>
-                    <input id="password" type="Password" placeholder="Mật khẩu" name = "password">
+                    <input id="password" type="Password" placeholder="Mật khẩu" name = "password" value="1">
                 </p>
                 <button type="submit">Đăng nhập</button>
             </form>

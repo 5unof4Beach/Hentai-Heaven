@@ -24,13 +24,15 @@ public class TruyenDao {
     }
     
     public Boolean themTruyen(Truyen t){
-        String query = "INSERT INTO [dbo].[truyen]([idTruyen],[ten],[nxb])VALUES(?, ?, ?)";
+        SearchDao sd = new SearchDao();
+        String query = "INSERT INTO [dbo].[truyen]([idTruyen],[ten],[nxb],[stt])VALUES(?, ?, ?, ?)";
         
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, t.getId());
             ps.setString(2, t.getTen());
             ps.setString(3, t.getNxb());
+            ps.setInt(4, sd.countTruyen()+1);
             ps.execute();
             System.out.println("Them Truyen Thanh Cong");
             dongKetnoi();

@@ -64,7 +64,6 @@
         var khungBaoDau = document.querySelector("#khung-bao-dau");
         
         const sticky = navbar.offsetTop;
-//        const sticky = window.pageYOffset - header.offsetTop;
 
         function myFunction() {
             console.log(sticky)

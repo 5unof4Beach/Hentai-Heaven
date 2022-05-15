@@ -11,21 +11,48 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/homepage.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/admin.css'>
         <title>JSP Page</title>
     </head>
-        <style>
-            p{
-                color: white;
-            }
-        </style>
+    <style>
+        p{
+            color: white;
+        }
+    </style>
     <body>
-        <p>Them Truyen</p>
-        <input id ="id" placeholder="ID">
-        <input id ="ten" placeholder="Ten Truyen">
-        <input id ="nxb" placeholder="Ten Nha Xuat Ban">
-        <button id = 'them'>them</button>
-        <p></p>
+        <div id = 'container'>
+            
+            <div id="them-truyen">
+                <p>Them Truyen</p>
+                <input id ="id" placeholder="ID" value="DRM1">
+                <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
+                <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
+                <button id = 'them'>Them</button>
+                <p class ='thong-bao' id = "thong-bao"></p>
+            </div>
+        
+            <div id="sua-truyen">
+                <p>Sua Truyen</p>
+                <input id ="id" placeholder="ID" value="DRM1">
+                <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
+                <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
+                <button id = 'xac-nhan'>Xac Nhan</button>
+                <p class ='thong-bao' id = "thong-bao2"></p>
+            </div>
+            
+            <div id="xoa-truyen">
+                <p>Xoa Truyen</p>
+                <input id ="id" placeholder="ID" value="DRM1">
+                <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
+                <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
+                <button id = 'xac-nhan'>Xac Nhan</button>
+                <p class ='thong-bao' id = "thong-bao3"></p>
+            </div>
+        </div>
+        
+        
     </body>
-    <script src='${pageContext.request.contextPath}/js/themTruyen.js'></script>
+    <script src="${pageContext.request.contextPath}/js/themTruyen.js"></script>
+    
 
 </html>

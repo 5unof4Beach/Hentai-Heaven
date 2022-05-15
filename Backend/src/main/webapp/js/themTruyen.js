@@ -1,9 +1,10 @@
 const id = document.getElementById("id")
 const ten = document.getElementById("ten")
 const nxb = document.getElementById("nxb")
-const them = document.querySelector('button')
-const mess = document.querySelector('p')
+const them = document.querySelector("#them")
+const mess = document.querySelector("#thong-bao")
 
+//them.addEventListener('click', themTruyen)
 them.addEventListener('click', themTruyen)
 
 function themTruyen() {

@@ -1,0 +1,75 @@
+*,:before,:after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    display: flex;
+}
+
+input{
+    height: 50px;
+    width: 51%;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#them-truyen{
+    /*height: 200px;*/
+    width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sua-truyen{
+    /*height: 200px;*/
+    width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#xoa-truyen{
+    /*height: 200px;*/
+    width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+button#them{
+    height: 30px;
+}
+
+button#xac-nhan{
+    height: 30px;
+    
+}
+
+#container{
+    height: 100%;
+    widows: 100%;
+    flex-direction: column;
+    align-items: center;
+/*    justify-content: center;*/
+    padding-top: 50px;
+}
+
+p{
+    width: 800px;
+    font-size: 50px;
+}
+
+button{
+    width: 200px;
+    
+}
+
+.thong-bao{
+    font-size: 30px;
+    color: pink;
+}
