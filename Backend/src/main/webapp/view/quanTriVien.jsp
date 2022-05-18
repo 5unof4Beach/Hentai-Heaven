@@ -33,26 +33,24 @@
         
             <div id="sua-truyen">
                 <p>Sua Truyen</p>
-                <input id ="id" placeholder="ID" value="DRM1">
-                <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
-                <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
-                <button id = 'xac-nhan'>Xac Nhan</button>
+                <input id ="id-sua" placeholder="ID" value="DRM1">
+                <input id ="ten-sua" placeholder="Ten Truyen" value="Doremon tap 1">
+                <input id ="nxb-sua" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
+                <button id = 'sua'>Xac Nhan</button>
                 <p class ='thong-bao' id = "thong-bao2"></p>
             </div>
             
             <div id="xoa-truyen">
                 <p>Xoa Truyen</p>
-                <input id ="id" placeholder="ID" value="DRM1">
-                <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
-                <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
-                <button id = 'xac-nhan'>Xac Nhan</button>
+                <input id ="id-xoa" placeholder="ID" value="DRM1">
+                <button id = 'xoa'>Xac Nhan</button>
                 <p class ='thong-bao' id = "thong-bao3"></p>
             </div>
         </div>
         
         
     </body>
-    <script src="${pageContext.request.contextPath}/js/themTruyen.js"></script>
+    <script src="${pageContext.request.contextPath}/js/apiTruyen.js"></script>
     
 
 </html>

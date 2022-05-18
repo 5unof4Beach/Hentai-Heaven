@@ -5,6 +5,7 @@
 package controller.api;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import dao.SearchDao;
 import dao.TruyenDao;
 import java.io.IOException;
@@ -66,14 +67,12 @@ public class truyenAPI extends HttpServlet {
         JsonConverter jc = new JsonConverter(request.getReader());
         Truyen t = (Truyen) jc.convertJsonToObject(new Truyen());
         TruyenDao td = new TruyenDao();
-        Boolean succesful = td.themTruyen(t);
+        Boolean successful = td.themTruyen(t);
         
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         
-        
-        String mess = "Them Truyen thanh cong";
-        if(succesful)
+        if(successful)
             out.print("{\"mess\": \"Them Truyen Thanh Cong\"}");
         else
             out.print("{\"mess\": \"Them Truyen Khong Thanh Cong\"}");
@@ -82,12 +81,35 @@ public class truyenAPI extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPut(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        req.setCharacterEncoding("UTF-8");
+        JsonConverter jc = new JsonConverter(req.getReader());
+        Truyen t = (Truyen) jc.convertJsonToObject(new Truyen());
+        TruyenDao td = new TruyenDao();
+        Boolean successful = td.suaTruyen(t); 
+        PrintWriter out = resp.getWriter();
+        resp.setContentType("application/json");
+        
+        if(successful)
+            out.print("{\"mess\": \"Sua Truyen Thanh Cong\"}");
+        else
+            out.print("{\"mess\": \"Sua Truyen Khong Thanh Cong\"}");
+        
     }
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        req.setCharacterEncoding("UTF-8");
+        JsonConverter jc = new JsonConverter(req.getReader());
+        JsonObject jo = jc.getJsonObject();
+        TruyenDao td = new TruyenDao();
+        Boolean successful = td.xoaTruyen(jo.get("id").getAsString()); 
+        PrintWriter out = resp.getWriter();
+        resp.setContentType("application/json");
+        
+        if(successful)
+            out.print("{\"mess\": \"Xoa Truyen Thanh Cong\"}");
+        else
+            out.print("{\"mess\": \"Xoa Truyen Khong Thanh Cong\"}");
     }
     
     

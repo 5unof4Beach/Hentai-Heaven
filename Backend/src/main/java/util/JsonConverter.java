@@ -7,6 +7,8 @@
 
 package util;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -42,6 +44,11 @@ public class JsonConverter {
         Object t = gson.fromJson(jsonString, o.getClass());
         System.out.println(o.getClass());
         return t;
+    }
+    
+    public JsonObject getJsonObject(){
+        JsonParser parser = new JsonParser();
+        return  parser.parse(jsonString).getAsJsonObject();
     }
     
 }
