@@ -8,8 +8,8 @@ div{
     display: flex;
 }
 
-input{
-    height: 50px;
+input, select, option{
+    height: 30px;
     width: 51%;
     margin: 5px;
     border-radius: 5px;
@@ -61,7 +61,8 @@ button#sua,#xoa{
 
 p{
     width: 800px;
-    font-size: 50px;
+    font-size: 40px;
+    color: white;
 }
 
 button{

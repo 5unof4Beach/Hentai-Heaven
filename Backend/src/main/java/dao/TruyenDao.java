@@ -25,14 +25,15 @@ public class TruyenDao {
     
     public Boolean themTruyen(Truyen t){
         SearchDao sd = new SearchDao();
-        String query = "INSERT INTO [dbo].[truyen]([idTruyen],[ten],[nxb],[stt])VALUES(?, ?, ?, ?)";
+        String query = "INSERT INTO [dbo].[truyen]([idTruyen],[ten],[nxb],[idTheLoai],[stt])VALUES(?, ?, ?, ?, ?)";
         
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, t.getId());
             ps.setString(2, t.getTen());
             ps.setString(3, t.getNxb());
-            ps.setInt(4, sd.countTruyen()+1);
+            ps.setString(4, t.getTheLoai());
+            ps.setInt(5, sd.countTruyen()+1);
             ps.execute();
             System.out.println("Them Truyen Thanh Cong");
             dongKetnoi();
@@ -47,13 +48,14 @@ public class TruyenDao {
     
     public Boolean suaTruyen(Truyen t){
         SearchDao sd = new SearchDao();
-        String query = "UPDATE [dbo].[truyen] set ten = ?, nxb = ? where idTruyen = ?";
+        String query = "UPDATE [dbo].[truyen] set ten = ?, nxb = ?, idTheLoai = ? where idTruyen = ?";
         
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, t.getTen());
             ps.setString(2, t.getNxb());
-            ps.setString(3, t.getId());
+            ps.setString(3, t.getTheLoai());
+            ps.setString(4, t.getId());
             ps.execute();
             System.out.println("Sua Truyen Thanh Cong");
             dongKetnoi();

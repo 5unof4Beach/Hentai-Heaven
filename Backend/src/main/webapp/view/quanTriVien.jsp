@@ -12,13 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/homepage.css'>
         <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/admin.css'>
-        <title>JSP Page</title>
+        <title>Hentai Heaven</title>
     </head>
-    <style>
-        p{
-            color: white;
-        }
-    </style>
     <body>
         <div id = 'container'>
             
@@ -27,6 +22,10 @@
                 <input id ="id" placeholder="ID" value="DRM1">
                 <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
                 <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
+                <select id="them-the-loai">
+                    <option value="tt">Truyen Tranh</option>
+                    <option value="tnl">Truyen Nguoi Lon</option>
+                </select>
                 <button id = 'them'>Them</button>
                 <p class ='thong-bao' id = "thong-bao"></p>
             </div>
@@ -36,6 +35,10 @@
                 <input id ="id-sua" placeholder="ID" value="DRM1">
                 <input id ="ten-sua" placeholder="Ten Truyen" value="Doremon tap 1">
                 <input id ="nxb-sua" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
+                <select id="sua-the-loai">
+                    <option value="tt">Truyen Tranh</option>
+                    <option value="tnl">Truyen Nguoi Lon</option>
+                </select>
                 <button id = 'sua'>Xac Nhan</button>
                 <p class ='thong-bao' id = "thong-bao2"></p>
             </div>

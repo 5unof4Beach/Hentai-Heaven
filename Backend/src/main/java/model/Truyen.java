@@ -9,9 +9,15 @@ package model;
  * @author suckm
  */
 public class Truyen {
-    private String id, ten, nxb;
+    private String id, ten, nxb, theLoai;
     private int rating;
 
+    public Truyen(String id, String ten, String nxb, String theLoai) {
+        this.id = id;
+        this.ten = ten;
+        this.nxb = nxb;
+        this.theLoai = theLoai;
+    }
     public Truyen(String id, String ten, String nxb, int rating) {
         this.id = id;
         this.ten = ten;
@@ -23,6 +29,8 @@ public class Truyen {
         this.ten = ten;
         this.nxb = nxb;
     }
+    
+    
 
     public Truyen() {
     }
@@ -37,6 +45,10 @@ public class Truyen {
 
     public String getNxb() {
         return nxb.trim();
+    }
+
+    public String getTheLoai() {
+        return theLoai;
     }
 
     public int getRating() {

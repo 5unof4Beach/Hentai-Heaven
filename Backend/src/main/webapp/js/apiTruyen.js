@@ -13,9 +13,14 @@ function themTruyen() {
     const ten = document.getElementById("ten")
     const nxb = document.getElementById("nxb")
     const mess = document.querySelector("#thong-bao")
+    const theLoai = document.querySelector("#them-the-loai")
+    
+    let idTheLoai = theLoai.options[theLoai.selectedIndex].value
 
 
     console.log('pressed')
+    console.log(idTheLoai)
+    
     fetch('api-truyen', {
         method: 'POST',
         headers: {
@@ -24,7 +29,8 @@ function themTruyen() {
         body: JSON.stringify({
             id: id.value,
             ten: ten.value,
-            nxb: nxb.value
+            nxb: nxb.value,
+            theLoai: idTheLoai
         })
     })
             .then(res => {
@@ -41,8 +47,13 @@ function suaTruyen() {
     const ten = document.getElementById("ten-sua")
     const nxb = document.getElementById("nxb-sua")
     const mess = document.querySelector("#thong-bao2")
+    const theLoai = document.querySelector("#sua-the-loai")
+    
+    let idTheLoai = theLoai.options[theLoai.selectedIndex].value
     
     console.log('pressed')
+    console.log(idTheLoai)
+    
     fetch('api-truyen', {
         method: 'PUT',
         headers: {
@@ -51,7 +62,8 @@ function suaTruyen() {
         body: JSON.stringify({
             id: id.value,
             ten: ten.value,
-            nxb: nxb.value
+            nxb: nxb.value,
+            theLoai: idTheLoai
         })
     })
             .then(res => {

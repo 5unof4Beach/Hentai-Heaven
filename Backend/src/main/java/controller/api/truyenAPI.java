@@ -83,8 +83,8 @@ public class truyenAPI extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         JsonConverter jc = new JsonConverter(req.getReader());
-        Truyen t = (Truyen) jc.convertJsonToObject(new Truyen());
         TruyenDao td = new TruyenDao();
+        Truyen t = (Truyen) jc.convertJsonToObject(new Truyen());
         Boolean successful = td.suaTruyen(t); 
         PrintWriter out = resp.getWriter();
         resp.setContentType("application/json");

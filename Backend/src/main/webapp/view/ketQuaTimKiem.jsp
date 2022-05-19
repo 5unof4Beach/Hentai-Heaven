@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' type='text/css' media='screen' href='${pageContext.request.contextPath}/css/homepage.css'>
-        <title>JSP Page</title>
+        <title>Hentai Heaven</title>
     </head>
     <body>
         <%@include file="toInclude/header.jsp" %>
