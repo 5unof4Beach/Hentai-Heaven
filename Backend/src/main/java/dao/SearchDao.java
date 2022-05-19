@@ -27,7 +27,7 @@ public class SearchDao {
         con = dbh.getConn();
     }
     
-    public Vector<Truyen> search(String nd){
+    public Vector<Truyen> searchByTen(String nd){
         String content = nd.trim();
         
         String query = "select * from truyen where ten like ?";
@@ -35,6 +35,38 @@ public class SearchDao {
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, "%" + content + "%");
+            rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ko co result set");
+        }
+        
+        
+        Vector<Truyen> ts = new Vector<>();
+        try {
+            while(rs.next()){
+                Truyen t = new Truyen(rs.getString(1).trim(), rs.getString(2).trim(), rs.getString(3).trim(), rs.getInt(4));
+                ts.add(t);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ts;
+    }
+    
+    public Vector<Truyen> searchByTheLoai(String idTheLoai){
+        String content = idTheLoai.trim();
+        
+        String query = "select * from truyen where idTheLoai = ?";
+        ResultSet rs = null;
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, idTheLoai);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,6 +116,7 @@ public class SearchDao {
         }
         return ts;
     }
+    
     public Integer countTruyen(){
         String query = "select max(stt) FROM dbo.truyen";
         ResultSet rs = null;

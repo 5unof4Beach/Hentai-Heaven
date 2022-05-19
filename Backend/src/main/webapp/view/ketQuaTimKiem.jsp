@@ -19,5 +19,5 @@
             <div id = 'danh-muc-truyen'></div>
         </div>
     </body>
-    <script src="${pageContext.request.contextPath}/js/kqTimKiem.js"></script>
+    <script src="${pageContext.request.contextPath}/js/timKiem.js"></script>
 </html>

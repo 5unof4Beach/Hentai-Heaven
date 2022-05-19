@@ -5,6 +5,7 @@
 package controller.api;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import dao.SearchDao;
 import dao.TruyenDao;
@@ -53,6 +54,7 @@ public class truyenAPI extends HttpServlet {
         SearchDao sd = new SearchDao();
         ts = sd.getTruyen(amount, page);
         String jsonResponse = gson.toJson(ts);
+        
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");

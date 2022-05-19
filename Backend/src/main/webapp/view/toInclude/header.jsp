@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <header class="header">
     <div id="menu-the-loai" class="menu-the-loai" >
 
@@ -5,11 +6,9 @@
 
         <div id = 'the-loai'>
             <ul>
-                <li><a href="#" class="link-the-loai">Trinh Tham</a></li>
-                <li><a href="#" class="link-the-loai">Truyen Tranh</a></li>
-                <li><a href="#" class="link-the-loai">Tieu Thuyet</a></li>
-                <li><a href="#" class="link-the-loai">Truyen Cuoi</a></li>
-                <li><a href="#" class="link-the-loai">Truyen Hentai</a></li>
+                <c:forEach items= "${sessionScope.dsTheLoai}" var='t'>
+                    <li><a href="search?theloai=${t.id}" class="link-the-loai">${t.ten}</a></li>
+                </c:forEach>
             </ul>
         </div>
     </div>
@@ -28,37 +27,5 @@
         <%@include file="userCheck.jsp" %>
         <%--<%@include file="jsp/toInclude/userCheck.jsp" %>--%>
     </div>
-    <script>
-        function moMenu() {
-            var a = document.getElementById("menu-the-loai");
-            a.style.width = "300px";
-// a.style.height = "100%";
-        }
-
-        function dongMenu() {
-            var a = document.getElementById("menu-the-loai");
-            a.style.width = "0";
-// a.style.height = "0px";
-        }
-
-        function themTruyen() {
-            var box = document.createElement('div')
-            box.className = 'truyen'
-            box.style.height = '340px';
-            box.style.width = '300px';
-// box.style.border = '1px solid black';
-
-            var ds_truyen = document.getElementById('danh-muc-truyen');
-
-            ds_truyen.appendChild(box);
-        }
-
-        nutThemTruyen = () => {
-            var Truyens = document.getElementsByClassName('truyen');
-            Truyens.length
-        }
-
-        const nutTim = document.getElementById('nut-tim')
-        const oTimKiem = document.getElementById('search')
-    </script>
+    <script src="${pageContext.request.contextPath}/js/main.js"></script>
 </header>

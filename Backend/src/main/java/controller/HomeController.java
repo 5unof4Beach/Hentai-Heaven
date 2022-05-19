@@ -5,6 +5,7 @@
 package controller;
 
 import dao.SearchDao;
+import dao.TruyenDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.TheLoai;
 import model.Truyen;
 
 /**
@@ -28,21 +30,24 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        if(request.getSession().getAttribute("user") == null){
-            getData(request, response);
-            goToIndex(request, response);
-            System.out.println("Lay du lieu");
-        }
-        else{
-            goToIndex(request, response);
-            System.out.println("Di toi trang chu");
-        }
+//        if(request.getSession().getAttribute("user") == null){
+//            getData(request, response);
+//            goToIndex(request, response);
+//            System.out.println("Lay du lieu");
+//        }
+//        else{
+//            goToIndex(request, response);
+//            System.out.println("Di toi trang chu");
+//        }
+        getData(request, response);
+        goToIndex(request, response);
     }
     
     private void getData(HttpServletRequest request, HttpServletResponse response){
         Integer page = null;
         Integer amount = 0;
         Vector<Truyen> ts = new Vector<>();
+        Vector<TheLoai> tls = new Vector<>();
         Hashtable<String, Truyen> truyenHM = new Hashtable<>();
 
         try {
@@ -51,9 +56,10 @@ public class HomeController extends HttpServlet {
             page = 1;
         }
 
-        SearchDao sd = new SearchDao();
-        ts = sd.getTruyen(10, page);
-        amount = (int) Math.ceil(sd.countTruyen() / 10);
+        TruyenDao td = new TruyenDao();
+        ts = td.getTruyen(10, page);
+        tls = td.getTheLoai();
+        amount = (int) Math.ceil(td.countTruyen() / 10);
         
         for(Truyen t : ts){
             if(!truyenHM.containsKey(t.getId())){
@@ -62,6 +68,7 @@ public class HomeController extends HttpServlet {
         }
         
         request.getSession().setAttribute("dsTruyen", ts);
+        request.getSession().setAttribute("dsTheLoai", tls);
         request.getSession().setAttribute("truyenHM", truyenHM);
         request.getSession().setAttribute("amount", amount);
         
