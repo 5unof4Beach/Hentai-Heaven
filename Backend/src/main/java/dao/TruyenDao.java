@@ -25,7 +25,8 @@ public class TruyenDao {
     Connection con = null;
 
     public TruyenDao() {
-        DatabaseHelper dbh = new DatabaseHelper();
+//        DatabaseHelper dbh = new DatabaseHelper();
+        DatabaseHelper dbh = DatabaseHelper.getSingletonInstance();
         con = dbh.getConn();
     }
 
@@ -48,7 +49,7 @@ public class TruyenDao {
             Logger.getLogger(TruyenDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Them Truyen Khong Thanh Cong");
         }
-        dongKetnoi();
+//        dongKetnoi();
         return false;
     }
 
@@ -64,13 +65,13 @@ public class TruyenDao {
             ps.setString(4, t.getId());
             ps.execute();
             System.out.println("Sua Truyen Thanh Cong");
-            dongKetnoi();
+//            dongKetnoi();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(TruyenDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Sua Truyen Khong Thanh Cong");
         }
-        dongKetnoi();
+//        dongKetnoi();
         return false;
     }
 
@@ -83,13 +84,13 @@ public class TruyenDao {
             ps.setString(1, id);
             ps.execute();
             System.out.println("Xoa Truyen Thanh Cong");
-            dongKetnoi();
+//            dongKetnoi();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(TruyenDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Xoa Truyen Khong Thanh Cong");
         }
-        dongKetnoi();
+//        dongKetnoi();
         return false;
     }
 
@@ -157,12 +158,6 @@ public class TruyenDao {
             while (rs.next()) {
                 amount = rs.getInt(1);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
         }

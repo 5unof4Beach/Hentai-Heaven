@@ -23,7 +23,7 @@ import model.Truyen;
 public class SearchDao {
     Connection con = null;
     public SearchDao() {
-        DatabaseHelper dbh = new DatabaseHelper();
+        DatabaseHelper dbh = DatabaseHelper.getSingletonInstance();
         con = dbh.getConn();
     }
     
@@ -51,11 +51,7 @@ public class SearchDao {
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try {
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         return ts;
     }
     
@@ -82,11 +78,6 @@ public class SearchDao {
             }
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ts;
     }
@@ -133,12 +124,6 @@ public class SearchDao {
             while(rs.next()){
                 amount = rs.getInt(1);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(SearchDao.class.getName()).log(Level.SEVERE, null, ex);
         }

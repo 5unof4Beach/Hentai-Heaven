@@ -10,11 +10,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DatabaseHelper {
+    
+    private static DatabaseHelper instance;
 
-    private static Connection conn = null;
+    private Connection conn = null;
     private Statement stmt = null;
-
-    public DatabaseHelper() {
+    
+    private DatabaseHelper() {
         loadDriver();
         connnect();
         statementCreate();
@@ -27,6 +29,27 @@ public class DatabaseHelper {
         }
 
     }
+    
+    public static DatabaseHelper getSingletonInstance(){
+        if(instance == null){
+            instance = new DatabaseHelper();
+        }
+        return instance;
+    }
+    
+//    public DatabaseHelper() {
+//        loadDriver();
+//        connnect();
+//        statementCreate();
+//
+//        if (conn != null) {
+//            System.out.println("conn is not Null");
+//        } else {
+//            System.out.println("conn is NULL");
+//
+//        }
+//
+//    }
 
     public void statementCreate() {
         try {

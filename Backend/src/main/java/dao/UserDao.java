@@ -24,7 +24,8 @@ import model.User;
 public class UserDao {
     private Connection conn = null;
     public UserDao() {
-        DatabaseHelper dbc = new DatabaseHelper();
+//        DatabaseHelper dbc = new DatabaseHelper();
+        DatabaseHelper dbc = DatabaseHelper.getSingletonInstance();
         conn = dbc.getConn();
     }
     
@@ -41,11 +42,13 @@ public class UserDao {
         } catch (Exception e) {
             System.out.println("No result for user found");
         }
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
+//        try {
+//            conn.close();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
         return null;
     }
     
@@ -65,11 +68,12 @@ public class UserDao {
             System.out.println("No result for user found");
         }
         
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            conn.close();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
         return null;
     }
 

@@ -24,8 +24,9 @@ public class ReadDao {
 
     private Connection conn = null;
     public ReadDao() {
-        DatabaseHelper dbc = new DatabaseHelper();
-        conn = dbc.getConn();
+//        DatabaseHelper dh = new DatabaseHelper();
+        DatabaseHelper dh = DatabaseHelper.getSingletonInstance();
+        conn = dh.getConn();
         
     }
     
@@ -57,11 +58,6 @@ public class ReadDao {
             }
         } catch (SQLException ex) {
             Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(ReadDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return t;
     }

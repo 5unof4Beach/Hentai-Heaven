@@ -30,7 +30,9 @@
     User u = (User) session.getAttribute("user");
     
     if(u == null){
-    
+    %>
+        <a class = 'link' href='admin'>Mat User roi</a>
+    <%
     }
     else if(u.getType() == 1) {
     %>
