@@ -25,7 +25,6 @@
 
     <div id="dang-nhap-dang-ky" >
         <%@include file="userCheck.jsp" %>
-        <%--<%@include file="jsp/toInclude/userCheck.jsp" %>--%>
     </div>
     <script src="${pageContext.request.contextPath}/js/main.js"></script>
 </header>

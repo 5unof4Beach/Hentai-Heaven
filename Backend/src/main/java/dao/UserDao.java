@@ -43,12 +43,6 @@ public class UserDao {
             System.out.println("No result for user found");
         }
         
-//        try {
-//            conn.close();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
         return null;
     }
     
@@ -67,12 +61,6 @@ public class UserDao {
             System.err.println(e);
             System.out.println("No result for user found");
         }
-        
-//        try {
-//            conn.close();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         
         return null;
     }

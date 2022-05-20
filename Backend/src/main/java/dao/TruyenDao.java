@@ -25,7 +25,6 @@ public class TruyenDao {
     Connection con = null;
 
     public TruyenDao() {
-//        DatabaseHelper dbh = new DatabaseHelper();
         DatabaseHelper dbh = DatabaseHelper.getSingletonInstance();
         con = dbh.getConn();
     }
@@ -43,7 +42,6 @@ public class TruyenDao {
             ps.setInt(5, sd.countTruyen() + 1);
             ps.execute();
             System.out.println("Them Truyen Thanh Cong");
-            dongKetnoi();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(TruyenDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -65,13 +63,11 @@ public class TruyenDao {
             ps.setString(4, t.getId());
             ps.execute();
             System.out.println("Sua Truyen Thanh Cong");
-//            dongKetnoi();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(TruyenDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Sua Truyen Khong Thanh Cong");
         }
-//        dongKetnoi();
         return false;
     }
 
@@ -84,13 +80,11 @@ public class TruyenDao {
             ps.setString(1, id);
             ps.execute();
             System.out.println("Xoa Truyen Thanh Cong");
-//            dongKetnoi();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(TruyenDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Xoa Truyen Khong Thanh Cong");
         }
-//        dongKetnoi();
         return false;
     }
 

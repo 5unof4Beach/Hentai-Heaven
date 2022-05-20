@@ -18,7 +18,7 @@
         <div id = 'container'>
             
             <div id="them-truyen">
-                <p>Them Truyen</p>
+                <h1>Them Truyen</h1>
                 <input id ="id" placeholder="ID" value="DRM1">
                 <input id ="ten" placeholder="Ten Truyen" value="Doremon tap 1">
                 <input id ="nxb" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
@@ -27,11 +27,11 @@
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
                 <button id = 'them'>Them</button>
-                <p class ='thong-bao' id = "thong-bao"></p>
+                <h1 class ='thong-bao' id = "thong-bao"></h1>
             </div>
         
             <div id="sua-truyen">
-                <p>Sua Truyen</p>
+                <h1>Sua Truyen</h1>
                 <input id ="id-sua" placeholder="ID" value="DRM1">
                 <input id ="ten-sua" placeholder="Ten Truyen" value="Doremon tap 1">
                 <input id ="nxb-sua" placeholder="Ten Nha Xuat Ban" value="Kim Dong">
@@ -40,14 +40,14 @@
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
                 <button id = 'sua'>Xac Nhan</button>
-                <p class ='thong-bao' id = "thong-bao2"></p>
+                <h2 class ='thong-bao' id = "thong-bao2"></h2>
             </div>
             
             <div id="xoa-truyen">
-                <p>Xoa Truyen</p>
+                <h1>Xoa Truyen</h1>
                 <input id ="id-xoa" placeholder="ID" value="DRM1">
                 <button id = 'xoa'>Xac Nhan</button>
-                <p class ='thong-bao' id = "thong-bao3"></p>
+                <h1 class ='thong-bao' id = "thong-bao3"></h1>
             </div>
         </div>
         

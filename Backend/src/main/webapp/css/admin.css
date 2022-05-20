@@ -8,36 +8,50 @@ div{
     display: flex;
 }
 
-input, select, option{
+input, option{
     height: 30px;
-    width: 51%;
+    width: 80%;
     margin: 5px;
     border-radius: 5px;
 }
 
+select{
+    height: 30px;
+    width: 80%;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #ff79c6;
+}
+
 #them-truyen{
     /*height: 200px;*/
-    width: 800px;
+    max-width: 500px;
+    width: 500px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 2;
 }
 
 #sua-truyen{
     /*height: 200px;*/
-    width: 800px;
+    max-width: 500px;
+    width: 500px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     
 }
 
 #xoa-truyen{
     /*height: 200px;*/
-    width: 800px;
+    max-width: 500px;
+    width: 500px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     
 }
 
@@ -53,15 +67,25 @@ button#sua,#xoa{
 #container{
     height: 100%;
     widows: 100%;
-    flex-direction: column;
-    align-items: center;
-/*    justify-content: center;*/
+    flex-wrap: wrap;
+/*    flex-direction: column;*/
+    align-items: flex-start;
+    justify-content: center;
+
     padding-top: 50px;
 }
+
+#container div:nth-of-type(1){flex-grow: 2;}
+#container div:nth-of-type(2){flex-grow: 1;}
+#container div:nth-of-type(3){flex-grow: 1;}
 
 p{
     width: 800px;
     font-size: 40px;
+    color: white;
+}
+
+h1{
     color: white;
 }
 

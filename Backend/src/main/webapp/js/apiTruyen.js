@@ -3,10 +3,9 @@ const them = document.querySelector("#them")
 const sua = document.querySelector("#sua")
 const xoa = document.querySelector("#xoa")
 
-//them.addEventListener('click', themTruyen)
-them.addEventListener('click', themTruyen)
-sua.addEventListener('click', suaTruyen)
-xoa.addEventListener('click', xoaTruyen)
+them.onclick = ()=>{themTruyen()}
+sua.onclick = ()=>(suaTruyen())
+xoa.onclick = ()=>(xoaTruyen())
 
 function themTruyen() {
     const id = document.getElementById("id")
@@ -21,7 +20,7 @@ function themTruyen() {
     console.log('pressed')
     console.log(idTheLoai)
     
-    fetch('api-truyen', {
+    let options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -32,14 +31,16 @@ function themTruyen() {
             nxb: nxb.value,
             theLoai: idTheLoai
         })
+    }
+    
+    fetch('api-truyen', options)
+    .then(res => {
+        return res.json()
     })
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                mess.innerHTML = data.mess
-                console.log(data)
-            })
+    .then(data => {
+        mess.innerHTML = data.mess
+        console.log(data)
+    })
 }
 
 function suaTruyen() {
@@ -54,7 +55,7 @@ function suaTruyen() {
     console.log('pressed')
     console.log(idTheLoai)
     
-    fetch('api-truyen', {
+    let options = {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -65,22 +66,23 @@ function suaTruyen() {
             nxb: nxb.value,
             theLoai: idTheLoai
         })
+    }
+    
+    fetch('api-truyen', options)
+    .then(res => {
+        return res.json()
     })
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                mess.innerHTML = data.mess
-                console.log(data)
-            })
+    .then(data => {
+        mess.innerHTML = data.mess
+        console.log(data)
+    })
 }
 
 function xoaTruyen() {
     const id = document.getElementById("id-xoa")
     const mess = document.querySelector("#thong-bao3")
     
-    console.log('pressed')
-    fetch('api-truyen', {
+    let options = {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -88,12 +90,15 @@ function xoaTruyen() {
         body: JSON.stringify({
             id: id.value,
         })
+    }
+    
+    console.log('pressed')
+    fetch('api-truyen', options)
+    .then(res => {
+        return res.json()
     })
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                mess.innerHTML = data.mess
-                console.log(data)
-            })
+    .then(data => {
+        mess.innerHTML = data.mess
+        console.log(data)
+    })
 }

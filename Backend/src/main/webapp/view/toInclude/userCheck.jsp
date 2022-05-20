@@ -1,42 +1,53 @@
 <%@page import="model.User"%>
-<%--<%@include file="const.jsp" %>--%>
 <%
     Cookie[] cookie = request.getCookies();
+    Cookie userCookie = null;
+    User u = null;
 
     Boolean loggedIn = false;
     for (Cookie c : cookie) {
         if (c.getName().equals("user")) {
-%>
-    <a class = 'link' href='thongtin' >
-    <%
-                out.print(c.getValue());
-                    
-                loggedIn = true;
-            }
+            userCookie = c;
+            loggedIn = true;
         }
-    %>
-</a>
+    }
+%>
 
 <%
     if (!loggedIn) {
-        out.print("<a class = 'link' href='dangnhap' >Login</a>");
-        out.print("<a class = 'link' href='dangky' >Signup</a>");
-    }
-
-
 %>
-
-<% 
-    User u = (User) session.getAttribute("user");
-    
-    if(u == null){
-    %>
-        <a class = 'link' href='admin'>Mat User roi</a>
+<a class = 'link' href='dangnhap' >LogIn</a>
+<a class = 'link' href='dangky' >Signup</a>
+<%
+} 
+    else {
+    u = (User) session.getAttribute("user");
+%>
+    <div class = 'link' id="user"  >
+    <div id = "user-option"> 
+        <ul>
+            <li><a class = 'link' href="thongtin">Thong Tin</a></li>
+            <li><a class = 'link' href="logout">Dang Xuat</a></li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
     <%
+        out.print(userCookie.getValue());
+    %>
+</div>
+<%
     }
-    else if(u.getType() == 1) {
+%>
+<%
+    if(u == null){
+    
+    }
+    else if(u.getType() == 1){
     %>
         <a class = 'link' href='admin'>admin</a>
     <%
     }
+
 %>

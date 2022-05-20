@@ -30,15 +30,6 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-//        if(request.getSession().getAttribute("user") == null){
-//            getData(request, response);
-//            goToIndex(request, response);
-//            System.out.println("Lay du lieu");
-//        }
-//        else{
-//            goToIndex(request, response);
-//            System.out.println("Di toi trang chu");
-//        }
         getData(request, response);
         goToIndex(request, response);
     }
