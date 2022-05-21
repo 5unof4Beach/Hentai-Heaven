@@ -1,8 +1,10 @@
+D:\HentaiHeaven\Backend\src\main\java\controller\api\yeuThichAPI.java
 D:\HentaiHeaven\Backend\src\main\java\model\Truyen.java
 D:\HentaiHeaven\Backend\src\main\java\controller\api\truyenAPI.java
 D:\HentaiHeaven\Backend\src\main\java\model\User.java
 D:\HentaiHeaven\Backend\src\main\java\controller\SearchController.java
 D:\HentaiHeaven\Backend\src\main\java\dao\SearchDao.java
+D:\HentaiHeaven\Backend\src\main\java\dao\YeuThichDao.java
 D:\HentaiHeaven\Backend\src\main\java\util\DatabaseHelper.java
 D:\HentaiHeaven\Backend\src\main\java\dao\ReadDao.java
 D:\HentaiHeaven\Backend\src\main\java\model\TheLoai.java

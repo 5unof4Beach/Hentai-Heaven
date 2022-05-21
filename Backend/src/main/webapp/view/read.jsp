@@ -15,15 +15,15 @@
     <%@include file="toInclude/header.jsp" %>
     <div id="khung-bao-dau">
         <div id="anh-bia">
-            <img  src="img/Thumbnails/${truyen.id}.jpg" alt="Anh bia"/>
+            <img  src="img/Thumbnails/${truyen.id}.jpg" value="${truyen.id}" alt="Anh bia"/>
         </div>
         
             <div class="thong-tin">
-                <div>Tên Truyen: ${truyen.ten}</div>
-                <div>Nha xuat ban: ${truyen.nxb}</div>
+                <div id="ten-truyen" value="${truyen.ten}">Tên Truyen: ${truyen.ten}</div>
+                <div id="nxb" value="${truyen.nxb}">Nha xuat ban: ${truyen.nxb}</div>
                 <div>Danh gia: ${truyen.rating}</div>
-                <button id="doc">
-                    Doc Truyen
+                <button id="yeu-thich">
+                    Thêm Vào Yêu Thích
                 </button>
             </div>
         
@@ -35,52 +35,10 @@
     </div>
             
     
+    <script src="${pageContext.request.contextPath}/js/read.js"></script>
     
-    <script>
-        var nutDoc = document.getElementById('doc')
-        var read = document.getElementById('khung-doc')
-        
-        let dong = 1;
+<!--    <div id="fb-root"></div>
 
-        function mo(){
-            if(dong === 1){
-                console.log("pressed")
-                read.style.display = "flex";
-                dong = 0;
-            }
-            else{
-                console.log("pressed")
-                read.style.display = "none";
-                dong = 1;
-            }
-        }
-
-        nutDoc.addEventListener('click', mo);
-        
-        window.onscroll = function() {myFunction()};
-
-        var navbar = document.getElementById("khung-doc");
-        
-        var khungBaoDau = document.querySelector("#khung-bao-dau");
-        
-        const sticky = navbar.offsetTop;
-
-        function myFunction() {
-            console.log(sticky)
-            if (window.pageYOffset + 100 >= sticky) {
-//            if (header >= sticky) {
-              navbar.classList.add("sticky");
-            }
-            else {
-              navbar.classList.remove("sticky");
-            }
-        }
-    </script>
-    
-    <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin chat code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 
@@ -90,7 +48,6 @@
       chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
-    <!-- Your SDK code -->
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -106,7 +63,7 @@
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
     
 </body>
 </html>

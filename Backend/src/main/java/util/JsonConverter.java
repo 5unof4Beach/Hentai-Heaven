@@ -48,7 +48,13 @@ public class JsonConverter {
     
     public JsonObject getJsonObject(){
         JsonParser parser = new JsonParser();
-        return  parser.parse(jsonString).getAsJsonObject();
+        return parser.parse(jsonString).getAsJsonObject();
     }
+
+    public String getJsonString() {
+        return jsonString;
+    }
+    
+    
     
 }

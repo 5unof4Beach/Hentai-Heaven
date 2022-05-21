@@ -24,7 +24,6 @@ public class ReadDao {
 
     private Connection conn = null;
     public ReadDao() {
-//        DatabaseHelper dh = new DatabaseHelper();
         DatabaseHelper dh = DatabaseHelper.getSingletonInstance();
         conn = dh.getConn();
         
