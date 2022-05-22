@@ -23,7 +23,7 @@ import model.Truyen;
  * @author suckm
  */
 @WebServlet(name = "SearchController", urlPatterns = {"/search"})
-public class SearchController extends HttpServlet {
+public class TimKiemController extends HttpServlet {
 
     String jsonResponse = null;
 
@@ -81,7 +81,7 @@ public class SearchController extends HttpServlet {
         try {
             response.sendRedirect(request.getContextPath() + "/index");
         } catch (IOException ex) {
-            Logger.getLogger(SearchController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TimKiemController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -91,7 +91,7 @@ public class SearchController extends HttpServlet {
         try {
             out = response.getWriter();
         } catch (IOException ex) {
-            Logger.getLogger(SearchController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TimKiemController.class.getName()).log(Level.SEVERE, null, ex);
         }
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");

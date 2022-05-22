@@ -48,12 +48,20 @@ public class yeuThichAPI extends HttpServlet {
     
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
+        YeuThichDao ytd = new YeuThichDao();
+        JsonConverter jc = new JsonConverter(req.getReader());
+        JSONObject obj = new JSONObject(jc.getJsonString());
+        String userName = obj.getString("name");
+        
+        ytd.addNewDanhSachYeuThichById(userName);
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        
         YeuThichDao ytd = new YeuThichDao();
         JsonConverter jc = new JsonConverter(req.getReader());
         JSONObject obj = new JSONObject(jc.getJsonString());
@@ -66,6 +74,11 @@ public class yeuThichAPI extends HttpServlet {
         
         System.out.println(userName);
         System.out.println(truyenObj.getString("id"));
+        
+        PrintWriter out = resp.getWriter();
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("application/json");
+        out.print("{\"mess\": \"Them Truyen Thanh Cong\"}");
         
     }
     

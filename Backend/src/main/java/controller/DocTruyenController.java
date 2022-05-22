@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "Readingpage", urlPatterns = {"/read"})
-public class ReadController extends HttpServlet {
+public class DocTruyenController extends HttpServlet {
     private Gson gson = new Gson();
     
     @Override

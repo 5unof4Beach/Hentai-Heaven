@@ -14,7 +14,6 @@ const sticky = navbar.offsetTop;
 function myFunction() {
     console.log(sticky)
     if (window.pageYOffset + 100 >= sticky) {
-//            if (header >= sticky) {
         navbar.classList.add("sticky");
     } else {
         navbar.classList.remove("sticky");
@@ -25,19 +24,18 @@ yeuThich.onclick = ()=>{themVaoYeuThich()}
 
 function themVaoYeuThich() {
     const userName = document.querySelector("#user");
-    
-    const idTruyen = document.querySelector("img");
+    const thongTin = document.querySelector("#thong-tin");
     const tenTruyen = document.querySelector("#ten-truyen");
     const nxb = document.querySelector("#nxb");
     
     const mess = document.querySelector("#thong-bao");
     
 
-    console.log('pressed')
-    console.log(userName.value)
-    console.log(idTruyen.value)
-    console.log(tenTruyen.textContent)
-    console.log(nxb.value)
+    console.log('Them Truyen Vao Danh Sach Yeu Thich')
+    console.log(userName.dataset.username)
+    console.log(thongTin.dataset.idtruyen)
+    console.log(tenTruyen.dataset.ten)
+    console.log(nxb.dataset.nxb)
     
     let options = {
         method: 'PUT',
@@ -46,22 +44,24 @@ function themVaoYeuThich() {
         },
         body: JSON.stringify(
         {
-            name: userName.textContent,
+            name: userName.dataset.username,
             truyen:
             {
-                id: idTruyen.value,
-                ten: tenTruyen.value,
-                nxb: nxb.value
+                id: thongTin.dataset.idtruyen,
+                ten: tenTruyen.dataset.ten,
+                nxb: nxb.dataset.nxb
             }
-        })
+        }
+        )
     }
     
-//    fetch('api-fav', options)
-//    .then(res => {
-//        return res.json()
-//    })
-//    .then(data => {
-//        mess.innerHTML = data.mess
-//        console.log(data)
-//    })
+    fetch('api-fav', options)
+    .then(res => {
+        console.log(res)
+            return res.json()
+        })
+        .then(data => {
+            mess.innerHTML = data.mess
+            console.log(data)
+        })
 }

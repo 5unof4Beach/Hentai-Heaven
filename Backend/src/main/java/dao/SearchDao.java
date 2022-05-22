@@ -4,7 +4,7 @@
  */
 package dao;
 
-import controller.ReadController;
+import controller.DocTruyenController;
 import util.DatabaseHelper;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,7 +37,7 @@ public class SearchDao {
             ps.setString(1, "%" + content + "%");
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Ko co result set");
         }
         
@@ -49,7 +49,7 @@ public class SearchDao {
                 ts.add(t);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return ts;
@@ -65,7 +65,7 @@ public class SearchDao {
             ps.setString(1, idTheLoai);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Ko co result set");
         }
         
@@ -77,7 +77,7 @@ public class SearchDao {
                 ts.add(t);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ts;
     }
@@ -91,7 +91,7 @@ public class SearchDao {
             ps.setInt(2, 10*page);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Ko co truyen");
         }
         
@@ -103,7 +103,7 @@ public class SearchDao {
                 ts.add(t);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ts;
     }
@@ -117,7 +117,7 @@ public class SearchDao {
             PreparedStatement ps = con.prepareStatement(query);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex);
         }
         try {

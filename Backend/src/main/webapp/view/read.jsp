@@ -15,16 +15,17 @@
     <%@include file="toInclude/header.jsp" %>
     <div id="khung-bao-dau">
         <div id="anh-bia">
-            <img  src="img/Thumbnails/${truyen.id}.jpg" value="${truyen.id}" alt="Anh bia"/>
+            <img  src="img/Thumbnails/${truyen.id}.jpg" alt="Anh bia"/>
         </div>
         
-            <div class="thong-tin">
-                <div id="ten-truyen" value="${truyen.ten}">Tên Truyen: ${truyen.ten}</div>
-                <div id="nxb" value="${truyen.nxb}">Nha xuat ban: ${truyen.nxb}</div>
+            <div class="thong-tin" id="thong-tin" data-idtruyen="${truyen.id}">
+                <div id="ten-truyen" data-ten="${truyen.ten}">Tên Truyen: ${truyen.ten}</div>
+                <div id="nxb" data-nxb="${truyen.nxb}">Nha xuat ban: ${truyen.nxb}</div>
                 <div>Danh gia: ${truyen.rating}</div>
                 <button id="yeu-thich">
                     Thêm Vào Yêu Thích
                 </button>
+                <h2 id="thong-bao"></h2>
             </div>
         
         </div>

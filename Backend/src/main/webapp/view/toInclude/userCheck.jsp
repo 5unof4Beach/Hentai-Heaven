@@ -16,18 +16,18 @@
 <%
     if (!loggedIn) {
 %>
-<a class = 'link' href='dangnhap' >LogIn</a>
+<a class = 'link' href='dangnhap' >Login</a>
 <a class = 'link' href='dangky' >Signup</a>
 <%
 } 
     else {
     u = (User) session.getAttribute("user");
 %>
-    <div class = 'link' id="user" value="<%out.print(userCookie.getValue());%>">
+    <div class = 'link' id="user" data-username="<%out.print(userCookie.getValue());%>">
     <div id = "user-option"> 
         <ul>
             <li><a class = 'link' href="thongtin">Thong Tin</a></li>
-            <li>3</li>
+            <li><a class = 'link' href="yeuthich">Yeu Thich</a></li>
             <li>4</li>
             <li>5</li>
             <li><a class = 'link' href="logout">Dang Xuat</a></li>

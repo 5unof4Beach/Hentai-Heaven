@@ -4,7 +4,7 @@
  */
 package dao;
 
-import controller.ReadController;
+import controller.DocTruyenController;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -97,7 +97,7 @@ public class TruyenDao {
             ps.setInt(2, 10 * page);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Ko co truyen");
         }
 
@@ -108,7 +108,7 @@ public class TruyenDao {
                 ts.add(t);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return ts;
     }
@@ -120,7 +120,7 @@ public class TruyenDao {
             PreparedStatement ps = con.prepareStatement(query);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Ko co truyen");
         }
 
@@ -131,7 +131,7 @@ public class TruyenDao {
                 tls.add(tl);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return tls;
     }
@@ -145,7 +145,7 @@ public class TruyenDao {
             PreparedStatement ps = con.prepareStatement(query);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex);
         }
         try {

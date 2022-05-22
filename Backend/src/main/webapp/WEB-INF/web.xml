@@ -23,6 +23,15 @@
         <url-pattern>/thongtin</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>yeuthich</servlet-name>
+        <jsp-file>/view/danhSachYeuThich.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>yeuthich</servlet-name>
+        <url-pattern>/yeuthich</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>

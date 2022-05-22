@@ -46,7 +46,7 @@ public class UserDao {
         return null;
     }
     
-    public String signup(String Ho, String Ten, String hashedPassword, String username){
+    public Boolean signup(String Ho, String Ten, String hashedPassword, String username){
         String sql = "INSERT INTO [dbo].[user]([firstName],[lastName],[password],[username])VALUES(?, ?, ?, ?)";
         if(username.equals("")) return null;
         try {
@@ -56,13 +56,13 @@ public class UserDao {
             ps.setString(3, hashedPassword);
             ps.setString(4, username);
             ps.execute();
-            return "sucessfully";
+            return true;
         } catch (Exception e) {
             System.err.println(e);
             System.out.println("No result for user found");
         }
         
-        return null;
+        return false;
     }
 
 }

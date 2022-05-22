@@ -23,7 +23,7 @@ import model.User;
  * @author suckm
  */
 @WebServlet(name = "LoginController", urlPatterns = {"/login"})
-public class LoginController extends HttpServlet {
+public class DangNhapController extends HttpServlet {
     
     final int ADMIN = 1;
     final int USER = 0;

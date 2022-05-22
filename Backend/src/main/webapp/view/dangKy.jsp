@@ -31,7 +31,7 @@
                 <p>
                     <input id="password" type="Password" placeholder="Mật khẩu" name = "password">
                 </p>
-                <button type="submit">Đăng ký</button>
+                <button id="dang-ky" type="submit">Đăng ký</button>
             </form>
             <p>${mess}</p>
         </div>

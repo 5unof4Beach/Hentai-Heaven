@@ -5,7 +5,9 @@
 package controller;
 
 import com.google.common.hash.Hashing;
+import controller.api.yeuThichAPI;
 import dao.UserDao;
+import dao.YeuThichDao;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
@@ -19,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author suckm
  */
 @WebServlet(name = "SignupController", urlPatterns = {"/signup"})
-public class SignupController extends HttpServlet {
+public class DangKyController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,13 +31,14 @@ public class SignupController extends HttpServlet {
         String pass = request.getParameter("password");
         
         UserDao ud = new UserDao();
-        String state = ud.signup(ho, ten, encryptPassword(pass), username);
-        if(state != null){
+        Boolean successfull = ud.signup(ho, ten, encryptPassword(pass), username);
+        if(successfull){
             response.sendRedirect("home");
+            new YeuThichDao().addNewDanhSachYeuThichById(username);
         }
         else{
             request.setAttribute("mess", "Lam on nhap lai");
-            request.getRequestDispatcher("jsp/dangKy.jsp").forward(request, response);
+            request.getRequestDispatcher("dangky").forward(request, response);
         }
     }
     
