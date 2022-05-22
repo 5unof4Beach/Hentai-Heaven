@@ -37,6 +37,8 @@ async function layTruyen(){
 }
 
 function display(json){
+    console.log(json)
+    
     if(json.length == 0){
         ketQua.innerHTML = '<h1>Khong co ket qua</h1>'
         return;

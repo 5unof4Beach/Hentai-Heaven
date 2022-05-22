@@ -264,7 +264,7 @@ a.link-the-loai:active{
 }
 
 .truyen:hover{
-    background-color: var(--green);
+    background-color: rgba(189,147,249,0.7);
     box-shadow: 5px 5px 8px 7px rgb(0, 0, 0, 0.85);
 }
 

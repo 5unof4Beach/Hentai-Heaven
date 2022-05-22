@@ -10,10 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-            <link rel='stylesheet' type='text/css' media='screen' href="${pageContext.request.contextPath}/css/homepage.css">
+        <link rel='stylesheet' type='text/css' media='screen' href="${pageContext.request.contextPath}/css/yeuThich.css">
     </head>
     <body>
         <%@include file="toInclude/header.jsp" %>
-        <h1>Hello World!</h1>
+        <div id="danh-muc-truyen">
+        <!--<div id="danh-muc">-->
+            
+        </div>
     </body>
+    <script src="${pageContext.request.contextPath}/js/yeuThich.js"></script>
 </html>

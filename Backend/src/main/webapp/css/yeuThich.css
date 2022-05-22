@@ -1,5 +1,6 @@
 @import url(theme.css);
 
+
 *, ::after, ::before{
     box-sizing: border-box;
     margin: 0;
@@ -7,10 +8,48 @@
     font-family: Consolas,"courier new";
 }
 
-/* html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-} */
+div.khung-anh{
+    width: 100%; 
+    height: 400px; 
+    justify-content: space-around;
+    background-color: rgba(230,159,157,0.1);
+    align-items: center;
+    border-radius: 5px;
+}
+
+.truyen{
+    /*width: 50%;*/
+    height: 500px;
+    margin: 0 20px 0 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    overflow: auto;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+.truyen:hover{
+    background-color: rgba(230,159,157,0.3);
+    box-shadow: 5px 5px 8px 7px rgb(0, 0, 0, 0.85);
+}
+
+img{
+    width: calc(340px*3/4); 
+    height: 340px; 
+    border-radius: 5px;
+}
+
+p{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    /*width: 100%;*/ 
+    justify-content: center;
+}
 
 @media all and (max-width: 800px) {
     #logo{
@@ -239,64 +278,5 @@ a.link-the-loai:active{
     border: none;
 }
 
-#quang-cao{
-    border: 1px solid black;
-    overflow: auto;
-    justify-content: center;
-}
 
-.truyen{
-    height: 340px;
-    width: 300px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    overflow: auto;
-    /*background-image: url('../img/meandmina.png');*/
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    text-decoration: none;
-    transition: 0.1s;
-}
 
-.truyen:hover{
-    background-color: rgba(189,147,249,0.7);
-    box-shadow: 5px 5px 8px 7px rgb(0, 0, 0, 0.85);
-}
-
-.truyen a{
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-#chuyen-trang{
-    display: flex;
-    height: 50px;
-    width: 100%;
-    /* border: 1px solid red ; */
-    margin: 3px;
-    justify-content: center;
-    align-items: center;
-}
-
-#chuyen-trang ul{
-    display: flex;
-    justify-content: center;
-}
-
-#chuyen-trang .doi-so-trang a{
-    /* border: 1px solid #373737; */
-    color: var(--purple);
-    margin: 2px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-#chuyen-trang .doi-so-trang a:hover{
-    color: var(--green);
-}
