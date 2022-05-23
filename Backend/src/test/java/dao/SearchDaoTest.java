@@ -50,8 +50,11 @@ public class SearchDaoTest {
         expResult.add(new Truyen("DRM2", "Doremon tap 2", "Dong Kim", 0));
 
         Vector<Truyen> result = instance.searchByTen(nd);
-        boolean testResult = result.firstElement().toString().equals(expResult.firstElement().toString());
-        assertTrue("Truyen nay co ton tai", testResult);
+        String results = result.toString();
+        String exp = expResult.toString();
+        boolean testResult = results.contains(exp);
+//        boolean testResult = result.firstElement().toString().equals(expResult.firstElement().toString());
+assertTrue("Truyen nay co ton tai", testResult);
     }
 
     /**
@@ -59,14 +62,19 @@ public class SearchDaoTest {
      */
     @Test
     public void testSearchByTheLoai() {
-        System.out.println("searchByTheLoai");
-        String idTheLoai = "";
+        String idTheLoai = "tnl";
         SearchDao instance = new SearchDao();
-        Vector<Truyen> expResult = null;
+        Vector<Truyen> expResult = new Vector<>();
+        expResult.add(new Truyen("DRM1", "Doremon tap 1", "Kim Dong", "tnl"));
+        expResult.add(new Truyen("50SOG01", "50 Sac Thai", "Vintage Books", "tnl"));
         Vector<Truyen> result = instance.searchByTheLoai(idTheLoai);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String results = result.toString();
+        String expResult1 = expResult.get(0).toString();
+        boolean b1 = results.contains(expResult1);
+        assertTrue("Truyen 1 khong ton tai", b1);
+        String expResult2= expResult.get(0).toString();
+        boolean b2 = results.contains(expResult2);
+        assertTrue("Truyen 2 khong ton tai", b2);
     }
 
     /**
