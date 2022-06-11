@@ -38,7 +38,7 @@ public class DatabaseHelper {
     private DatabaseHelper() {
         loadDriver();
         connnect();
-        connectMongoDB();
+//        connectMongoDB();
         statementCreate();
 
         if (conn != null) {
@@ -70,7 +70,7 @@ public class DatabaseHelper {
         try {
             String[] IPS = {"10.147.17.50", "localhost:1433"};
 
-            String IP = IPS[1];
+            String IP = IPS[0];
             String dbURL = "jdbc:sqlserver://" + IP + ";databaseName=BTLWEB;encrypt=false";
             String usrname = "sa";
             String pw = "1";
@@ -90,7 +90,9 @@ public class DatabaseHelper {
     }
     
     public void connectMongoDB(){
-        String uri = "mongodb://localhost:27017";
+        String[] IPS = {"10.147.17.50", "localhost:27017"};
+        String IP = IPS[1];
+        String uri = "mongodb://" + IP;
         
         MongoClient mongoClient = null;
         

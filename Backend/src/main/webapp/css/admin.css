@@ -41,7 +41,7 @@ select{
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    
+
 }
 
 #xoa-truyen{
@@ -52,7 +52,7 @@ select{
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    
+
 }
 
 button#them{
@@ -61,23 +61,29 @@ button#them{
 
 button#sua,#xoa{
     height: 30px;
-    
+
 }
 
 #container{
     height: 100%;
     widows: 100%;
     flex-wrap: wrap;
-/*    flex-direction: column;*/
+    /*    flex-direction: column;*/
     align-items: flex-start;
     justify-content: center;
 
     padding-top: 50px;
 }
 
-#container div:nth-of-type(1){flex-grow: 2;}
-#container div:nth-of-type(2){flex-grow: 1;}
-#container div:nth-of-type(3){flex-grow: 1;}
+#container div:nth-of-type(1){
+    flex-grow: 2;
+}
+#container div:nth-of-type(2){
+    flex-grow: 1;
+}
+#container div:nth-of-type(3){
+    flex-grow: 1;
+}
 
 p{
     width: 800px;
@@ -91,10 +97,43 @@ h1{
 
 button{
     width: 200px;
-    
+
 }
 
 .thong-bao{
     font-size: 30px;
     color: pink;
+}
+
+#tai-truyen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border: 1px solid black;*/
+    margin: 10px;
+    height: fit-content;
+    width: 500px;
+}
+
+#tai-truyen h1{
+    margin: 0 10px 0 10px ;
+
+}
+
+#tai-truyen p{
+    font-size: 20px;
+    width: fit-content;
+
+}
+
+#upload{
+    width: fit-content;
+
+}
+
+#file{
+    border: 1px solid black;
+    margin: 10px 0 10px 0;
+    width: fit-content;
+    color: white;
 }

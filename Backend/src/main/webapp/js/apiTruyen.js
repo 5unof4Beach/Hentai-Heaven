@@ -17,8 +17,8 @@ function themTruyen() {
     let idTheLoai = theLoai.options[theLoai.selectedIndex].value
 
 
-    console.log('pressed')
-    console.log(idTheLoai)
+    console.log('pressed');
+    console.log(idTheLoai);
     
     let options = {
         method: 'POST',
@@ -31,7 +31,7 @@ function themTruyen() {
             nxb: nxb.value,
             theLoai: idTheLoai
         })
-    }
+    };
     
     fetch('api-truyen', options)
     .then(res => {

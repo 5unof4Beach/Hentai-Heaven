@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id = 'container'>
-            
+
             <div id="them-truyen">
                 <h1>Them Truyen</h1>
                 <input id ="id" placeholder="ID" value="DRM1">
@@ -26,10 +26,20 @@
                     <option value="tt">Truyen Tranh</option>
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
+
+                <div id='tai-truyen'>
+                    <h1>Upload File Truyen</h1>
+                    <input id='file' type='file' name='truyen'/>
+                    <!--<button id="upload">upload</button>-->
+
+                    <p id = 'mess'></p>
+                    <p id = 'mess2'></p>
+                </div>
+                
                 <button id = 'them'>Them</button>
                 <h1 class ='thong-bao' id = "thong-bao"></h1>
             </div>
-        
+
             <div id="sua-truyen">
                 <h1>Sua Truyen</h1>
                 <input id ="id-sua" placeholder="ID" value="DRM1">
@@ -39,10 +49,11 @@
                     <option value="tt">Truyen Tranh</option>
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
+
                 <button id = 'sua'>Xac Nhan</button>
                 <h2 class ='thong-bao' id = "thong-bao2"></h2>
             </div>
-            
+
             <div id="xoa-truyen">
                 <h1>Xoa Truyen</h1>
                 <input id ="id-xoa" placeholder="ID" value="DRM1">
@@ -50,10 +61,11 @@
                 <h1 class ='thong-bao' id = "thong-bao3"></h1>
             </div>
         </div>
-        
-        
+
+
     </body>
     <script src="${pageContext.request.contextPath}/js/apiTruyen.js"></script>
-    
+    <script src="${pageContext.request.contextPath}/js/truyenUpload.js"></script>
+
 
 </html>

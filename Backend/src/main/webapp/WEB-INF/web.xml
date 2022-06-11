@@ -32,6 +32,15 @@
         <url-pattern>/yeuthich</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>upload</servlet-name>
+        <jsp-file>/view/uploadTruyen.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upload</servlet-name>
+        <url-pattern>/uploadTruyen</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -83,7 +92,7 @@
         <welcome-file>home</welcome-file>
     </welcome-file-list>
     
-    <security-constraint>
+<!--    <security-constraint>
         <web-resource-collection>
             <web-resource-name>securedapp</web-resource-name>
             <url-pattern>/*</url-pattern>
@@ -91,5 +100,5 @@
         <user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
-    </security-constraint>
+    </security-constraint>-->
 </web-app>

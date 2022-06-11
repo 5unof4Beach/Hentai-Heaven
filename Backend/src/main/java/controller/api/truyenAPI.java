@@ -5,7 +5,6 @@
 package controller.api;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import dao.SearchDao;
 import dao.TruyenDao;
@@ -70,6 +69,8 @@ public class truyenAPI extends HttpServlet {
         Truyen t = (Truyen) jc.convertJsonToObject(new Truyen());
         TruyenDao td = new TruyenDao();
         Boolean successful = td.themTruyen(t);
+        
+        request.getSession().setAttribute("idThemTruyen", t.getId());
         
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
