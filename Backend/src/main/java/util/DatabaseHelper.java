@@ -38,7 +38,7 @@ public class DatabaseHelper {
     private DatabaseHelper() {
         loadDriver();
         connnect();
-//        connectMongoDB();
+        connectMongoDB();
         statementCreate();
 
         if (conn != null) {

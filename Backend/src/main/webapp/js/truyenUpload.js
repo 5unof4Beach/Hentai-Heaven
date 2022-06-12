@@ -1,13 +1,18 @@
 
 
 const truyenFiles = document.querySelector('#file');
+const anhFiles = document.querySelector('#file-thumb');
 const thongBao = document.querySelector('#mess');
 const thongBaoTraVe = document.querySelector('#mess2');
-//const upload = document.querySelector('#upload');
+const thongBaoThumb = document.querySelector('#mess3');
+const thongBaoTraVeThumb = document.querySelector('#mess4');
 const upload = document.querySelector('#them');
 
 truyenFiles.addEventListener('change', () => {
     uploadTruyen(truyenFiles.files[0]);
+});
+anhFiles.addEventListener('change', () => {
+    uploadThumb(anhFiles.files[0]);
 });
 
 const uploadTruyen = (file) => {
@@ -17,19 +22,14 @@ const uploadTruyen = (file) => {
         thongBao.textContent = 'lam on chon file pdf';
         truyenFiles.value = '';
         return;
-    } else {
-        thongBao.textContent = file.type;
     }
 
     thongBao.textContent = file.type;
 
-    console.log(file);
-
     const options = {
         method: 'POST',
         headers: {
-//            'Content-Type': 'application/pdf'
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/pdf'
         },
         body: file
     };
@@ -44,6 +44,42 @@ const uploadTruyen = (file) => {
                 })
                 .then(data => {
                     thongBaoTraVe.textContent = data.mess;
+                    console.log(data);
+                })
+    });
+
+}
+
+const uploadThumb = (file) => {
+    console.log(file.type === 'image/jpeg');
+    if (!(file.type === 'image/jpeg')) {
+        console.log('in ra thong bao');
+        thongBaoThumb.textContent = 'lam on chon file jpg';
+        anhFiles.value = '';
+        return;
+    }
+
+    thongBaoThumb.textContent = file.type;
+
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'image/jpeg'
+        },
+        body: file
+    };
+
+    console.log('chuan bi fetch anh thumb');
+
+    upload.addEventListener('click', () => {
+        console.log('pressed');
+        fetch('uploadThumb', options)
+                .then(res => {
+                    return res.json()
+                })
+                .then(data => {
+                    thongBaoTraVeThumb.textContent = data.mess;
                     console.log(data);
                 })
     });

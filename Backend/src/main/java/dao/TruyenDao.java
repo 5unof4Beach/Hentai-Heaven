@@ -89,12 +89,14 @@ public class TruyenDao {
     }
 
     public Vector<Truyen> getTruyen(int soLuong, int page) {
-        String query = "select * from dbo.truyen where stt > ? and stt <= ?";
+        String query = "select * from dbo.truyen\n"
+                + "order by dbo.truyen.stt asc\n"
+                + "OFFSET ? ROWS \n"
+                + "FETCH NEXT 10 ROWS ONLY";
         ResultSet rs = null;
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, 10 * (page - 1));
-            ps.setInt(2, 10 * page);
             rs = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(DocTruyenController.class.getName()).log(Level.SEVERE, null, ex);
@@ -112,7 +114,7 @@ public class TruyenDao {
         }
         return ts;
     }
-    
+
     public Vector<TheLoai> getTheLoai() {
         String query = "select * from dbo.theloai";
         ResultSet rs = null;

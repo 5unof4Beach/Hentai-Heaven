@@ -27,13 +27,21 @@
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
 
-                <div id='tai-truyen'>
+                <div id='tai-truyen' class='tai-file'>
                     <h1>Upload File Truyen</h1>
-                    <input id='file' type='file' name='truyen'/>
+                    <input id='file' type='file'/>
                     <!--<button id="upload">upload</button>-->
 
                     <p id = 'mess'></p>
                     <p id = 'mess2'></p>
+                </div>
+                
+                <div id='tai-truyen' class='tai-file'>
+                    <h1>Upload Anh Thumb</h1>
+                    <input id='file-thumb' type='file'/>
+
+                    <p id = 'mess3'></p>
+                    <p id = 'mess4'></p>
                 </div>
                 
                 <button id = 'them'>Them</button>

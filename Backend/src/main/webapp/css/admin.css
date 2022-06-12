@@ -105,7 +105,7 @@ button{
     color: pink;
 }
 
-#tai-truyen{
+.tai-file{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,12 +115,12 @@ button{
     width: 500px;
 }
 
-#tai-truyen h1{
+.tai-file h1{
     margin: 0 10px 0 10px ;
 
 }
 
-#tai-truyen p{
+.tai-file p{
     font-size: 20px;
     width: fit-content;
 
@@ -132,7 +132,14 @@ button{
 }
 
 #file{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    margin: 10px 0 10px 0;
+    width: fit-content;
+    color: white;
+}
+
+#file-thumb{
+    /*border: 1px solid black;*/
     margin: 10px 0 10px 0;
     width: fit-content;
     color: white;

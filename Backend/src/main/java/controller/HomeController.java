@@ -39,7 +39,12 @@ public class HomeController extends HttpServlet {
         Integer amount = 0;
         Vector<Truyen> ts = new Vector<>();
         Vector<TheLoai> tls = new Vector<>();
-        Hashtable<String, Truyen> truyenHM = new Hashtable<>();
+        
+        Hashtable<String, Truyen> truyenHM = (Hashtable<String, Truyen>) request.getSession().getAttribute("truyenHM");
+        
+        if(truyenHM == null){
+            truyenHM = new Hashtable<>();
+        }
 
         try {
             page = Integer.parseInt(request.getParameter("page"));
