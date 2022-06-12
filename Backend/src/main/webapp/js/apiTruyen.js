@@ -1,20 +1,25 @@
 
-const them = document.querySelector("#them")
-const sua = document.querySelector("#sua")
-const xoa = document.querySelector("#xoa")
+const them = document.querySelector("#them");
+const sua = document.querySelector("#sua");
+const xoa = document.querySelector("#xoa");
+const xoaFile = document.querySelector("#xoa-truyen #xoa-file");
+const xoaThumb = document.querySelector("#xoa-truyen #xoa-thumb");
 
-them.onclick = ()=>{themTruyen()}
-sua.onclick = ()=>(suaTruyen())
-xoa.onclick = ()=>(xoaTruyen())
+them.onclick = ()=>{themTruyen()};
+sua.onclick = ()=>{suaTruyen()};
+
+xoa.onclick = ()=>{xoaTruyen()};
+xoaFile.onclick = () =>{xoaFileTruyen()};
+xoaThumb.onclick = () =>{xoaAnhThumbTruyen()};
 
 function themTruyen() {
-    const id = document.getElementById("id")
-    const ten = document.getElementById("ten")
-    const nxb = document.getElementById("nxb")
-    const mess = document.querySelector("#thong-bao")
-    const theLoai = document.querySelector("#them-the-loai")
+    const id = document.getElementById("id");
+    const ten = document.getElementById("ten");
+    const nxb = document.getElementById("nxb");
+    const mess = document.querySelector("#thong-bao");
+    const theLoai = document.querySelector("#them-the-loai");
     
-    let idTheLoai = theLoai.options[theLoai.selectedIndex].value
+    let idTheLoai = theLoai.options[theLoai.selectedIndex].value;
 
 
     console.log('pressed');
@@ -35,25 +40,25 @@ function themTruyen() {
     
     fetch('api-truyen', options)
     .then(res => {
-        return res.json()
+        return res.json();
     })
     .then(data => {
-        mess.innerHTML = data.mess
-        console.log(data)
+        mess.innerHTML = data.mess;
+        console.log(data);
     })
 }
 
 function suaTruyen() {
-    const id = document.getElementById("id-sua")
-    const ten = document.getElementById("ten-sua")
-    const nxb = document.getElementById("nxb-sua")
-    const mess = document.querySelector("#thong-bao2")
-    const theLoai = document.querySelector("#sua-the-loai")
+    const id = document.getElementById("id-sua");
+    const ten = document.getElementById("ten-sua");
+    const nxb = document.getElementById("nxb-sua");
+    const mess = document.querySelector("#thong-bao2");
+    const theLoai = document.querySelector("#sua-the-loai");
     
-    let idTheLoai = theLoai.options[theLoai.selectedIndex].value
+    let idTheLoai = theLoai.options[theLoai.selectedIndex].value;
     
-    console.log('pressed')
-    console.log(idTheLoai)
+    console.log('pressed');
+    console.log(idTheLoai);
     
     let options = {
         method: 'PUT',
@@ -73,14 +78,14 @@ function suaTruyen() {
         return res.json()
     })
     .then(data => {
-        mess.innerHTML = data.mess
-        console.log(data)
+        mess.innerHTML = data.mess;
+        console.log(data);
     })
 }
 
 function xoaTruyen() {
-    const id = document.getElementById("id-xoa")
-    const mess = document.querySelector("#thong-bao3")
+    const id = document.getElementById("id-xoa");
+    const mess = document.querySelector("#thong-bao3");
     
     let options = {
         method: 'DELETE',
@@ -88,7 +93,7 @@ function xoaTruyen() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            id: id.value,
+            id: id.value
         })
     }
     
@@ -102,3 +107,55 @@ function xoaTruyen() {
         console.log(data)
     })
 }
+
+function xoaFileTruyen() {
+    const id = document.querySelector("#xoa-truyen #id-xoa-file");
+    const mess = document.querySelector("#xoa-truyen h1:nth-child(8)");
+    
+    let options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: id.value
+        })
+    }
+    
+    console.log('pressed');
+    fetch('upload', options)
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        mess.textContent = data.mess
+        console.log(data)
+    })
+}
+
+function xoaAnhThumbTruyen() {
+    const id = document.querySelector("#xoa-truyen #id-xoa-thumb")
+    const mess = document.querySelector("#xoa-truyen h1:nth-child(12)");
+    
+    let options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: id.value
+        })
+    }
+    
+    console.log('pressed');
+    fetch('uploadThumb', options)
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        mess.textContent = data.mess;
+        console.log(data);
+    })
+}
+
+

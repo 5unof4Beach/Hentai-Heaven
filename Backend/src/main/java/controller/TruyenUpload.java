@@ -41,12 +41,12 @@ public class TruyenUpload extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        String path = "C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\";
         InputStream truyen = request.getInputStream();
         
         String idTruyen = "Truyen Moi Them";
         idTruyen = (String) request.getSession().getAttribute("idThemTruyen");
-        File f = new File("C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\" + idTruyen + ".pdf");
+        File f = new File(path + idTruyen + ".pdf");
         
         FileOutputStream out = new FileOutputStream(f);
         
@@ -55,6 +55,26 @@ public class TruyenUpload extends HttpServlet {
         PrintWriter printOut = response.getWriter();
         response.setContentType("application/json");
         printOut.print("{\"mess\": \"Upload File Truyen Thanh Cong\"}");
+    }
+    
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse response) throws IOException {
+        String path = "C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\";
+
+        JsonConverter jc = new JsonConverter(req.getReader());
+        JsonObject jo = jc.getJsonObject();
+        String idTruyenXoa = jo.get("id").getAsString();
+
+        PrintWriter printOut = response.getWriter();
+        response.setContentType("application/json");
+
+        File fileTruyen = new File(path + idTruyenXoa + ".pdf");
+        if (fileTruyen.delete()) {
+            printOut.print("{\"mess\": \"Xoa File Truyen Thanh Cong\"}");
+        }
+        else{
+            printOut.print("{\"mess\": \"Xoa File Truyen Khong Thanh Cong\"}");
+        }
     }
     
     @Override

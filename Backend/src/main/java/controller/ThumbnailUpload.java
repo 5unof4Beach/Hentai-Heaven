@@ -41,28 +41,47 @@ public class ThumbnailUpload extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         InputStream truyen = request.getInputStream();
-        
+
         String idTruyen = "Truyen Moi Them";
         idTruyen = (String) request.getSession().getAttribute("idThemTruyen");
         String path = "F:\\Hentai-Heaven\\Backend\\src\\main\\webapp\\img\\Thumbnails\\";
 //        String path = "../../img/Thumbnails";
         File f = new File(path + idTruyen + ".jpg");
-        
+
         FileOutputStream out = new FileOutputStream(f);
-        
+
         truyen.transferTo(out);
 
         PrintWriter printOut = response.getWriter();
         response.setContentType("application/json");
         printOut.print("{\"mess\": \"Upload File Anh Thumb Thanh Cong\"}");
     }
-    
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse response) throws IOException {
+        String path = "F:\\Hentai-Heaven\\Backend\\src\\main\\webapp\\img\\Thumbnails\\";
+
+        JsonConverter jc = new JsonConverter(req.getReader());
+        JsonObject jo = jc.getJsonObject();
+        String idTruyenXoa = jo.get("id").getAsString();
+
+        PrintWriter printOut = response.getWriter();
+        response.setContentType("application/json");
+
+        File fileTruyen = new File(path + idTruyenXoa + ".jpg");
+        if (fileTruyen.delete()) {
+            printOut.print("{\"mess\": \"Xoa File Anh Thumb Thanh Cong\"}");
+        }
+        else{
+            printOut.print("{\"mess\": \"Xoa File Anh Thumb Khong Thanh Cong\"}");
+        }
+    }
+
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 
 }
