@@ -140,7 +140,7 @@ function xoaTruyen() {
 
 function xoaFileTruyen() {
     const id = document.querySelector("#xoa-truyen #id-xoa-file");
-    const mess = document.querySelector("#xoa-truyen h1:nth-child(8)");
+    const mess = document.querySelector("#xoa-truyen :nth-child(8)");
 
     let options = {
         method: 'DELETE',
@@ -165,7 +165,7 @@ function xoaFileTruyen() {
 
 function xoaAnhThumbTruyen() {
     const id = document.querySelector("#xoa-truyen #id-xoa-thumb")
-    const mess = document.querySelector("#xoa-truyen h1:nth-child(12)");
+    const mess = document.querySelector("#xoa-truyen :nth-child(12)");
 
     let options = {
         method: 'DELETE',
@@ -239,13 +239,7 @@ const uploadThumbCheck = (file) => {
 
     thongBaoThumb.textContent = file.type;
 
-
-
-
     console.log('chuan bi fetch anh thumb');
-
-
-
 }
 
 taiTruyenLen = (file) => {

@@ -80,12 +80,6 @@ button#them{
     flex-grow: 1;
 }
 
-p{
-    width: 800px;
-    font-size: 40px;
-    color: white;
-}
-
 h1{
     color: white;
 }
@@ -96,7 +90,7 @@ button{
 }
 
 .thong-bao{
-    font-size: 30px;
+    font-size: 20px;
     color: pink;
 }
 
@@ -112,12 +106,6 @@ button{
 
 .tai-file h1{
     margin: 0 10px 0 10px ;
-
-}
-
-.tai-file p{
-    font-size: 20px;
-    width: fit-content;
 
 }
 
