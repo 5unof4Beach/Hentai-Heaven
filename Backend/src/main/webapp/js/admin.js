@@ -5,16 +5,26 @@ const xoa = document.querySelector("#xoa");
 const xoaFile = document.querySelector("#xoa-truyen #xoa-file");
 const xoaThumb = document.querySelector("#xoa-truyen #xoa-thumb");
 
-them.onclick = ()=>{
+them.onclick = () => {
     themTruyen();
-    taiAnhLen();
-    taiAnhLen();
+    if(truyenFiles.files.length != 0)
+        taiTruyenLen(truyenFiles.files[0]);
+    if(anhFiles.files.length != 0)
+        taiAnhLen(anhFiles.files[0]);
 };
-sua.onclick = ()=>{suaTruyen()};
+sua.onclick = () => {
+    suaTruyen()
+};
 
-xoa.onclick = ()=>{xoaTruyen()};
-xoaFile.onclick = () =>{xoaFileTruyen()};
-xoaThumb.onclick = () =>{xoaAnhThumbTruyen()};
+xoa.onclick = () => {
+    xoaTruyen()
+};
+xoaFile.onclick = () => {
+    xoaFileTruyen()
+};
+xoaThumb.onclick = () => {
+    xoaAnhThumbTruyen()
+};
 
 function themTruyen() {
     const id = document.getElementById("id");
@@ -22,13 +32,13 @@ function themTruyen() {
     const nxb = document.getElementById("nxb");
     const mess = document.querySelector("#thong-bao");
     const theLoai = document.querySelector("#them-the-loai");
-    
+
     let idTheLoai = theLoai.options[theLoai.selectedIndex].value;
 
 
     console.log('pressed');
     console.log(idTheLoai);
-    
+
     let options = {
         method: 'POST',
         headers: {
@@ -41,15 +51,15 @@ function themTruyen() {
             theLoai: idTheLoai
         })
     };
-    
+
     fetch('api-truyen', options)
-    .then(res => {
-        return res.json();
-    })
-    .then(data => {
-        mess.innerHTML = data.mess;
-        console.log(data);
-    })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                mess.innerHTML = data.mess;
+                console.log(data);
+            })
 }
 
 function suaTruyen() {
@@ -58,12 +68,12 @@ function suaTruyen() {
     const nxb = document.getElementById("nxb-sua");
     const mess = document.querySelector("#thong-bao2");
     const theLoai = document.querySelector("#sua-the-loai");
-    
+
     let idTheLoai = theLoai.options[theLoai.selectedIndex].value;
-    
+
     console.log('pressed');
     console.log(idTheLoai);
-    
+
     let options = {
         method: 'PUT',
         headers: {
@@ -76,21 +86,21 @@ function suaTruyen() {
             theLoai: idTheLoai
         })
     }
-    
+
     fetch('api-truyen', options)
-    .then(res => {
-        return res.json()
-    })
-    .then(data => {
-        mess.innerHTML = data.mess;
-        console.log(data);
-    })
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                mess.innerHTML = data.mess;
+                console.log(data);
+            })
 }
 
 function xoaTruyen() {
     const id = document.getElementById("id-xoa");
     const mess = document.querySelector("#thong-bao3");
-    
+
     let options = {
         method: 'DELETE',
         headers: {
@@ -100,22 +110,22 @@ function xoaTruyen() {
             id: id.value
         })
     }
-    
+
     console.log('pressed')
     fetch('api-truyen', options)
-    .then(res => {
-        return res.json()
-    })
-    .then(data => {
-        mess.innerHTML = data.mess
-        console.log(data)
-    })
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                mess.innerHTML = data.mess
+                console.log(data)
+            })
 }
 
 function xoaFileTruyen() {
     const id = document.querySelector("#xoa-truyen #id-xoa-file");
     const mess = document.querySelector("#xoa-truyen h1:nth-child(8)");
-    
+
     let options = {
         method: 'DELETE',
         headers: {
@@ -125,22 +135,22 @@ function xoaFileTruyen() {
             id: id.value
         })
     }
-    
+
     console.log('pressed');
     fetch('upload', options)
-    .then(res => {
-        return res.json()
-    })
-    .then(data => {
-        mess.textContent = data.mess
-        console.log(data)
-    })
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                mess.textContent = data.mess
+                console.log(data)
+            })
 }
 
 function xoaAnhThumbTruyen() {
     const id = document.querySelector("#xoa-truyen #id-xoa-thumb")
     const mess = document.querySelector("#xoa-truyen h1:nth-child(12)");
-    
+
     let options = {
         method: 'DELETE',
         headers: {
@@ -150,16 +160,16 @@ function xoaAnhThumbTruyen() {
             id: id.value
         })
     }
-    
+
     console.log('pressed');
     fetch('uploadThumb', options)
-    .then(res => {
-        return res.json();
-    })
-    .then(data => {
-        mess.textContent = data.mess;
-        console.log(data);
-    })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                mess.textContent = data.mess;
+                console.log(data);
+            })
 }
 
 
@@ -175,14 +185,16 @@ const thongBaoTraVeThumb = document.querySelector('#mess4');
 const upload = document.querySelector('#them');
 
 truyenFiles.addEventListener('change', () => {
-    uploadTruyen(truyenFiles.files[0]);
+    uploadTruyenCheck(truyenFiles.files[0]);
 });
+
 
 anhFiles.addEventListener('change', () => {
-    uploadThumb(anhFiles.files[0]);
+    uploadThumbCheck(anhFiles.files[0]);
 });
 
-const uploadTruyen = (file) => {
+
+const uploadTruyenCheck = (file) => {
     console.log(file.type === 'application/pdf');
     if (!(file.type === 'application/pdf')) {
         console.log('in ra thong bao');
@@ -193,31 +205,14 @@ const uploadTruyen = (file) => {
 
     thongBao.textContent = file.type;
 
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/pdf'
-        },
-        body: file
-    };
 
     console.log('chuan bi fetch');
 
-    taiTruyenLen = () => {
-        console.log('pressed');
-        fetch('upload', options)
-                .then(res => {
-                    return res.json()
-                })
-                .then(data => {
-                    thongBaoTraVe.textContent = data.mess;
-                    console.log(data);
-                })
-    }
+
 
 }
 
-const uploadThumb = (file) => {
+const uploadThumbCheck = (file) => {
     console.log(file.type === 'image/jpeg');
     if (!(file.type === 'image/jpeg')) {
         console.log('in ra thong bao');
@@ -229,6 +224,39 @@ const uploadThumb = (file) => {
     thongBaoThumb.textContent = file.type;
 
 
+    
+
+    console.log('chuan bi fetch anh thumb');
+
+
+
+}
+
+taiTruyenLen = (file) => {
+    
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/pdf'
+        },
+        body: file
+    };
+    
+    fetch('upload', options)
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                thongBaoTraVe.textContent = data.mess;
+                console.log(data);
+            })
+            .catch(err => {
+                thongBaoTraVe.textContent = err;
+            })
+}
+
+taiAnhLen = (file) => {
+    
     const options = {
         method: 'POST',
         headers: {
@@ -236,24 +264,13 @@ const uploadThumb = (file) => {
         },
         body: file
     };
-
-    console.log('chuan bi fetch anh thumb');
-
-    taiAnhLen = () => {
-        console.log('pressed');
-        fetch('uploadThumb', options)
-                .then(res => {
-                    return res.json()
-                })
-                .then(data => {
-                    thongBaoTraVeThumb.textContent = data.mess;
-                    console.log(data);
-                })
-    }
-
+    
+    fetch('uploadThumb', options)
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                thongBaoTraVeThumb.textContent = data.mess;
+                console.log(data);
+            })
 }
-
-
-
-
-

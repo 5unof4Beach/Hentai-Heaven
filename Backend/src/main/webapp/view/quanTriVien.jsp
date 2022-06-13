@@ -29,7 +29,7 @@
 
                 <div id='tai-truyen' class='tai-file'>
                     <h1>Upload File Truyen</h1>
-                    <input id='file' type='file'/>
+                    <input id='file' type='file' value=''/>
                     <!--<button id="upload">upload</button>-->
 
                     <p id = 'mess'></p>
@@ -38,7 +38,7 @@
                 
                 <div id='tai-truyen' class='tai-file'>
                     <h1>Upload Anh Thumb</h1>
-                    <input id='file-thumb' type='file'/>
+                    <input id='file-thumb' type='file' value=''/>
 
                     <p id = 'mess3'></p>
                     <p id = 'mess4'></p>
