@@ -59,12 +59,12 @@ body{
     z-index: 1;
 }
 
-footer{
+/*footer{
      position: fixed; 
     background: var(--background);
     height: 150px;
     bottom: 0; 
-}
+}*/
 
 .header h1{
     display: flex;  
@@ -299,4 +299,45 @@ a.link-the-loai:active{
 
 #chuyen-trang .doi-so-trang a:hover{
     color: var(--green);
+}
+
+.footer {
+    width: 100%;
+    margin: 0px auto;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer > #container-footer {
+    width: 100%;
+    border-top: white solid 2px;
+}
+
+.footer .tv {
+    width: 25%;
+    font-size: 25px;
+    line-height: 75px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .tv .chuc-vu {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.footer .tv .ten-tv {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--red);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
