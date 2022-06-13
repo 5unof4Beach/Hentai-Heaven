@@ -18,7 +18,6 @@ them.onclick = () => {
                     taiAnhLen(anhFiles.files[0]);
             })
 };
-
 sua.onclick = () => {
     suaTruyen()
 };
@@ -179,6 +178,10 @@ function xoaAnhThumbTruyen() {
             })
 }
 
+
+
+
+
 const truyenFiles = document.querySelector('#file');
 const anhFiles = document.querySelector('#file-thumb');
 const thongBao = document.querySelector('#mess');
@@ -208,6 +211,7 @@ const uploadTruyenCheck = (file) => {
 
     thongBao.textContent = file.type;
 
+
     console.log('chuan bi fetch');
 
 
@@ -225,6 +229,9 @@ const uploadThumbCheck = (file) => {
 
     thongBaoThumb.textContent = file.type;
 
+
+
+
     console.log('chuan bi fetch anh thumb');
 
 
@@ -232,6 +239,7 @@ const uploadThumbCheck = (file) => {
 }
 
 taiTruyenLen = (file) => {
+
     const options = {
         method: 'POST',
         headers: {
@@ -254,6 +262,7 @@ taiTruyenLen = (file) => {
 }
 
 taiAnhLen = (file) => {
+
     const options = {
         method: 'POST',
         headers: {
