@@ -6,11 +6,17 @@ const xoaFile = document.querySelector("#xoa-truyen #xoa-file");
 const xoaThumb = document.querySelector("#xoa-truyen #xoa-thumb");
 
 them.onclick = () => {
-    themTruyen();
-    if(truyenFiles.files.length != 0)
-        taiTruyenLen(truyenFiles.files[0]);
-    if(anhFiles.files.length != 0)
-        taiAnhLen(anhFiles.files[0]);
+    let themXong = themTruyen();
+
+    themXong
+            .then(() => {
+                if (truyenFiles.files.length != 0)
+                    taiTruyenLen(truyenFiles.files[0]);
+            })
+            .then(() => {
+                if (anhFiles.files.length != 0)
+                    taiAnhLen(anhFiles.files[0]);
+            })
 };
 sua.onclick = () => {
     suaTruyen()
@@ -52,7 +58,7 @@ function themTruyen() {
         })
     };
 
-    fetch('api-truyen', options)
+    return fetch('api-truyen', options)
             .then(res => {
                 return res.json();
             })
@@ -224,7 +230,7 @@ const uploadThumbCheck = (file) => {
     thongBaoThumb.textContent = file.type;
 
 
-    
+
 
     console.log('chuan bi fetch anh thumb');
 
@@ -233,7 +239,7 @@ const uploadThumbCheck = (file) => {
 }
 
 taiTruyenLen = (file) => {
-    
+
     const options = {
         method: 'POST',
         headers: {
@@ -241,7 +247,7 @@ taiTruyenLen = (file) => {
         },
         body: file
     };
-    
+
     fetch('upload', options)
             .then(res => {
                 return res.json()
@@ -256,7 +262,7 @@ taiTruyenLen = (file) => {
 }
 
 taiAnhLen = (file) => {
-    
+
     const options = {
         method: 'POST',
         headers: {
@@ -264,7 +270,7 @@ taiAnhLen = (file) => {
         },
         body: file
     };
-    
+
     fetch('uploadThumb', options)
             .then(res => {
                 return res.json()
