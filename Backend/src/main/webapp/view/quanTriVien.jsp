@@ -83,8 +83,7 @@
 
 
     </body>
-    <script src="${pageContext.request.contextPath}/js/apiTruyen.js"></script>
-    <script src="${pageContext.request.contextPath}/js/truyenUpload.js"></script>
+    <script src="${pageContext.request.contextPath}/js/admin.js"></script>
 
 
 </html>
