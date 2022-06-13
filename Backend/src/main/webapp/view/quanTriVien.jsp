@@ -44,7 +44,7 @@
                     <p id = 'mess4'></p>
                 </div>
                 
-                <button id = 'them'>Them</button>
+                <button id = 'them' class="xac-nhan">Them</button>
                 <h1 class ='thong-bao' id = "thong-bao"></h1>
             </div>
 
@@ -58,24 +58,24 @@
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
 
-                <button id = 'sua'>Xac Nhan</button>
+                <button id = 'sua' class = 'xac-nhan'>Xac Nhan</button>
                 <h2 class ='thong-bao' id = "thong-bao2"></h2>
             </div>
 
             <div id="xoa-truyen">
                 <h1>Xoa Truyen Trong Database</h1>
                 <input id ="id-xoa" placeholder="ID" value="DRM1">
-                <button id = 'xoa'>Xac Nhan</button>
+                <button id = 'xoa' class = 'xac-nhan'>Xac Nhan</button>
                 <h1 class ='thong-bao' id = "thong-bao3"></h1>
                 
                 <h1>Xoa File Truyen</h1>
                 <input id ="id-xoa-file" placeholder="ID" value="DRM1">
-                <button id = 'xoa-file'>Xac Nhan</button>
+                <button id = 'xoa-file' class = 'xac-nhan'>Xac Nhan</button>
                 <h1 class ='thong-bao'></h1>
                 
                 <h1>Xoa Anh Thumb</h1>
                 <input id ="id-xoa-thumb" placeholder="ID" value="DRM1">
-                <button id = 'xoa-thumb'>Xac Nhan</button>
+                <button id = 'xoa-thumb' class = 'xac-nhan'>Xac Nhan</button>
                 <h1 class ='thong-bao'></h1>
                 
             </div>

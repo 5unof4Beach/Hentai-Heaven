@@ -59,11 +59,6 @@ button#them{
     height: 30px;
 }
 
-button#sua,#xoa{
-    height: 30px;
-
-}
-
 #container{
     height: 100%;
     widows: 100%;
@@ -143,4 +138,15 @@ button{
     margin: 10px 0 10px 0;
     width: fit-content;
     color: white;
+}
+
+.xac-nhan{
+    height: 30px;
+    border-radius: 5px;
+    background: gainsboro;
+}
+
+.xac-nhan:hover{
+    background: var(--green);
+    transition-duration: 0.3s;
 }
