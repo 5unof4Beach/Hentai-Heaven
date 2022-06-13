@@ -5,17 +5,27 @@ const xoa = document.querySelector("#xoa");
 const xoaFile = document.querySelector("#xoa-truyen #xoa-file");
 const xoaThumb = document.querySelector("#xoa-truyen #xoa-thumb");
 
+// con quay loading
+//const loaderUploadTruyen = document.querySelector('#them-truyen #tai-file-truyen #mess2 .loader');
+const loaderUploadTruyen = document.querySelector('#loader-file');
+//const loaderUploadThumb = document.querySelector('#them-truyen #tai-thumb-truyen #mess4 .loader');
+const loaderUploadThumb = document.querySelector('#loader-thumb');
+
 them.onclick = () => {
     let themXong = themTruyen();
 
     themXong
             .then(() => {
-                if (truyenFiles.files.length != 0)
+                if (truyenFiles.files.length != 0){
+                    loaderUploadTruyen.style.display = 'block';
                     taiTruyenLen(truyenFiles.files[0]);
+                }
             })
             .then(() => {
-                if (anhFiles.files.length != 0)
+                if (anhFiles.files.length != 0){
+                    loaderUploadThumb.style.display = 'block';
                     taiAnhLen(anhFiles.files[0]);
+                }
             })
 };
 sua.onclick = () => {
@@ -253,6 +263,7 @@ taiTruyenLen = (file) => {
                 return res.json()
             })
             .then(data => {
+                loaderUploadTruyen.style.display = 'none';
                 thongBaoTraVe.textContent = data.mess;
                 console.log(data);
             })
@@ -276,7 +287,9 @@ taiAnhLen = (file) => {
                 return res.json()
             })
             .then(data => {
+                loaderUploadThumb.style.display = 'none';
                 thongBaoTraVeThumb.textContent = data.mess;
                 console.log(data);
             })
 }
+

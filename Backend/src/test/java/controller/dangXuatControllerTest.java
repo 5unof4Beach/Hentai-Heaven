@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Hung Dinh
  */
-public class dangXuatControllerTest {
+public class DangXuatControllerTest {
     
-    public dangXuatControllerTest() {
+    public DangXuatControllerTest() {
     }
     
     @BeforeClass
@@ -46,7 +46,7 @@ public class dangXuatControllerTest {
         System.out.println("processRequest");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        dangXuatController instance = new dangXuatController();
+        DangXuatController instance = new DangXuatController();
         instance.processRequest(request, response);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -60,7 +60,7 @@ public class dangXuatControllerTest {
         System.out.println("doGet");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        dangXuatController instance = new dangXuatController();
+        DangXuatController instance = new DangXuatController();
         instance.doGet(request, response);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -74,7 +74,7 @@ public class dangXuatControllerTest {
         System.out.println("doPost");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        dangXuatController instance = new dangXuatController();
+        DangXuatController instance = new DangXuatController();
         instance.doPost(request, response);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -86,7 +86,7 @@ public class dangXuatControllerTest {
     @Test
     public void testGetServletInfo() {
         System.out.println("getServletInfo");
-        dangXuatController instance = new dangXuatController();
+        DangXuatController instance = new DangXuatController();
         String expResult = "";
         String result = instance.getServletInfo();
         assertEquals(expResult, result);

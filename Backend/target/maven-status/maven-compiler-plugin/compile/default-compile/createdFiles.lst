@@ -1,9 +1,9 @@
 dao\TruyenDao.class
 model\Truyen.class
-controller\DangKyController.class
 controller\DangNhapController.class
+controller\DangXuatController.class
 model\TheLoai.class
-util\JsonConverter.class
-controller\dangXuatController.class
 controller\TimKiemController.class
+controller\DangKyController.class
+util\JsonConverter.class
 util\DatabaseHelper.class
