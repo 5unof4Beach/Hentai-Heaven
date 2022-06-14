@@ -105,19 +105,19 @@ public class DatabaseHelper {
         
         mongo = mongoClient.getDatabase("BTLWEB");
         
-        MongoCollection mc = mongo.getCollection("userfav");
-        
-        BasicDBObject field = new BasicDBObject();
-        field.put("fav", 1);
-        field.put("_id", 0);
-        
-        FindIterable<Document> res = mc.find(eq("name","duc3"))
-                                        .projection(field);
-//        FindIterable<Document> res1 = mc.find();
-        
-        for(Document doc:res){
-            System.out.println(doc.toJson());
-        }
+//        MongoCollection mc = mongo.getCollection("userfav");
+//        
+//        BasicDBObject field = new BasicDBObject();
+//        field.put("fav", 1);
+//        field.put("_id", 0);
+//        
+//        FindIterable<Document> res = mc.find(eq("name","duc3"))
+//                                        .projection(field);
+////        FindIterable<Document> res1 = mc.find();
+//        
+//        for(Document doc:res){
+//            System.out.println(doc.toJson());
+//        }
        
     }
 

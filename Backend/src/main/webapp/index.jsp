@@ -67,7 +67,7 @@
                     Thành viên 2
                 </div>
                 <div class="ten-tv">
-                    Chinh
+                    Trần Thị Chinh
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                     Thành viên 3
                 </div>
                 <div class="ten-tv">
-                    Minh
+                   Bùi Nhật Minh
                 </div>
             </div>
         </div>
