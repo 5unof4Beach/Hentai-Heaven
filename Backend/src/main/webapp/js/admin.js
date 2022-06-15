@@ -5,20 +5,11 @@ const xoa = document.querySelector("#xoa");
 const xoaFile = document.querySelector("#xoa-truyen #xoa-file");
 const xoaThumb = document.querySelector("#xoa-truyen #xoa-thumb");
 
-<<<<<<< HEAD
-them.onclick = ()=>{
-    themTruyen();
-    taiAnhLen();
-    taiTruyenLen();
-};
-sua.onclick = ()=>{suaTruyen()};
-=======
 // con quay loading
 //const loaderUploadTruyen = document.querySelector('#them-truyen #tai-file-truyen #mess2 .loader');
 const loaderUploadTruyen = document.querySelector('#loader-file');
 //const loaderUploadThumb = document.querySelector('#them-truyen #tai-thumb-truyen #mess4 .loader');
 const loaderUploadThumb = document.querySelector('#loader-thumb');
->>>>>>> main
 
 them.onclick = () => {
     let themXong = themTruyen();
