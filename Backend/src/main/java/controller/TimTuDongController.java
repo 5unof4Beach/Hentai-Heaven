@@ -7,7 +7,9 @@ package controller;
 import dao.SearchDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +30,8 @@ public class TimTuDongController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String txtSearch = request.getParameter("txt");
         SearchDao dao = new SearchDao();
-        List<Truyen> list = dao.searchByTen(txtSearch);
+        Vector<Truyen> list = dao.searchByTen(txtSearch);
+        themTruyenVaoSession(list, request);
         PrintWriter out = response.getWriter();
 
         for (Truyen t : list) {
@@ -42,6 +45,17 @@ public class TimTuDongController extends HttpServlet {
                     + "                    </p>\n"
                     + "                </a>");
         }
+    }
+    
+    private void themTruyenVaoSession(Vector<Truyen> ts, HttpServletRequest request){
+        Hashtable<String, Truyen> truyenHM = (Hashtable) request.getSession().getAttribute("truyenHM");
+        
+        for(Truyen t : ts){
+            if(!truyenHM.containsKey(t.getId())){
+                truyenHM.put(t.getId(), t);
+            }
+        }
+        request.getSession().setAttribute("truyenHM", truyenHM);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
