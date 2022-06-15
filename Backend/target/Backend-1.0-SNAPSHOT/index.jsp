@@ -41,47 +41,27 @@
         </ul>
     </nav>
 
-
-    <footer class="footer">
-        <div id="container-footer">
-            <div class="tv">
-                <div class="chuc-vu">
-                    Trưởng nhóm
-                </div>
-                <div class="ten-tv">
-                    Bùi Minh Đức
-                </div>
-            </div>
-
-            <div class="tv">
-                <div class="chuc-vu">
-                    Thành viên 1
-                </div>
-                <div class="ten-tv">
-                    Đinh Văn Giới
-                </div>
-            </div>
-
-            <div class="tv">
-                <div class="chuc-vu">
-                    Thành viên 2
-                </div>
-                <div class="ten-tv">
-                    Chinh
-                </div>
-            </div>
-
-            <div class="tv">
-                <div class="chuc-vu">
-                    Thành viên 3
-                </div>
-                <div class="ten-tv">
-                    Minh
-                </div>
-            </div>
-        </div>
-    </footer>
+    <%@include file="view/toInclude/footer.jsp" %>
+    
     <script src='js/main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function searchByName(parameter) {
+            var txtSearch = parameter.value;
+            $.ajax({
+                url: '/Backend/searchAuto',
+                type: "GET",
+                data: {
+                    txt: txtSearch
+                },
+                success: function(data) {
+                    var row = document.getElementById("danh-muc-truyen");
+                    row.innerHTML = data;
+                }
+            });
+            console.log("Da tim xong");
+        }
+    </script>
 </body>
 </html>
 

@@ -8,7 +8,7 @@ const xoaThumb = document.querySelector("#xoa-truyen #xoa-thumb");
 them.onclick = ()=>{
     themTruyen();
     taiAnhLen();
-    taiAnhLen();
+    taiTruyenLen();
 };
 sua.onclick = ()=>{suaTruyen()};
 
