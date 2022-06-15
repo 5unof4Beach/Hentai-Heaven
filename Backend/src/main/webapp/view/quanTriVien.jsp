@@ -26,26 +26,31 @@
                     <option value="tt">Truyen Tranh</option>
                     <option value="tnl">Truyen Nguoi Lon</option>
                 </select>
+                <p class ='thong-bao' id = "thong-bao"></p>
 
-                <div id='tai-truyen' class='tai-file'>
+                <div id='tai-file-truyen' class='tai-file'>
                     <h1>Upload File Truyen</h1>
-                    <input id='file' type='file'/>
+                    <input id='file' type='file' value=''/>
                     <!--<button id="upload">upload</button>-->
 
-                    <p id = 'mess'></p>
-                    <p id = 'mess2'></p>
+                    <p class ='thong-bao' id = 'mess'></p>
+                    <p class ='thong-bao' id = 'mess2'>
+                        <div id='loader-file' class="loader"></div>
+                    </p>
                 </div>
-                
-                <div id='tai-truyen' class='tai-file'>
-                    <h1>Upload Anh Thumb</h1>
-                    <input id='file-thumb' type='file'/>
 
-                    <p id = 'mess3'></p>
-                    <p id = 'mess4'></p>
+                <div id='tai-thumb-truyen' class='tai-file'>
+                    <h1>Upload Anh Thumb</h1>
+                    <input id='file-thumb' type='file' value=''/>
+
+                    <p class ='thong-bao' id = 'mess3'></p>
+                    <p class ='thong-bao' id = 'mess4'>
+                        <div id='loader-thumb' class="loader"></div>
+                    </p>
                 </div>
-                
+
                 <button id = 'them' class="xac-nhan">Them</button>
-                <h1 class ='thong-bao' id = "thong-bao"></h1>
+                
             </div>
 
             <div id="sua-truyen">
@@ -66,24 +71,25 @@
                 <h1>Xoa Truyen Trong Database</h1>
                 <input id ="id-xoa" placeholder="ID" value="DRM1">
                 <button id = 'xoa' class = 'xac-nhan'>Xac Nhan</button>
-                <h1 class ='thong-bao' id = "thong-bao3"></h1>
-                
+                <p class ='thong-bao' id = "thong-bao3"></p>
+
                 <h1>Xoa File Truyen</h1>
                 <input id ="id-xoa-file" placeholder="ID" value="DRM1">
                 <button id = 'xoa-file' class = 'xac-nhan'>Xac Nhan</button>
-                <h1 class ='thong-bao'></h1>
-                
+                <p class ='thong-bao'></p>
+
                 <h1>Xoa Anh Thumb</h1>
                 <input id ="id-xoa-thumb" placeholder="ID" value="DRM1">
                 <button id = 'xoa-thumb' class = 'xac-nhan'>Xac Nhan</button>
-                <h1 class ='thong-bao'></h1>
-                
+                <p class ='thong-bao'></p>
+
             </div>
         </div>
 
 
     </body>
     <script src="${pageContext.request.contextPath}/js/admin.js"></script>
-
+    <!--dsa-->
 
 </html>
+

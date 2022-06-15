@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import dao.SearchDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Hashtable;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,7 +37,7 @@ public class TimKiemController extends HttpServlet {
             TimVoiIDTheLoai(idTheLoai, request, response);
 //            returnJson(request, response);
         } else {
-            TimVoiTen(ndTimKiem);
+            TimVoiTen(ndTimKiem, request);
             returnJson(request, response);
         }
 
@@ -54,11 +55,14 @@ public class TimKiemController extends HttpServlet {
         processRequest(request, response);
     }
 
-    private void TimVoiTen(String ndTimKiem) {
+    private void TimVoiTen(String ndTimKiem, HttpServletRequest request) {
         Gson gson = new Gson();
         Vector<Truyen> ts = new Vector<>();
         SearchDao sd = new SearchDao();
         ts = sd.searchByTen(ndTimKiem);
+        
+        themTruyenVaoSession(ts, request);
+        
         jsonResponse = gson.toJson(ts);
 
     }
@@ -97,5 +101,16 @@ public class TimKiemController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         out.print(jsonResponse);
         out.flush();
+    }
+    
+    private void themTruyenVaoSession(Vector<Truyen> ts, HttpServletRequest request){
+        Hashtable<String, Truyen> truyenHM = (Hashtable) request.getSession().getAttribute("truyenHM");
+        
+        for(Truyen t : ts){
+            if(!truyenHM.containsKey(t.getId())){
+                truyenHM.put(t.getId(), t);
+            }
+        }
+        request.getSession().setAttribute("truyenHM", truyenHM);
     }
 }

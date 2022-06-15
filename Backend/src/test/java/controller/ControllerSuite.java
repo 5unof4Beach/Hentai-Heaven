@@ -16,7 +16,7 @@ import org.junit.runners.Suite;
  * @author Hung Dinh
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({controller.HomeControllerTest.class, controller.DangKyControllerTest.class, controller.dangXuatControllerTest.class, controller.DangNhapControllerTest.class, controller.TimKiemControllerTest.class, controller.DocTruyenControllerTest.class, controller.api.ApiSuite.class})
+@Suite.SuiteClasses({controller.HomeControllerTest.class, controller.DangKyControllerTest.class, controller.DangXuatControllerTest.class, controller.DangNhapControllerTest.class, controller.TimKiemControllerTest.class, controller.DocTruyenControllerTest.class, controller.api.ApiSuite.class})
 public class ControllerSuite {
 
     @BeforeClass

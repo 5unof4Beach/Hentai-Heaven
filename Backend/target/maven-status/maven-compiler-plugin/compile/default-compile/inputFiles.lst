@@ -1,7 +1,7 @@
 F:\Hentai-Heaven\Backend\src\main\java\model\Truyen.java
+F:\Hentai-Heaven\Backend\src\main\java\controller\api\ThumbnailUploadAPI.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\HomeController.java
-F:\Hentai-Heaven\Backend\src\main\java\controller\dangXuatController.java
-F:\Hentai-Heaven\Backend\src\main\java\controller\TruyenUpload.java
+F:\Hentai-Heaven\Backend\src\main\java\controller\DangXuatController.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\api\yeuThichAPI.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\DangKyController.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\DocTruyenController.java
@@ -15,5 +15,6 @@ F:\Hentai-Heaven\Backend\src\main\java\dao\UserDao.java
 F:\Hentai-Heaven\Backend\src\main\java\dao\YeuThichDao.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\DangNhapController.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\TimKiemController.java
+F:\Hentai-Heaven\Backend\src\main\java\controller\api\TruyenUploadAPI.java
 F:\Hentai-Heaven\Backend\src\main\java\dao\SearchDao.java
 F:\Hentai-Heaven\Backend\src\main\java\controller\api\truyenAPI.java
