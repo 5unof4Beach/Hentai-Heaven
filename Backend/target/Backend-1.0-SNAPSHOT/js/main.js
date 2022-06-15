@@ -27,5 +27,18 @@ nutThemTruyen = () => {
     Truyens.length
 }
 
+function searchByName(parameter) {
+    var txtSearch = parameter.value;
+    fetch('searchAuto?txt=' + txtSearch)
+            .then((res) => {
+                return res.text();
+
+            })
+            .then((res) => {
+                var row = document.getElementById("danh-muc-truyen");
+                row.innerHTML = res;
+            });
+}
+
 const nutTim = document.getElementById('nut-tim')
 const oTimKiem = document.getElementById('search')
