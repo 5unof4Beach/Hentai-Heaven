@@ -41,6 +41,10 @@
         </ul>
     </nav>
 
+<<<<<<< HEAD
+    <%@include file="view/toInclude/footer.jsp" %>
+    
+=======
 
     <footer class="footer">
         <div id="container-footer">
@@ -81,7 +85,26 @@
             </div>
         </div>
     </footer>
+>>>>>>> main
     <script src='js/main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function searchByName(parameter) {
+            var txtSearch = parameter.value;
+            $.ajax({
+                url: '/Backend/searchAuto',
+                type: "GET",
+                data: {
+                    txt: txtSearch
+                },
+                success: function(data) {
+                    var row = document.getElementById("danh-muc-truyen");
+                    row.innerHTML = data;
+                }
+            });
+            console.log("Da tim xong");
+        }
+    </script>
 </body>
 </html>
 

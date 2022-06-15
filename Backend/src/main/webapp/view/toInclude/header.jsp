@@ -19,7 +19,7 @@
     </div>
 
     <form action="kqtimkiem" style="display: flex; justify-content: center; align-items: center; width:30%; ">
-        <input type="text" placeholder="Tim Kiem..." name="search" style="height: 90%; width: 90%;border-radius: 5px">
+        <input oninput="searchByName(this)" type="text" placeholder="Tim Kiem..." name="search" style="height: 90%; width: 90%;border-radius: 5px">
         <input type="submit" value="" placeholder="search"  style="display:none"/>
     </form>
 
