@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author suckm
  */
-@WebServlet(name = "dangXuatController", urlPatterns = {"/logout"})
+@WebServlet(name = "DangXuatController", urlPatterns = {"/logout"})
 public class DangXuatController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

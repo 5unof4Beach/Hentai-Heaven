@@ -7,9 +7,8 @@
         
         
         Truyen t = (Truyen)request.getSession().getAttribute("truyen");
-        //FileInputStream fin = new FileInputStream("/home/duc/Desktop/Hentai Heaven Data/Comic/"+t.getId()+".pdf");
-        FileInputStream fin = new FileInputStream("C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\"+ t.getId() + ".pdf");
-//        System.out.println("id:" + t.getId());
+        String[] path = {"C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\","D:\\Hentai Heaven Data\\Comic\\"};
+        FileInputStream fin = new FileInputStream(path[1]+ t.getId() + ".pdf");
         
 
         byte [] buf = new byte[4096];

@@ -46,9 +46,8 @@ public class ThumbnailUploadAPI extends HttpServlet {
 
         String idTruyen = "Truyen Moi Them";
         idTruyen = (String) request.getSession().getAttribute("idThemTruyen");
-        String path = "F:\\Hentai-Heaven\\Backend\\src\\main\\webapp\\img\\Thumbnails\\";
-//        String path = "../../img/Thumbnails";
-        File f = new File(path + idTruyen + ".jpg");
+        String[] path = {"F:\\Hentai-Heaven\\Backend\\src\\main\\webapp\\img\\Thumbnails\\", "D:\\HentaiHeaven\\Backend\\src\\main\\webapp\\img\\Thumbnails\\"};
+        File f = new File(path[1] + idTruyen + ".jpg");
 
         FileOutputStream out = new FileOutputStream(f);
 

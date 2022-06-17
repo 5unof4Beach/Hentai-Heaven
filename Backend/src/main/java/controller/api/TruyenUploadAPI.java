@@ -41,12 +41,12 @@ public class TruyenUploadAPI extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String path = "C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\";
+        String[] path = {"C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\","D:\\Hentai Heaven Data\\Comic\\"};
         InputStream truyen = request.getInputStream();
         
         String idTruyen = "Truyen Moi Them";
         idTruyen = (String) request.getSession().getAttribute("idThemTruyen");
-        File f = new File(path + idTruyen + ".pdf");
+        File f = new File(path[1] + idTruyen + ".pdf");
         
         FileOutputStream out = new FileOutputStream(f);
         

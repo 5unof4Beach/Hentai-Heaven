@@ -62,7 +62,7 @@ public class DatabaseHelper {
         try {
             String[] IPS = {"10.147.17.50", "localhost:1433"};
 
-            String IP = IPS[0];
+            String IP = IPS[1];
             String dbURL = "jdbc:sqlserver://" + IP + ";databaseName=BTLWEB;encrypt=false";
             String usrname = "sa";
             String pw = "1";
