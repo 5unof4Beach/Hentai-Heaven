@@ -83,15 +83,17 @@ public class DatabaseHelper {
     
     public void connectMongoDB(){
         String[] IPS = {"10.147.17.50", "localhost:27017"};
-        String IP = IPS[1];
+        String IP = IPS[0];
         String uri = "mongodb://" + IP;
         
         MongoClient mongoClient = null;
         
         try{
-            mongoClient = new MongoClient("localhost");
+            mongoClient = new MongoClient(IP);
+            System.out.println("Mongo Connected");
         }
         catch(MongoException e){
+            System.err.println("Cannot connect mongoDB database, " + e);
             return;
         }
         

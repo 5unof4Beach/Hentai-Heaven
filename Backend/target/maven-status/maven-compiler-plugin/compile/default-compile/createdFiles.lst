@@ -1,6 +1,7 @@
 controller\api\ThumbnailUploadAPI.class
 dao\SearchDao.class
 controller\api\TruyenAPI.class
+controller\DoiMatKhauController.class
 controller\HomeController.class
 controller\api\NguoiDungAPI.class
 dao\TruyenDao.class
