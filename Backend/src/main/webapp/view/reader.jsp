@@ -8,9 +8,10 @@
         
         Truyen t = (Truyen)request.getSession().getAttribute("truyen");
         String[] path = {"C:\\Users\\suckm\\OneDrive\\Desktop\\TestDataBTLWeb\\","D:\\Hentai Heaven Data\\Comic\\"};
+        //Lay file truyen trong folder
         FileInputStream fin = new FileInputStream(path[0]+ t.getId() + ".pdf");
         
-
+        //Tra ve bufer
         byte [] buf = new byte[4096];
         int read;
         while((read = fin.read(buf)) != -1)

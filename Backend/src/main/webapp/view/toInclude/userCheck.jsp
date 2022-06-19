@@ -1,5 +1,7 @@
 <%@page import="model.User"%>
 <%
+    
+    // Kiem tra xem dang nhap chua
     Cookie[] cookie = request.getCookies();
     Cookie userCookie = null;
     User u = null;
@@ -16,10 +18,11 @@
 <%
     if (!loggedIn) {
 %>
-<a class = 'link' href='dangnhap' >Login</a>
-<a class = 'link' href='dangky' >Signup</a>
+<a class = 'link' href='dangnhap' >DN</a>
+<a class = 'link' href='dangky' >DK</a>
 <%
 } 
+    //Neu da dang nhap hien ten dang nhap va cac lua chon
     else {
     u = (User) session.getAttribute("user");
 %>
@@ -28,8 +31,6 @@
         <ul>
             <li><a class = 'link' href="thongtin">Thong Tin</a></li>
             <li><a class = 'link' href="yeuthich">Yeu Thich</a></li>
-            <li>4</li>
-            <li>5</li>
             <li><a class = 'link' href="logout">Dang Xuat</a></li>
         </ul>
     </div>
@@ -41,12 +42,13 @@
     }
 %>
 <%
+    //Kiem tra xem co phai admin hay ko
     if(u == null){
     
     }
     else if(u.getType() == 1){
     %>
-        <a class = 'link' href='admin'>admin</a>
+        <a class = 'link' href='admin'>QTV</a>
     <%
     }
 

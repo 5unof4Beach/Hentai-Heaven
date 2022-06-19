@@ -105,7 +105,7 @@ public class TruyenAPI extends HttpServlet {
         JsonConverter jc = new JsonConverter(req.getReader());
         JsonObject jo = jc.getJsonObject();
         TruyenDao td = new TruyenDao();
-        Boolean successful = td.xoaTruyen(jo.get("userName").getAsString()); 
+        Boolean successful = td.xoaTruyen(jo.get("id").getAsString()); 
         PrintWriter out = resp.getWriter();
         resp.setContentType("application/json");
         

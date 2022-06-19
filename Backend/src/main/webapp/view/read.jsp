@@ -8,7 +8,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href="${pageContext.request.contextPath}/css/trangDoc.css">
     <link rel='stylesheet' type='text/css' media='screen' href="${pageContext.request.contextPath}/css/homepage.css">
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0" nonce="BXLSoInD"></script>
 </head>
 <body>
     <%@include file="toInclude/userCheckToRead.jsp" %>

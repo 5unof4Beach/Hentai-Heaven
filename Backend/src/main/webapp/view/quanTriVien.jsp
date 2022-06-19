@@ -29,7 +29,7 @@
                 <p class ='thong-bao' id = "thong-bao"></p>
 
                 <div id='tai-file-truyen' class='tai-file'>
-                    <h1>Upload File Truyen</h1>
+                    <h1>Tai Tep Truyen</h1>
                     <input id='file' type='file' value=''/>
                     <!--<button id="upload">upload</button>-->
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div id='tai-thumb-truyen' class='tai-file'>
-                    <h1>Upload Anh Thumb</h1>
+                    <h1>Tai Anh Thumb</h1>
                     <input id='file-thumb' type='file' value=''/>
 
                     <p class ='thong-bao' id = 'mess3'></p>
@@ -68,12 +68,12 @@
             </div>
 
             <div id="xoa-truyen">
-                <h1>Xoa Truyen Trong Database</h1>
+                <h1>Xoa Truyen Trong CSDL</h1>
                 <input id ="id-xoa" placeholder="ID" value="DRM1">
                 <button id = 'xoa' class = 'xac-nhan'>Xac Nhan</button>
                 <p class ='thong-bao' id = "thong-bao3"></p>
 
-                <h1>Xoa File Truyen</h1>
+                <h1>Xoa Tep Truyen</h1>
                 <input id ="id-xoa-file" placeholder="ID" value="DRM1">
                 <button id = 'xoa-file' class = 'xac-nhan'>Xac Nhan</button>
                 <p class ='thong-bao'></p>
