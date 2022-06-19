@@ -1,6 +1,5 @@
 controller\api\ThumbnailUploadAPI.class
 dao\SearchDao.class
-controller\api\TruyenAPI.class
 controller\DoiMatKhauController.class
 controller\HomeController.class
 controller\api\NguoiDungAPI.class
@@ -14,9 +13,7 @@ model\TheLoai.class
 dao\ReadDao.class
 controller\TimKiemController.class
 dao\UserDao.class
-controller\DangKyController.class
 util\JsonConverter.class
-controller\api\YeuThichAPI.class
 controller\TimTuDongController.class
 model\User.class
 dao\YeuThichDao.class
