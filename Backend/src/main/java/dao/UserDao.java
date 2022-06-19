@@ -117,5 +117,35 @@ public class UserDao {
         
         return ds;
     }
+    
+    public User kiemTraMatkhau(String username, String hashedPass){
+        String sql = "select * from [dbo].[user] where userName = ? and password = ?";
+        if(username.equals("")) return null;
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, hashedPass);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                return new User(rs.getString(1),rs.getString(2),rs.getString(5),rs.getInt(3));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+     public Boolean doiMatkhau(String username, String hashedPass1,String hashedPass2){
+        String sql = "update [dbo].[user] set password = ? where userName = ? and password = ?";
+        if(username.equals("")) return null;
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, hashedPass2);
+            ps.setString(2, username);
+            ps.setString(3, hashedPass1);
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+        }
+        return false;
+    }
 
 }

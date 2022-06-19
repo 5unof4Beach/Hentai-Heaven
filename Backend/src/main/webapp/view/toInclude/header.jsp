@@ -1,9 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link rel='stylesheet' type='text/css' media='screen' href='css/include.css'>
 <header class="header">
     <div id="menu-the-loai" class="menu-the-loai" >
 
-        <button id="dong-menu" onclick="dongMenu()">�</button>
+        <button id="dong-menu" onclick="dongMenu()">×</button>
 
         <div id = 'the-loai'>
             <ul>
@@ -16,7 +17,7 @@
 
     <div style="align-items: center;">
         <button id="mo-menu" onclick="moMenu()">&#9776;</button>
-        <a id = "logo" href="home" style="text-decoration:none;"><h1>Hentai Heaven</h1></a>
+        <a id = "logo" href="home" style="text-decoration:none;"><h1>Truyện Hay</h1></a>
     </div>
 
     <form action="kqtimkiem" style="display: flex; justify-content: center; align-items: center; width:30%; ">

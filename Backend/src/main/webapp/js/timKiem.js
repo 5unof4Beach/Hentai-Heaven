@@ -3,37 +3,14 @@ const urlParams = new URLSearchParams(queryString);
 const ketQua = document.querySelector('#danh-muc-truyen')
 
 
-layTruyen()
-    .then(response =>{
-        console.log('Tra ve ket qua thanh cong')
-})
-    .catch(logError());
-    
-function logResult(result) {
-  console.log(result);
-}
-
-function logError(error) {
-  console.log('Looks like there was a problem: \n', error);
-}
-
-function validateResponse(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
-
-function readResponseAsJSON(response) {
-  return response.json();
-}
-
-async function layTruyen(){
-    var res = await fetch('search?search=' + urlParams.get('search'))
-    res = await validateResponse(res)
-    res = await readResponseAsJSON(res)
-    await logResult(res)
-    await display(res)
+function layTruyen(){
+    fetch('search?search=' + urlParams.get('search'))
+            .then((respnse) =>{
+                return response.json();
+    })
+            .then((res) => {
+                display(res)
+    })
 }
 
 function display(json){
