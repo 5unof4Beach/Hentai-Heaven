@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel='stylesheet' type='text/css' media='screen' href='css/include.css'>
 <header class="header">
     <div id="menu-the-loai" class="menu-the-loai" >
 

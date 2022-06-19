@@ -1,10 +1,5 @@
-<%-- 
-    Document   : footer
-    Created on : Jun 15, 2022, 9:21:46 PM
-    Author     : Hung Dinh
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel='stylesheet' type='text/css' media='screen' href='css/include.css'>
 <footer class="footer">
         <div id="container-footer">
             <div class="tv">

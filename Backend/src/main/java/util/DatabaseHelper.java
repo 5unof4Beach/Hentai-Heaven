@@ -59,10 +59,10 @@ public class DatabaseHelper {
     }
 
     public void connnect() {
-        try {
             String[] IPS = {"10.147.17.50", "localhost:1433"};
+            String IP = IPS[0];
+        try {
 
-            String IP = IPS[1];
             String dbURL = "jdbc:sqlserver://" + IP + ";databaseName=BTLWEB;encrypt=false";
             String usrname = "sa";
             String pw = "1";
@@ -77,7 +77,7 @@ public class DatabaseHelper {
                 System.out.println("Product version: " + dm.getDatabaseProductVersion());
             }
         } catch (SQLException ex) {
-            System.err.println("Cannot connect database, " + ex);
+            System.err.println("Cannot connect database, " + IP + ex);
         }
     }
     

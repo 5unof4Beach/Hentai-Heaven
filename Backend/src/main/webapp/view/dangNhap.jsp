@@ -29,7 +29,7 @@
                 <button type="submit">Đăng nhập</button>
             </form>
             <small>
-                Bạn chưa có tài khoản? Đăng ký <a href="dangky">Tại đây</a></p>
+                Bạn chưa có tài khoản? Đăng ký <a href="dangky">Tại đây nhe</a></p>
             </small>
             <p>${mess}</p>
         </div>
