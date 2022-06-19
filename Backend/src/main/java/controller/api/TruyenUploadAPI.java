@@ -46,7 +46,7 @@ public class TruyenUploadAPI extends HttpServlet {
         
         String idTruyen = "Truyen Moi Them";
         idTruyen = (String) request.getSession().getAttribute("idThemTruyen");
-        File f = new File(path[1] + idTruyen + ".pdf");
+        File f = new File(path[0] + idTruyen + ".pdf");
         
         FileOutputStream out = new FileOutputStream(f);
         

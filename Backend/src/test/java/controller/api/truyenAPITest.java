@@ -46,7 +46,7 @@ public class truyenAPITest {
         System.out.println("doGet");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        truyenAPI instance = new truyenAPI();
+        TruyenAPI instance = new TruyenAPI();
         instance.doGet(request, response);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -60,7 +60,7 @@ public class truyenAPITest {
         System.out.println("doPost");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        truyenAPI instance = new truyenAPI();
+        TruyenAPI instance = new TruyenAPI();
         instance.doPost(request, response);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -74,7 +74,7 @@ public class truyenAPITest {
         System.out.println("doPut");
         HttpServletRequest req = null;
         HttpServletResponse resp = null;
-        truyenAPI instance = new truyenAPI();
+        TruyenAPI instance = new TruyenAPI();
         instance.doPut(req, resp);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -88,7 +88,7 @@ public class truyenAPITest {
         System.out.println("doDelete");
         HttpServletRequest req = null;
         HttpServletResponse resp = null;
-        truyenAPI instance = new truyenAPI();
+        TruyenAPI instance = new TruyenAPI();
         instance.doDelete(req, resp);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

@@ -46,7 +46,7 @@ public class yeuThichAPITest {
         System.out.println("doGet");
         HttpServletRequest request = null;
         HttpServletResponse response = null;
-        yeuThichAPI instance = new yeuThichAPI();
+        YeuThichAPI instance = new YeuThichAPI();
         instance.doGet(request, response);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -60,7 +60,7 @@ public class yeuThichAPITest {
         System.out.println("doPost");
         HttpServletRequest req = null;
         HttpServletResponse res = null;
-        yeuThichAPI instance = new yeuThichAPI();
+        YeuThichAPI instance = new YeuThichAPI();
         instance.doPost(req, res);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -74,7 +74,7 @@ public class yeuThichAPITest {
         System.out.println("doPut");
         HttpServletRequest req = null;
         HttpServletResponse resp = null;
-        yeuThichAPI instance = new yeuThichAPI();
+        YeuThichAPI instance = new YeuThichAPI();
         instance.doPut(req, resp);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -86,7 +86,7 @@ public class yeuThichAPITest {
     @Test
     public void testGetServletInfo() {
         System.out.println("getServletInfo");
-        yeuThichAPI instance = new yeuThichAPI();
+        YeuThichAPI instance = new YeuThichAPI();
         String expResult = "";
         String result = instance.getServletInfo();
         assertEquals(expResult, result);

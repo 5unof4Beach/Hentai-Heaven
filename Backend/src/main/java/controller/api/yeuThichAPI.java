@@ -22,7 +22,7 @@ import util.JsonConverter;
  * @author suckm
  */
 @WebServlet(name = "yeuThichAPI", urlPatterns = {"/api-fav"})
-public class yeuThichAPI extends HttpServlet {
+public class YeuThichAPI extends HttpServlet {
 
     
     @Override

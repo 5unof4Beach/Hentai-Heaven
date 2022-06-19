@@ -24,7 +24,7 @@ import util.JsonConverter;
  * @author suckm
  */
 @WebServlet(name = "truyenAPI", urlPatterns = {"/api-truyen"})
-public class truyenAPI extends HttpServlet {
+public class TruyenAPI extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -105,7 +105,7 @@ public class truyenAPI extends HttpServlet {
         JsonConverter jc = new JsonConverter(req.getReader());
         JsonObject jo = jc.getJsonObject();
         TruyenDao td = new TruyenDao();
-        Boolean successful = td.xoaTruyen(jo.get("id").getAsString()); 
+        Boolean successful = td.xoaTruyen(jo.get("userName").getAsString()); 
         PrintWriter out = resp.getWriter();
         resp.setContentType("application/json");
         

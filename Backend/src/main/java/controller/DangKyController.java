@@ -5,7 +5,7 @@
 package controller;
 
 import com.google.common.hash.Hashing;
-import controller.api.yeuThichAPI;
+import controller.api.YeuThichAPI;
 import dao.UserDao;
 import dao.YeuThichDao;
 import java.io.IOException;

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -63,6 +64,58 @@ public class UserDao {
         }
         
         return false;
+    }
+    
+    public Boolean xoaNguoiDung(String username){
+        String sql = "Delete from [dbo].[user] where userName = ?";
+        if(username.equals("")) return null;
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            System.out.println("Xoa Nguoi Dung That Bai");
+        }
+        
+        return false;
+    }
+    
+    public Boolean suaNguoiDung(String username, String firstName, String lastName){
+        String sql = "update [dbo].[user] set firstName = ?, lastName = ? where userName = ?";
+        if(username.equals("")) return null;
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, firstName);
+            ps.setString(2, lastName);
+            ps.setString(3, username);
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            System.out.println("Xoa Nguoi Dung That Bai");
+        }
+        
+        return false;
+    }
+    
+    public Vector<User> dsNguoiDung(){
+        Vector<User> ds = new Vector<>();
+        
+        String sql = "SELECT firstName,lastName,username\n" +
+                    "FROM dbo.[user]";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                ds.add(new User(rs.getString(1),rs.getString(2),rs.getString(3)));
+            }
+        } catch (Exception e) {
+            System.out.println("No result for user found");
+        }
+        
+        return ds;
     }
 
 }
