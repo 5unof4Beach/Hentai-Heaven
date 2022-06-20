@@ -59,17 +59,18 @@ public class DatabaseHelper {
     }
 
     public void connnect() {
-            String[] IPS = {"10.147.17.50", "localhost:1433"};
-            String IP = IPS[0];
+            String[] IPS = {"10.147.17.50", "localhost:1433", "10.147.17.79", "172.17.0.4:1433"};
+            String[] PWS = {"1", "Buiminhduc2001"};
+            String IP = IPS[3];
+            String pw = PWS[1];
         try {
 
             String dbURL = "jdbc:sqlserver://" + IP + ";databaseName=BTLWEB;encrypt=false";
             String usrname = "sa";
-            String pw = "1";
             conn = DriverManager.getConnection(dbURL, usrname, pw);
 
             if (conn != null) {
-                System.out.println("Connected");
+                System.out.println("SQL Server Connected" + IP);
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
                 System.out.println("Driver name: " + dm.getDriverName());
                 System.out.println("Driver version: " + dm.getDriverVersion());
@@ -77,13 +78,13 @@ public class DatabaseHelper {
                 System.out.println("Product version: " + dm.getDatabaseProductVersion());
             }
         } catch (SQLException ex) {
-            System.err.println("Cannot connect database, " + IP + ex);
+            System.err.println("Cannot connect database, " + IP + " password: "+ pw +ex);
         }
     }
     
     public void connectMongoDB(){
-        String[] IPS = {"10.147.17.50", "localhost:27017"};
-        String IP = IPS[0];
+        String[] IPS = {"10.147.17.50", "localhost:27017", "172.17.0.2"};
+        String IP = IPS[2];
         String uri = "mongodb://" + IP;
         
         MongoClient mongoClient = null;
@@ -97,7 +98,8 @@ public class DatabaseHelper {
             return;
         }
         
-        mongo = mongoClient.getDatabase("BTLWEB");
+//        mongo = mongoClient.getDatabase("BTLWEB");
+        mongo = mongoClient.getDatabase("TTCS");
         
     }
 
